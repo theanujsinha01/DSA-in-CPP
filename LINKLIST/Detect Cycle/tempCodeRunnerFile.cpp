@@ -1,1 +1,0 @@
-  // head->next->next->next->next = head->next; // 40 points to 20

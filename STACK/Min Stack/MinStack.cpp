@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 class MinStack {
     public:
     stack<int> s;        // Regular stack to store elements
@@ -9,14 +9,14 @@ class MinStack {
     void push(int x) {
         s.push(x);
         // If the minStack is empty or the current element is smaller than or equal to the top of minStack, push it onto minStack
-        if (minStack.empty() || x <= minStack.top()) {
+        if (minStack.size() == 0 || x <= minStack.top()) {
             minStack.push(x);
         }
     }
 
     // Remove the top element from the stack
     void pop() {
-        if (s.empty()) {
+        if (s.size() == 0) {
             return;
         }
         // If the top of the minStack is the same as the top of the main stack, pop it from minStack as well
@@ -34,7 +34,7 @@ class MinStack {
     }
 
     int getMin() {
-        if (minStack.empty()) {
+        if (minStack.size() == 0) {
             return -1;
         }
         return minStack.top();

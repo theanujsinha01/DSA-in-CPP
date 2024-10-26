@@ -3,7 +3,11 @@ using namespace std;
 
 //bitwise AND Operation num and 1
 bool isEven(int n) {
-    return (n & 1) == 0; // Returns true if even, false if odd
+    if(n & 1 != 0){
+        return false;
+    }
+
+    return true ; // Returns true if even, false if odd
 }
 
 int main() {

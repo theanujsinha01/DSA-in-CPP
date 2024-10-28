@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string reverseWords(const string& str) {
-    stack<string> wordStack; // Stack to store words
+string reverseWords( string& str) {
+    stack<string> wordStack; 
     string word;
     istringstream stream(str); // Create a string stream from the input string
 
@@ -11,13 +11,12 @@ string reverseWords(const string& str) {
         wordStack.push(word); // Push each word onto the stack
     }
 
-    // Prepare the result string
     string reversedStr;
     
-    // Pop words from the stack to get them in reverse order
-    while (!wordStack.empty()) {
+   
+    while (wordStack.size() > 0) {
         reversedStr += wordStack.top(); // Add the top word to the result
-        wordStack.pop(); // Remove the top word from the stack
+        wordStack.pop(); 
         if (wordStack.size() > 0) {
             reversedStr += " "; // Add space between words if the stack is not empty
         }

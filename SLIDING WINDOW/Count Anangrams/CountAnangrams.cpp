@@ -22,11 +22,11 @@ int countAnagrams(string txt, string pat) {
         // Add the current character to the window
         windowFreq[txt[right]]++;
 
-        // If the window size is less than K, expand it
+ 
         if (right - left + 1 < K) {
             right++;
         }
-        // If window size is exactly K
+      
         else if (right - left + 1 == K) {
             // Compare the frequency maps
             if (windowFreq == patFreq) {

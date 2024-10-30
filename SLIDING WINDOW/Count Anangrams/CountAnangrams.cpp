@@ -2,10 +2,10 @@
 using namespace std;
 
 int countAnagrams(string txt, string pat) {
-    int K = pat.size();  // Length of the pattern
-    int N = txt.size();  // Length of the text
+    int K = pat.size();  
+    int N = txt.size(); 
 
-    if (K > N) return 0;  // If pattern is longer than text, return 0
+    if (K > N) return 0;  
 
     unordered_map<char, int> patFreq;  // Frequency map for the pattern
     unordered_map<char, int> windowFreq;  // Frequency map for the current window in txt
@@ -38,16 +38,16 @@ int countAnagrams(string txt, string pat) {
             if (windowFreq[txt[left]] == 0) {
                 windowFreq.erase(txt[left]);  // Remove the character from map if count becomes 0
             }
-            left++;  // Slide the window forward
-            right++;  // Expand the window
+            left++;  
+            right++;  
         }
     }
 
-    return count;  // Return the total count of anagrams found
+    return count;  
 }
 
 int main() {
-    string txt = "abbcbabce";
+    string txt = "abccbabce";
     string pat = "abc";
     int result = countAnagrams(txt, pat);
     cout << "Number of anagram occurrences: " << result << endl;

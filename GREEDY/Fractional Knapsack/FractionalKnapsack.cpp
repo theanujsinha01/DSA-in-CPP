@@ -14,18 +14,17 @@ bool comp(Item i1, Item i2) {
     return unit1 > unit2;
 }
 
-// Function to get the maximum total value in the knapsack.
 double fractionalKnapsack(int W, Item arr[], int n) {
     // Sort items based on value per weight.
     sort(arr, arr + n, comp);
 
-    double ans = 0;  // To store the final answer.
+    double ans = 0; 
 
     for (int i = 0; i < n; i++) {
         if (arr[i].weight >= W) {
             // If the current item weight is more than available capacity,
             // take the fractional part of this item.
-            double unit = (arr[i].value * 1.0) / (arr[i].weight);
+            double unit = (arr[i].value) / (arr[i].weight);
             ans += (W * unit);
             break;
         }
@@ -41,11 +40,9 @@ double fractionalKnapsack(int W, Item arr[], int n) {
 int main() {
     int n, W;
 
-    // Taking input for number of items.
     cout << "Enter number of items: ";
     cin >> n;
 
-    // Creating an array of items.
     Item arr[n];
 
     // Taking input for each item's value and weight.
@@ -58,10 +55,8 @@ int main() {
     cout << "Enter knapsack capacity: ";
     cin >> W;
 
-    // Calculating maximum value for the knapsack.
     double maxValue = fractionalKnapsack(W, arr, n);
 
-    // Output the result.
     cout << "Maximum value in Knapsack = " << maxValue << endl;
 
     return 0;

@@ -2,13 +2,13 @@
 using namespace std;
 
 vector<vector<int>> mergeIntervals(vector<vector<int>>& intervals) {
+
     vector<vector<int>> ans;
     if (intervals.size() == 0) return ans;
     
     // Sort intervals based on the starting time
     sort(intervals.begin(), intervals.end());
     
-    // Add the first interval to the answer
     ans.push_back(intervals[0]);
     int j = 0; // To keep track of the last added interval
     

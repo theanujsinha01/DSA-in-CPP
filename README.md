@@ -57,38 +57,42 @@ In this repository, you'll find:
 
 ## Data Structures
 
-- **Arrays** – [array.cpp](array.cpp)
-- **Linked Lists** – [linked_list.cpp](linked_list.cpp)
-- **Stacks** – [stack.cpp](stack.cpp)
-- **Queues** – [queue.cpp](queue.cpp)
-- **Trees** – [tree.cpp](tree.cpp)
-- **Graphs** – [graph.cpp](graph.cpp)
-- **Heaps** – [heap.cpp](heap.cpp)
-- **Hash Tables** – [hash_table.cpp](hash_table.cpp)
-- **Tries** – [trie.cpp](trie.cpp)
+- **Arrays** 
+- **Linked Lists** 
+- **Stacks**
+- **Queues** 
+- **Trees** 
+- **Graphs** 
+- **Hash Tables**
+- **Sliding Window**
+- **Greedy**
+- **Recursion**
+
 
 ---
 
 ## Algorithms
 
 - **Sorting Algorithms**
-    - Bubble Sort – [bubble_sort.cpp](bubble_sort.cpp)
-    - Merge Sort – [merge_sort.cpp](merge_sort.cpp)
-    - Quick Sort – [quick_sort.cpp](quick_sort.cpp)
-    - Heap Sort – [heap_sort.cpp](heap_sort.cpp)
+    - Bubble Sort –
+    - Merge Sort – 
+    - Quick Sort –
+    - Selection Sort-
+    - Insertion Sort-
+   
 
 - **Searching Algorithms**
-    - Binary Search – [binary_search.cpp](binary_search.cpp)
-    - Linear Search – [linear_search.cpp](linear_search.cpp)
+    - Binary Search – 
+    - Linear Search – 
 
 - **Graph Algorithms**
     - Breadth-First Search (BFS) – [bfs.cpp](bfs.cpp)
     - Depth-First Search (DFS) – [dfs.cpp](dfs.cpp)
-    - Dijkstra's Algorithm – [dijkstra.cpp](dijkstra.cpp)
+   
 
 - **Dynamic Programming**
-    - Fibonacci Sequence – [fibonacci_dp.cpp](fibonacci_dp.cpp)
-    - Knapsack Problem – [knapsack.cpp](knapsack.cpp)
+    - Fibonacci Sequence – 
+    - Knapsack Problem – 
 
 ---
 

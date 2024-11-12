@@ -1,6 +1,5 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
 int power(int a, int b) {
     if (b == 0)  // Base case: any number raised to power 0 is 1
         return 1;

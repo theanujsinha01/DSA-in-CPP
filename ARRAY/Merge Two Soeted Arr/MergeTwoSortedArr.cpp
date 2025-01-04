@@ -2,26 +2,26 @@
 using namespace std;
 
 
-void mergeArrays(int arr1[], int n1, int arr2[], int n2, int merged[]) {
+void mergeArrays(int arr1[], int n1, int arr2[], int n2, int mergedarr[]) {
     int i = 0, j = 0, k = 0;
 
     // Merge elements from both arrays in sorted order
     while (i < n1 && j < n2) {
         if (arr1[i] <= arr2[j]) {
-            merged[k++] = arr1[i++];
+            mergedarr[k++] = arr1[i++];
         } else {
-            merged[k++] = arr2[j++];
+            mergedarr[k++] = arr2[j++];
         }
     }
 
     // Copy remaining elements of arr1
     while (i < n1) {
-        merged[k++] = arr1[i++];
+        mergedarr[k++] = arr1[i++];
     }
 
     // Copy remaining elements of arr2
     while (j < n2) {
-        merged[k++] = arr2[j++];
+        mergedarr[k++] = arr2[j++];
     }
 }
 
@@ -30,13 +30,13 @@ int main() {
     int arr2[] = {2, 4, 6, 8};
     int n1 = sizeof(arr1) / sizeof(arr1[0]);
     int n2 = sizeof(arr2) / sizeof(arr2[0]);
-    int merged[n1 + n2];
+    int mergedarr[n1 + n2];
 
-    mergeArrays(arr1, n1, arr2, n2, merged);
+    mergeArrays(arr1, n1, arr2, n2, mergedarr);
 
     cout << "Merged array: ";
     for (int i = 0; i < n1 + n2; i++) {
-        cout << merged[i] << " ";
+        cout << mergedarr[i] << " ";
     }
 
     return 0;

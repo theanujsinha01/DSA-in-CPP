@@ -1,20 +1,16 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int countPairsWithSum(int arr[], int n, int target) {
-    unordered_set<int> numSet;  // To store the unique elements
-    int count = 0;  
+    int count = 0;
 
+    // Use a nested loop to check all pairs
     for (int i = 0; i < n; i++) {
-        int complement = target - arr[i];  
-
-        // If complement is found in the set, a pair exists
-        if (numSet.find(complement) != numSet.end()) {
-            count++;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] + arr[j] == target) {
+                count++;
+            }
         }
-
-        // Add the current number to the set
-        numSet.insert(arr[i]);
     }
 
     return count;
@@ -26,7 +22,8 @@ int main() {
     int target = 6;
 
     int result = countPairsWithSum(arr, n, target);
-    cout << "Number of pairs: " << result << endl;
+
+    cout << "Number of pairs with sum " << target << ": " << result << endl;
 
     return 0;
 }

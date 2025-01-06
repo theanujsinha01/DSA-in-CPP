@@ -5,19 +5,16 @@ int maxProfit(const vector<int>& prices) {
 
     if (prices.empty()) return 0;
 
-    int minPrice = prices[0];  
-    int maxProfit = 0;   
+    int buy = prices[0];  
+    int Profit = 0;   
 
     for (int i = 1; i < prices.size(); i++) {
         // Update the minimum price if the current price is lower
-        minPrice = min(minPrice, prices[i]);
-
-        // Calculate the current profit and use max() to update the maximum profit
-        int currentProfit = prices[i] - minPrice;
-        maxProfit = max(maxProfit, currentProfit);
+        buy = min(buy, prices[i]);
+        Profit = max(Profit, prices[i] - buy);
     }
 
-    return maxProfit;
+    return Profit;
 }
 
 int main() {

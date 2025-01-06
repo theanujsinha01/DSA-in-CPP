@@ -12,7 +12,7 @@ void findIntersection(int arr1[], int n1, int arr2[], int n2) {
     // Check if elements of arr2 are present in the set
     cout << "Intersection: ";
     for (int i = 0; i < n2; i++) {
-        if (intersectionSet.find(arr2[i]) != intersectionSet.end()) {
+        if (intersectionSet.count(arr2[i])) {
             cout << arr2[i] << " ";
             intersectionSet.erase(arr2[i]); // To avoid duplicates
         }

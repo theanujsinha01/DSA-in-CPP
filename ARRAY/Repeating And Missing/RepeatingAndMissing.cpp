@@ -1,27 +1,25 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void findRepeatingAndMissing(int arr[], int n) {
-    int sumActual = 0, sumExpected = 0;
-    int sumSquaresActual = 0, sumSquaresExpected = 0;
+     map<int, int> freq;  // Hashmap to store frequencies
 
+    // Count frequencies of elements in the array
     for (int i = 0; i < n; i++) {
-        sumActual += arr[i];
-        sumSquaresActual += arr[i] * arr[i];
+        freq[arr[i]]++;
     }
 
-    sumExpected = n * (n + 1) / 2;
-    sumSquaresExpected = (n * (n + 1) * (2 * n + 1)) / 6;
+    int missing = 0, repeating = 0;
 
-  
-    int diffSum = sumExpected - sumActual; 
-    int diffSquares = sumSquaresExpected - sumSquaresActual;  
+    // Check each number from 1 to n
+    for (int i = 1; i <= n; i++) {
+        if (freq[i] == 0) {
+            missing = i;  // Missing number
+        } else if (freq[i] > 1) {
+            repeating = i;  // Repeating number
+        }
+    }
 
-    // Find missing and repeating using simple math
-    int missing = ((diffSum + diffSquares) / diffSum) / 2;
-    int repeating = missing - diffSum;
-
-   
     cout << "Repeating element: " << repeating << endl;
     cout << "Missing element: " << missing << endl;
 }

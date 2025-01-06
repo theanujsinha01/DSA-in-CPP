@@ -7,7 +7,7 @@ void findDuplicates(int arr[], int n) {
     set<int> duplicates;
 
     for (int i = 0; i < n; i++) {
-        if (uniqueElements.count(arr[i])>0) {
+        if (uniqueElements.count(arr[i])) {
             // Element already exists, it's a duplicate
             duplicates.insert(arr[i]);
         } else {
@@ -29,7 +29,7 @@ void findDuplicates(int arr[], int n) {
 }
 
 int main() {
-    int arr[] = {1, 2, 3, 4, 2, 5, 1, 6, 3};
+    int arr[] = {1, 2, 3, 4, 2};
     int n = sizeof(arr) / sizeof(arr[0]);
 
     findDuplicates(arr, n);

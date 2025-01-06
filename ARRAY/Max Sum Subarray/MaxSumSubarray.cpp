@@ -7,7 +7,7 @@ int maxSubarraySum(int arr[], int n) {
     int currentSum = 0; // Initialize currentSum to 0
 
     for (int i = 0; i < n; i++) {
-        currentSum += arr[i];  // Add current element to currentSum
+        currentSum = currentSum + arr[i];  // Add current element to currentSum
 
         if (currentSum < 0) {
             currentSum = 0;  

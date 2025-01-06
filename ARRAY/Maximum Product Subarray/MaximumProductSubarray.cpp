@@ -1,32 +1,28 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int maxProductSubarray(int arr[], int n) {
-    int maxProduct = arr[0];  
-    int minProduct = arr[0];  
-    int result = arr[0];      
+    int maxProd = arr[0], minProd = arr[0], result = arr[0];
 
     for (int i = 1; i < n; i++) {
-        // If the current number is negative, swap max and min
         if (arr[i] < 0) {
-            swap(maxProduct, minProduct);
+            swap(maxProd, minProd);  // Swap if negative
         }
 
-        // Update maxProduct and minProduct
-        maxProduct = max(arr[i], maxProduct * arr[i]);  
-        minProduct = min(arr[i], minProduct * arr[i]); 
+        maxProd = max(arr[i], maxProd * arr[i]);  // Update max
+        minProd = min(arr[i], minProd * arr[i]);  // Update min
 
-        result = max(result, maxProduct);
+        result = max(result, maxProd);  // Store the max result
     }
 
     return result;
 }
 
 int main() {
-    int arr[] = {2, -100, 2, 4};  
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int arr[] = {2, -100, 2, 4};
+    int n = 4;
 
-    cout << "Maximum product subarray: " << maxProductSubarray(arr, n) << endl;
+    cout << "Maximum product: " << maxProductSubarray(arr, n) << endl;
 
     return 0;
 }

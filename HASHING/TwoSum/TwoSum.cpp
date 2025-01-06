@@ -1,24 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool twoSum(const vector<int>& arr, int target) {
-    unordered_map<int, int> mp;
+pair<int, int> twoSum(const vector<int>& arr, int target) {
+    unordered_map<int, int> mp; // Map to store the element and its index
+
     for (int i = 0; i < arr.size(); i++) {
-         mp[arr[i]]++;
-    }
-    
-    
-    for (int i = 0; i < arr.size(); i++) {
-        int finding = target - arr[i];
-        
-        // Check if the complement already exists in the map
-        if (mp.find(finding) != mp.end()) {
-            return true;
+        int finding = target - arr[i]; // Find the complement of the current number
+
+        // Check if the complement exists in the map
+        if (mp.count(finding)) {
+            return {mp[finding], i}; // Return indices of the pair
         }
-        
+
+        // Store the current number with its index
+        mp[arr[i]] = i;
     }
-    
-    return false;
+
+    return {-1, -1}; // Return -1, -1 if no pair is found
 }
 
 int main() {
@@ -35,8 +33,9 @@ int main() {
     cout << "Enter the target sum: ";
     cin >> target;
 
-    if (twoSum(arr, target)) {
-        cout << "There exists a pair with the given sum.\n";
+    pair<int, int> result = twoSum(arr, target);
+    if (result.first != -1) {
+        cout << "Indices of the pair with the given sum: " << result.first << " and " << result.second << endl;
     } else {
         cout << "No pair exists with the given sum.\n";
     }

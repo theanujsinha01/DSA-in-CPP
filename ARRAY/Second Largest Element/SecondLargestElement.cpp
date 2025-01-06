@@ -1,8 +1,8 @@
 // PROBLEM :
-// Find the  Second Smallest Element in an Array
+// Find the  Second Largest Element in an Array
 
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -16,23 +16,26 @@ int main() {
         cin >> arr[i];
     }
 
-    int max = -1, secondMax = -1;
+    int mx = arr[0], secondMax = INT_MIN;
 
-    // Loop to find the max and second max elements
+    // Loop to find the max element
+    for (int i = 1; i < n; i++) {
+        mx = max(mx, arr[i]);
+    }
+
+    // Loop to find the second max element
     for (int i = 0; i < n; i++) {
-        if (arr[i] > max) {
-            secondMax = max;  
-            max = arr[i];     
-        } else if (arr[i] > secondMax && arr[i] != max) {
-            secondMax = arr[i];  
+        if (arr[i] != mx) {
+            secondMax = max(secondMax, arr[i]);
         }
     }
 
-    if (secondMax == -1) {
-        cout << "There is no second maximum element." << endl;
+    if (secondMax == INT_MIN) {
+        cout << "Second Largest Element does not exist" << endl;
     } else {
-        cout << "The second maximum element is: " << secondMax << endl;
+        cout << "Second Largest Element is: " << secondMax << endl;
     }
 
     return 0;
 }
+

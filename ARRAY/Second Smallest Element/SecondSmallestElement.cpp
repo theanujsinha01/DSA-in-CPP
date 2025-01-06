@@ -15,14 +15,14 @@ int main() {
         cin >> arr[i];
     }
 
-    int min = INT_MAX, secondMin = INT_MAX;
+    int mn = arr[0], secondMin = INT_MAX;
 
     for (int i = 0; i < n; i++) {
-        if (arr[i] < min) {
-            secondMin = min;  // Update second smallest
-            min = arr[i];     // Update smallest
-        } else if (arr[i] < secondMin && arr[i] != min) {
-            secondMin = arr[i];  // Update second smallest
+       mn = min(mn, arr[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        if (arr[i] != mn) {
+            secondMin = min(secondMin, arr[i]);
         }
     }
 

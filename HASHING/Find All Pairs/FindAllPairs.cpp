@@ -10,7 +10,7 @@ vector<pair<int, int>> allPairs(int x, const vector<int> &arr1, const vector<int
     vector<pair<int, int>> ans;
     for (int i = 0; i < arr1.size(); i++) {
         int finding = x - arr1[i];
-        if (mp.find(finding) != mp.end()) {
+        if (mp.count(finding)) {
             ans.push_back({arr1[i], finding});
         }
     }

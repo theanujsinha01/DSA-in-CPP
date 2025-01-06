@@ -6,13 +6,15 @@ vector<int> findDuplicates(const vector<int>& arr) {
     vector<int> duplicates;   
 
     // Count the frequency of each element
-    for (int i=0; i<arr.size(); i++) {
-        mp[arr[i]]++;
+    for (int i = 0; i < arr.size(); i++) {
+        mp[arr[i]]++; // Increment the count of the element
+    }
 
-        if (mp[arr[i]] > 1) {
-            duplicates.push_back(arr[i]); // Add to duplicates if count > 1
+    // Find elements with frequency > 1
+    for (auto it : mp) {
+        if (it.second > 1) {
+            duplicates.push_back(it.first); // Add to duplicates
         }
-
     }
 
     return duplicates; 

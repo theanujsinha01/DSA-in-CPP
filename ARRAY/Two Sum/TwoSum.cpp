@@ -1,30 +1,24 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-void findTwoNumbersWithSum(int arr[], int n, int target) {
-     set<int> numSet; 
-
+void findTwoSum(int arr[], int n, int target) {
     for (int i = 0; i < n; i++) {
-        int complement = target - arr[i];
-
-        // Check if the complement is already in the map
-        if (numSet.find(complement) != numSet.end()) {
-            cout << "Pair found: " << arr[i] << " and " << complement << endl;
-            return;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] + arr[j] == target) {
+                cout << "Indices: " << i << " and " << j << endl;
+                return; // Exit after finding one solution
+            }
         }
-
-        // Add the current number to the set
-        numSet.insert(arr[i]);
     }
-
-    cout << "No pair found" << endl;
+    cout << "No two numbers add up to the target." << endl;
 }
 
 int main() {
     int arr[] = {2, 7, 11, 15};
     int n = sizeof(arr) / sizeof(arr[0]);
-    int target = 13;
+    int target = 9;
 
-    findTwoNumbersWithSum(arr, n, target);
+    findTwoSum(arr, n, target);
+
     return 0;
 }

@@ -1,16 +1,5 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
-// Function to reverse a row
-void reverse(int matrix[10][10], int row, int n) {
-    int start = 0;
-    int end = n - 1; // Keep this the same
-    while (start < end) {
-        swap(matrix[row][start], matrix[row][end]);
-        start++;
-        end--;
-    }
-}
 
 // Function to rotate the matrix
 void rotateMatrix(int matrix[10][10], int n) {
@@ -23,7 +12,7 @@ void rotateMatrix(int matrix[10][10], int n) {
 
     
     for (int i = 0; i < n; i++) {
-        reverse(matrix, i, n);  // Reverse the current row
+        reverse(matrix[i], matrix[i]+n);  // Reverse the current row
     }
 }
 
@@ -41,8 +30,6 @@ int main() {
             cin >> matrix[i][j];
         }
     }
-
-    rotateMatrix(matrix, n);
 
     cout << "Matrix after 90 degree rotation:\n";
     for (int i = 0; i < n; i++) {

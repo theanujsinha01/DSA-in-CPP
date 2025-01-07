@@ -15,7 +15,7 @@ int partition(int arr[], int left, int right) {
     swap(arr[i], arr[left]); // Place pivot in the correct position
     return i; // Return the index of the pivot
 }
-
+ 
 
 void quickSort(int arr[], int left, int right) {
     if (left < right) {

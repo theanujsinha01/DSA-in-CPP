@@ -1,78 +1,45 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void merge(int arr[], int left, int right) {
-   
-     int mid = left + (right - left) / 2; 
-     int n1 = mid-left+1;
-     int n2 = right-mid;
+void merge(int arr[], int start, int mid, int end) {
+    int n1 = mid - start + 1;
+    int n2 = end - mid;
+    int leftArr[n1], rightArr[n2];
 
-     vector<int>first(n1);
-     vector<int>second(n2);
+    for (int i = 0; i < n1; i++) leftArr[i] = arr[start + i];
+    for (int i = 0; i < n2; i++) rightArr[i] = arr[mid + 1 + i];
 
-    int mainIdx = left;
-    for(int i=0; i<n1; i++){
-        first[i] = arr[mainIdx++]; // copy element into first
-    }
-    
-    mainIdx = mid+1;
-    for(int i=0; i<n2; i++){
-        second[i] = arr[mainIdx++]; // copy element into second 
+    int i = 0, j = 0, k = start;
+    while (i < n1 && j < n2) {
+        if (leftArr[i] <= rightArr[j]) arr[k++] = leftArr[i++];
+        else arr[k++] = rightArr[j++];
     }
 
-    int Idx1 = 0;  // index for first half array
-    int Idx2 = 0; // index for second half array
-    mainIdx = left;
-
-    while(Idx1 < n1 && Idx2 < n2){ // merge the first and second
-        if(first[Idx1]<second[Idx2]){
-            arr[mainIdx++] = first[Idx1++];
-        }
-        else{
-           arr[mainIdx++] = second[Idx2++]; 
-        }
-    }
-
-    while(Idx1<n1){
-      arr[mainIdx++] = first[Idx1++];
-    }
-    while(Idx2<n2){
-       arr[mainIdx++] = second[Idx2++]; 
-    }
-  
-  
+    while (i < n1) arr[k++] = leftArr[i++];
+    while (j < n2) arr[k++] = rightArr[j++];
 }
 
-
-void mergeSort(int arr[], int left, int right) {
-    if (left < right) {
-        int mid = left + (right - left) / 2; 
-
-        // Recursively sort first and second halves
-        mergeSort(arr, left, mid);
-        mergeSort(arr, mid + 1, right);
-
-        // Merge the sorted halves
-        merge(arr, left, right);
+void mergeSort(int arr[], int start, int end) {
+    if (start < end) {
+        int mid = (start + end) / 2;
+        mergeSort(arr, start, mid);
+        mergeSort(arr, mid + 1, end);
+        merge(arr, start, mid, end);
     }
 }
 
 int main() {
     int arr[] = {5, 3, 8, 4, 2, 7, 1, 6};
-    int n = 8;
+    int n = sizeof(arr) / sizeof(arr[0]);
 
     cout << "Unsorted array: ";
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " "; 
-    }
+    for (int i = 0; i < n; i++) cout << arr[i] << " ";
     cout << endl;
 
-    mergeSort(arr, 0, n - 1); 
+    mergeSort(arr, 0, n - 1);
 
     cout << "Sorted array: ";
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " "; 
-    }
+    for (int i = 0; i < n; i++) cout << arr[i] << " ";
     cout << endl;
 
     return 0;

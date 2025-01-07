@@ -7,10 +7,11 @@ string removeDuplicatesUsingStack(string str) {
 
     for (char ch : str) {
         // If the character hasn't been seen, push it to the stack
-        if (seen.find(ch) == seen.end()) {
+        if (seen.count(ch) == 0) {
             s.push(ch);
-            seen.insert(ch);
+           
         }
+        seen.insert(ch);
     }
 
     // Create a result string from the stack

@@ -1,24 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void findIntersection(int arr1[], int n1, int arr2[], int n2) {
-    set<int> intersectionSet;
-
-    // Insert elements of arr1 into the set
+vector<int> findIntersection(int nums1[], int n1, int nums2[], int n2) {
+    unordered_map<int, int> map;
+        
+    // Count frequency of each element in nums1
     for (int i = 0; i < n1; i++) {
-        intersectionSet.insert(arr1[i]);
+        map[nums1[i]]++;
     }
 
-    // Check if elements of arr2 are present in the set
-    cout << "Intersection: ";
+    vector<int> res;
+    
+    // Iterate over nums2 and use the map to check for intersections
     for (int i = 0; i < n2; i++) {
-        if (intersectionSet.count(arr2[i])) {
-            cout << arr2[i] << " ";
-            intersectionSet.erase(arr2[i]); // To avoid duplicates
+        if (map[nums2[i]] > 0) {
+            res.push_back(nums2[i]);
+            map[nums2[i]]--;  // Decrease count to handle duplicates
         }
     }
-    cout << endl;
+
+    return res;
 }
+
 int main() {
     int n1, n2;
 
@@ -38,6 +41,11 @@ int main() {
         cin >> arr2[i];
     }
 
-    findIntersection(arr1, n1, arr2, n2);
+    vector<int> ans = findIntersection(arr1, n1, arr2, n2);
+    cout << "Intersection of two arrays: ";
+    for (int i = 0; i < ans.size(); i++) {
+        cout << ans[i] << " ";
+    }
+
     return 0;
 }

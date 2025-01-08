@@ -4,10 +4,12 @@ using namespace std;
 // Function to check if a string is an isogram or not
 bool isIsogram(string s) {
     unordered_map<char, int> mp;
-    for (int i = 0; i < s.size(); i++) {
-        mp[s[i]]++;
+    for (auto ch : s) {
+        mp[ch]++;
+    }
+    for (auto ch : mp) {
         // If any character appears more than once, return false
-        if (mp[s[i]] > 1) return false;
+        if ( ch.second > 1) return false;
     }
     return true; // All characters are unique
 }

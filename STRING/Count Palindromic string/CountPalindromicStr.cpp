@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int countPalindromesAroundCenter( string& str, int left, int right) {
+int countPalindromesAroundCenter(const string& str, int left, int right) {
     int count = 0;
     int n = str.size();
 
@@ -18,7 +18,6 @@ int countSubstrings(const string& str) {
     int n = str.size();
     int count = 0;
 
-   
     for (int i = 0; i < n; i++) {
         // Odd-length palindromes (centered at a single character)
         count += countPalindromesAroundCenter(str, i, i);
@@ -32,7 +31,7 @@ int countSubstrings(const string& str) {
 int main() {
     string str;
     cout << "Enter a string: ";
-    cin >> str;
+    getline(cin, str);  // Allows input with spaces
 
     int totalPalindromes = countSubstrings(str);
     cout << "Total palindromic substrings: " << totalPalindromes << endl;

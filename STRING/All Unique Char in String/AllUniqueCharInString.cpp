@@ -6,7 +6,7 @@ bool hasUniqueCharacters(const string& str) {
 
     for (char ch : str) {
         // If character is already in the set, it's not unique
-        if (charSet.find(ch) != charSet.end()) {
+        if (charSet.count(ch)) {
             return false; 
         }
         charSet.insert(ch);

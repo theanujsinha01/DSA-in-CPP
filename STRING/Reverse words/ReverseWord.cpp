@@ -4,10 +4,10 @@ using namespace std;
 string reverseWords( string& str) {
     stack<string> wordStack; 
     string word;
-    istringstream stream(str); // Create a string stream from the input string
+    stringstream ss(str); // Create a string stream from the input string
 
     // Extract words from the string stream and push them onto the stack
-    while (stream >> word) {
+    while (ss >> word) {
         wordStack.push(word); // Push each word onto the stack
     }
 

@@ -3,8 +3,8 @@ using namespace std;
 
 vector<pair<int, int>> allPairs(int x, const vector<int> &arr1, const vector<int> &arr2) {
     unordered_map<int, int> mp;
-    for (int i = 0; i < arr2.size(); i++) {
-        mp[arr2[i]]++;
+    for (auto it : arr2) {
+        mp[it]++;
     }
     
     vector<pair<int, int>> ans;

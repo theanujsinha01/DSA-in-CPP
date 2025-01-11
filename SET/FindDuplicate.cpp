@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-
 void findDuplicates(int arr[], int n) {
     set<int> uniqueElements;
     set<int> duplicates;
@@ -10,10 +8,10 @@ void findDuplicates(int arr[], int n) {
         if (uniqueElements.count(arr[i])) {
             // Element already exists, it's a duplicate
             duplicates.insert(arr[i]);
-        } else {
+        } 
             // Add element to the set
             uniqueElements.insert(arr[i]);
-        }
+        
     }
 
     // Print duplicates

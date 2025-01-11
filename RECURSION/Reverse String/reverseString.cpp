@@ -3,7 +3,7 @@ using namespace std;
 
 string reverseString(string str) {
     // Base case: If the string is empty or has one character, return it.
-    if (str.empty() || str.length() == 1)
+    if (str.size() == 0 || str.size() == 1)
         return str;
     
     // Recursive case: Reverse the rest of the string and append the first character.

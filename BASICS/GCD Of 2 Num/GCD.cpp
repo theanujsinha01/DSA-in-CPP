@@ -3,10 +3,16 @@ using namespace std;
 
 // Function to calculate GCD using recursion
 int gcd(int a, int b) {
-    if (b == 0)
-        return a;
-    return gcd(b, a % b);
+    int n = (a > b) ? b : a; 
+    int gcd = 1; 
+    for (int i = 1; i <= n; i++) {
+        if (a % i == 0 && b % i == 0) {
+            gcd = i; 
+        }
+    }
+    return gcd; 
 }
+
 
 int main() {
     int num1, num2;

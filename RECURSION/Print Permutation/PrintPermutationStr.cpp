@@ -3,7 +3,7 @@ using namespace std;
 
 void permute(string str, string ans) {
     // Base case: if the string is empty, print the permutation
-    if (str.empty()) {
+    if (str.size() == 0) {
         cout << ans << endl;
         return;
     }

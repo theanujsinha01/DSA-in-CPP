@@ -20,6 +20,7 @@ int main() {
     cout << "Enter value of r: ";
     cin >> r;
     cout << "nCr = " << nCr(n, r) << endl;
+    cout << nCr(n, r) << endl;
 
     return 0;
 }

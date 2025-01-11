@@ -14,7 +14,7 @@ int main(){
         binaryNum = binaryNum/10;
         i++;
     }
-    cout<<"Decimal equivalent: "<<ans<<endl;
+    cout<<ans<<endl;
     return 0;
  
 

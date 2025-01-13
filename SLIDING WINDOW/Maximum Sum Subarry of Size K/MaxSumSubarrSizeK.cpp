@@ -11,23 +11,23 @@ int maximumSumSubarray(int K, vector<int> &Arr, int N) {
 
         // Check if the window size is less than K
         if (right - left + 1 < K) {
-            right++; // Increase j until we reach window size K
+            right++; // Expand the window to size K
         }
         // When the window size hits K
         else if (right - left + 1 == K) {
             mx = max(mx, sum); // Update maximum sum
             sum -= Arr[left]; // Remove the first element of the window
             left++; // Slide the window forward
-            right++;
+            right++; // Move right pointer
         }
     }
     return mx;
 }
 
 int main(){
-    vector<int>arr = {1,2,9,4,12,3,7,8};
+    vector<int>arr = {1, 2, 9, 4, 12, 3, 7, 8};
     int n = arr.size();
     int k = 3;
     int ans = maximumSumSubarray(k, arr, n);
-    cout<<"Maximum Sum of Subarry size k  is  : "<<ans;
+    cout << "Maximum Sum of Subarray size k is: " << ans;
 }

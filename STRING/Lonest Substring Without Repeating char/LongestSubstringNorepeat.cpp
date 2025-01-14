@@ -8,7 +8,7 @@ int lengthOfLongestSubstring(const string& s) {
 
     for (int right = 0; right < s.length(); right++) {
         // If the character is already in the set, remove characters from the left
-        while (charSet.find(s[right]) != charSet.end()) {
+        while (charSet.count(s[right])) {
             charSet.erase(s[left]); // Remove the left character from the set
             left++; // Move the left index to the right
         }

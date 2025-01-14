@@ -3,15 +3,14 @@ using namespace std;
 
 int maxProfit(const vector<int>& prices) {
 
-    if (prices.empty()) return 0;
-
-    int buy = prices[0];  
+    if (prices.size() == 0) return 0; 
     int Profit = 0;   
 
     for (int i = 1; i < prices.size(); i++) {
         // Update the minimum price if the current price is lower
-        buy = min(buy, prices[i]);
-        Profit = max(Profit, prices[i] - buy);
+        if (prices[i] > prices[i - 1]) {
+            Profit = Profit + prices[i] - prices[i - 1];
+        }
     }
 
     return Profit;

@@ -7,16 +7,15 @@ int maxSubarraySum(int arr[], int n) {
     int currentSum = 0; // Initialize currentSum to 0
 
     for (int i = 0; i < n; i++) {
-        currentSum = currentSum + arr[i];  // Add current element to currentSum
+        currentSum = currentSum + arr[i];
+        maxSum = max(maxSum, currentSum); 
 
         if (currentSum < 0) {
             currentSum = 0;  
         }
-
-        maxSum = max(maxSum, currentSum);  
     }
 
-    return maxSum;  // Return the maximum sum found
+    return maxSum; 
 }
 
 int main() {

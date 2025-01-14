@@ -3,7 +3,7 @@ using namespace std;
 
 void selectionSort(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
-        int minIndex = i; // Assume the minimum is the first element of the unsorted part
+        int minIndex = i; // Assume the minimum is the first element of the 
         for (int j = i + 1; j < n; j++) { 
             if (arr[j] < arr[minIndex]) { // Find the index of the minimum element
                 minIndex = j; // Update minIndex if a smaller element is found

@@ -1,37 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Structure to represent an item with weight and value.
-struct Item {
-    int value;
-    int weight;
-};
+double fractionalKnapsack(int W, int values[], int weights[], int n) {
+    vector<pair<double, int>> unitValue; // Stores value/weight and index
 
-// Comparator function to sort items based on value per weight.
-bool comp(Item i1, Item i2) {
-    double unit1 = (i1.value * 1.0) / (i1.weight);
-    double unit2 = (i2.value * 1.0) / (i2.weight);
-    return unit1 > unit2;
-}
+    // Calculate value/weight for each item and store in the vector
+    for (int i = 0; i < n; i++) {
+        unitValue.push_back({(double)values[i] / weights[i], i});
+    }
 
-double fractionalKnapsack(int W, Item arr[], int n) {
-    // Sort items based on value per weight.
-    sort(arr, arr + n, comp);
+    // Sort items based on value per weight in descending order
+    sort(unitValue.rbegin(), unitValue.rend());
 
-    double ans = 0; 
+    double ans = 0;
 
     for (int i = 0; i < n; i++) {
-        if (arr[i].weight >= W) {
-            // If the current item weight is more than available capacity,
-            // take the fractional part of this item.
-            double unit = (arr[i].value) / (arr[i].weight);
-            ans += (W * unit);
+        int idx = unitValue[i].second; // Get the index of the current item
+
+        if (weights[idx] <= W) {
+            // Take the entire item if it fits
+            ans += values[idx];
+            W -= weights[idx];
+        } else {
+            // Take the fractional part of the item
+            ans += unitValue[i].first * W;
             break;
         }
-
-        // If the current item can be fully added, add its value.
-        ans += arr[i].value;
-        W -= arr[i].weight;  // Reduce remaining capacity.
     }
 
     return ans;
@@ -43,19 +37,18 @@ int main() {
     cout << "Enter number of items: ";
     cin >> n;
 
-    Item arr[n];
+    int values[n], weights[n];
 
-    // Taking input for each item's value and weight.
+    // Input values and weights
     for (int i = 0; i < n; i++) {
         cout << "Enter value and weight for item " << i + 1 << ": ";
-        cin >> arr[i].value >> arr[i].weight;
+        cin >> values[i] >> weights[i];
     }
 
-    // Taking input for knapsack capacity.
     cout << "Enter knapsack capacity: ";
     cin >> W;
 
-    double maxValue = fractionalKnapsack(W, arr, n);
+    double maxValue = fractionalKnapsack(W, values, weights, n);
 
     cout << "Maximum value in Knapsack = " << maxValue << endl;
 

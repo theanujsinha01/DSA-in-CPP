@@ -1,25 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool comp(pair<int, int> p1, pair<int, int> p2) {
-    
-    return p1.second < p2.second; // Sort by end time in ascending order
-}
-
 int maxMeetings(vector<int> start, vector<int> end) {
     vector<pair<int, int>> meetings;
     for (int i = 0; i < start.size(); i++) {
-        meetings.push_back({start[i], end[i]});
+        meetings.push_back({end[i], start[i]}); // Store end and start times
     }
 
-    sort(meetings.begin(), meetings.end(), comp);
+    sort(meetings.begin(), meetings.end()); // Sort by end time
 
     int ans = 1; // At least one meeting can be attended
-    int close = meetings[0].second; // The end time of the first meeting
-    for (int i = 1; i < start.size(); i++) {
-        if (meetings[i].first > close) { // If the start time is after the last end time
+    int lastEndTime = meetings[0].first; // The end time of the first meeting
+    for (int i = 1; i < meetings.size(); i++) {
+        if (meetings[i].second > lastEndTime) { // Check if the next meeting starts after the last one ends
             ans++;
-            close = meetings[i].second; // Update the end time to the current meeting's end time
+            lastEndTime = meetings[i].first; // Update the last end time
         }
     }
     return ans;
@@ -30,18 +25,12 @@ int main() {
     cout << "Enter the number of meetings: ";
     cin >> n;
 
-    vector<int> start(n);
-    vector<int> end(n);
-
+    vector<int> start(n), end(n);
     cout << "Enter the start times: ";
-    for (int i = 0; i < n; i++) {
-        cin >> start[i];
-    }
+    for (int i = 0; i < n; i++) cin >> start[i];
 
     cout << "Enter the end times: ";
-    for (int i = 0; i < n; i++) {
-        cin >> end[i];
-    }
+    for (int i = 0; i < n; i++) cin >> end[i];
 
     int result = maxMeetings(start, end);
     cout << "Maximum number of meetings that can be attended: " << result << endl;

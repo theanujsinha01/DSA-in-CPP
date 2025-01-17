@@ -6,25 +6,17 @@ double findMaxAverage(vector<int>& nums, int k) {
     double res; // max average
     double currentMaximum; // current maximum average
     double sum = 0; // sum of k values
+    int idx = 0;
 
-    int left = 0;
-    int right = 0; // starting at the beginning of the array
-
-    while (right < nums.size()) {
-        sum += nums[right]; // add current element to the sum
-
-        if (right - left + 1 < k) {
-            // increase the window size
-            right++;
-        } 
-        else if (right - left + 1 == k) { 
-            // when window size reaches k
-            currentMaximum = sum / k; // calculate average
-            res = max(res, currentMaximum); // update max average
-            sum -= nums[left]; // remove leftmost element
-            left++; // slide the window forward
-            right++;
-        }
+    while(idx < k) {
+        sum += nums[idx]; // add k elements
+        idx++;
+    }
+    for(int i=1; i<=nums.size()-k; i++) {
+        currentMaximum = sum / k; // calculate average
+        res = max(res, currentMaximum); // update max average
+        sum -= nums[i-1]; // remove leftmost element
+        sum += nums[i+k-1]; // add rightmost element
     }
 
     return res;

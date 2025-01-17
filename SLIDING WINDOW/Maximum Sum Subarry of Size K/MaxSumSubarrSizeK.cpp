@@ -1,25 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int maximumSumSubarray(int K, vector<int> &Arr, int N) {
-    int left = 0, right = 0;
+int maximumSumSubarray(int k, vector<int> &Arr, int N) {
     int sum = 0;
     int mx = INT_MIN;
-
-    while (right < N) {
-        sum += Arr[right]; // Add current element to the sum
-
-        // Check if the window size is less than K
-        if (right - left + 1 < K) {
-            right++; // Expand the window to size K
-        }
-        // When the window size hits K
-        else if (right - left + 1 == K) {
-            mx = max(mx, sum); // Update maximum sum
-            sum -= Arr[left]; // Remove the first element of the window
-            left++; // Slide the window forward
-            right++; // Move right pointer
-        }
+    int idx = 0;
+    while (idx < k) {
+        sum = sum + Arr[idx]; // Add current element to the sum
+        idx++;
+    }
+    for(int i = 1; i <= N-k; i++) {
+        mx = max(mx, sum); 
+        sum = sum - Arr[i - 1]; // Remove the first element of the window
+        sum = sum + Arr[i+k-1]; // Add the next element to the window
+       
     }
     return mx;
 }

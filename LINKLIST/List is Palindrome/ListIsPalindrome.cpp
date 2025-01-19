@@ -1,72 +1,42 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 struct Node {
     int data;
     Node* next;
-    Node(int val) : data(val), next(nullptr) {}
+    Node(int val) {
+        data = val;
+        next = NULL;
+    }
 };
 
-// Function to find the middle of the linked list
-Node* findMiddle(Node* head) {
-    Node* slow = head;
-    Node* fast = head;
-    
-    while (fast != nullptr && fast->next != nullptr) {
-        slow = slow->next;
-        fast = fast->next->next;
+// Function to convert the linked list to a vector
+vector<int> linkedListToVector(Node* head) {
+    vector<int> vec;
+    while (head != NULL) {
+        vec.push_back(head->data);
+        head = head->next;
     }
-    
-    return slow; 
+    return vec;
 }
 
-Node* reverseLinkedList(Node* head) {
-    // Base case: 
-    if (head == NULL || head->next == NULL) {
-        return head; 
-    }
-    
-    Node* newHead = reverseLinkedList(head->next);
-  
-    head->next->next = head; 
-    head->next = NULL;    
+// Function to check if a vector is a palindrome
+bool isPalindrome(vector<int>& vec) {
+    int left = 0, right = vec.size() - 1;
 
-    return newHead; 
-}
-
-bool isPalindrome(Node* head) {
-    if (head == nullptr || head->next == nullptr) {
-        return true;  
-    }
-
-    // Step 1: Find the middle of the linked list
-    Node* middle = findMiddle(head);
-
-    // Step 2: Reverse the second half of the list
-    Node* secondHalfStart = reverseLinkedList(middle);
-
-    // Step 3: Compare the first half and the reversed second half
-    Node* firstHalf = head;
-    Node* secondHalf = secondHalfStart;
-    bool palindrome = true;
-    
-    while (secondHalf != nullptr) {
-        if (firstHalf->data != secondHalf->data) {
-            palindrome = false;
-            break;
+    while (left < right) {
+        if (vec[left] != vec[right]) {
+            return false;
         }
-        firstHalf = firstHalf->next;
-        secondHalf = secondHalf->next;
+        left++;
+        right--;
     }
 
-    // Step 4 (optional): Restore the second half to its original form
-   reverseLinkedList(secondHalfStart);
-
-    return palindrome;
+    return true;
 }
 
 void printList(Node* node) {
-    while (node != nullptr) {
+    while (node != NULL) {
         cout << node->data << " ";
         node = node->next;
     }
@@ -74,7 +44,6 @@ void printList(Node* node) {
 }
 
 int main() {
-     
     Node* list1 = new Node(1);
     list1->next = new Node(2);
     list1->next->next = new Node(3);
@@ -84,7 +53,11 @@ int main() {
     cout << "Original List: ";
     printList(list1);
 
-    if (isPalindrome(list1)) {
+    // Convert linked list to vector
+    vector<int> vec = linkedListToVector(list1);
+
+    // Check if the vector is a palindrome
+    if (isPalindrome(vec)) {
         cout << "The linked list is a palindrome." << endl;
     } else {
         cout << "The linked list is not a palindrome." << endl;

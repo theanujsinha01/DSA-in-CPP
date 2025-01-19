@@ -10,22 +10,27 @@ struct Node {
     }
 };
 
-Node* reverseLinkedList(Node* head) {
-    // Base case: 
-    if (head == NULL || head->next == NULL) {
-        return head; // Return the head if the list is empty or has one node
+Node* reverseList(Node* head) {
+    vector<int> ans;
+
+    // Store the elements of the linked list in a vector
+    Node* temp = head;
+    while (temp != NULL) {
+        ans.push_back(temp->data);
+        temp = temp->next;
     }
-    
-    // Recursive case: reverse the rest of the list
-    Node* newHead = reverseLinkedList(head->next);
-    
-    // Reverse the current node's pointer
-    head->next->next = head; // Point the next node's next to the current node
-    head->next = NULL;     // Set the current node's next to nullptr
 
-    return newHead; // Return the new head of the reversed list
+    // Reverse the linked list by setting the node values from the vector
+    temp = head;
+    int i = ans.size() - 1;
+    while (temp != NULL) {
+        temp->data = ans[i];
+        i--;
+        temp = temp->next;
+    }
+
+    return head;
 }
-
 
 void printList(Node* node) {
     while (node != NULL) {
@@ -36,8 +41,7 @@ void printList(Node* node) {
 }
 
 int main() {
-
-
+    // Creating a linked list: 10 -> 20 -> 30 -> 40
     Node* head = new Node(10);
     head->next = new Node(20);
     head->next->next = new Node(30);
@@ -46,9 +50,12 @@ int main() {
     cout << "Original Linked List: ";
     printList(head);
 
-    head = reverseLinkedList(head);
+    // Reverse the linked list using the array method
+    head = reverseList(head);
+
     cout << "Reversed Linked List: ";
     printList(head);
 
     return 0;
 }
+

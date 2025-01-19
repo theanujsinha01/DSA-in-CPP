@@ -11,43 +11,46 @@ struct Node {
 };
 
 Node* mergeTwoLists(Node* list1, Node* list2) {
-    // Create a dummy node to act as the start of the merged list
-    Node* dummy = new Node(0);
-    Node* tail = dummy; // Pointer to build the merged list
+  
+    vector<int> values;
 
-    while (list1 != NULL && list2 != NULL) {
-        if (list1->data <= list2->data) {
-            tail->next = list1; // Append list1's node to the merged list
-            list1 = list1->next; // Move list1 pointer forward
-        } else {
-            tail->next = list2; // Append list2's node to the merged list
-            list2 = list2->next; // Move list2 pointer forward
-        }
-        tail = tail->next; // Move the tail pointer forward
+    Node* current = list1;
+    while (current != NULL) {
+        values.push_back(current->data);
+        current = current->next;
     }
 
-    // Append the remaining nodes from whichever list is not empty
-    if (list1 != NULL) {
-        tail->next = list1;
-    } else {
-        tail->next = list2;
+    current = list2;
+    while (current != NULL) {
+        values.push_back(current->data);
+        current = current->next;
     }
 
-    // The merged list starts from the node after dummy
-    return dummy->next;
+    sort(values.begin(), values.end());
+    if (values.empty()) return NULL;
+
+    Node* mergedHead = new Node(values[0]);  // First node of the merged list
+    Node* tail = mergedHead;                  // Pointer to build the merged list
+
+    // Rebuild the list from the sorted vector
+    for (int i = 1; i < values.size(); i++) {
+        tail->next = new Node(values[i]);
+        tail = tail->next;
+    }
+
+    // Return the head of the merged list
+    return mergedHead;
 }
-
 
 void printList(Node* node) {
     while (node != nullptr) {
-        cout << node->data << " "; 
-        node = node->next;         
+        cout << node->data << " ";
+        node = node->next;
     }
     cout << endl;
 }
 
 int main() {
-     
     Node* list1 = new Node(10);
     list1->next = new Node(30);
     list1->next->next = new Node(50);
@@ -66,5 +69,5 @@ int main() {
     cout << "Merged List: ";
     printList(mergedList);
 
-    return 0; 
+    return 0;
 }

@@ -13,56 +13,38 @@ struct Node {
 void segregateEvenOdd(Node*& head) {
     if (head == NULL) return;
 
-    Node* even = NULL;
-    Node* odd = NULL;
-    Node* evenHead = NULL;
-    Node* oddHead = NULL;
-
+    vector<int> values;
     Node* current = head;
 
+    // Store all node values in the vector
     while (current != NULL) {
-        if (current->data % 2 == 0) {
-            // Add to even list
-            if (even == NULL) {
-                even = current;
-                evenHead = even;
-            } else {
-                even->next = current;
-                even = even->next;
-            }
-        } else {
-            // Add to odd list
-            if (odd == NULL) {
-                odd = current;
-                oddHead = odd;
-            } else {
-                odd->next = current;
-                odd = odd->next;
-            }
-        }
+        values.push_back(current->data);
         current = current->next;
     }
 
-    // If there are no even nodes, return the odd list
-    if (even == NULL) {
-        head = oddHead;
-        return;
+    // Rearrange the vector to have even numbers first, then odd numbers
+    int i = 0, j = values.size() - 1;
+
+    // Use two pointers to separate even and odd numbers in the vector
+    while (i < j) {
+        if (values[i] % 2 == 0) {
+            i++; // Move i to the right if it's already even
+        } else {
+            swap(values[i], values[j]); // Swap odd at i with even at j
+            j--; // Move j to the left
+        }
     }
 
-    // Connect even list to odd list
-    even->next = oddHead;
-    
-    // If there are odd nodes, terminate the list after the last odd node
-    if (odd != NULL) {
-        odd->next = NULL;
+    // Rebuild the linked list with the values from the vector
+    current = head;
+    for (int val : values) {
+        current->data = val;
+        current = current->next;
     }
-
-    // Update head to the start of the even list
-    head = evenHead;
 }
 
 void printList(Node* node) {
-    while (node != nullptr) {
+    while (node != NULL) {
         cout << node->data << " ";
         node = node->next;
     }
@@ -70,16 +52,16 @@ void printList(Node* node) {
 }
 
 int main() {
-    
+    // Creating a linked list: 1 -> 2 -> 3 -> 4
     Node* head = new Node(1);
     head->next = new Node(2);
     head->next->next = new Node(3);
     head->next->next->next = new Node(4);
 
-
     cout << "Original List: ";
     printList(head);
 
+    // Segregate even and odd nodes using a single vector
     segregateEvenOdd(head);
 
     cout << "List after segregating even and odd nodes: ";

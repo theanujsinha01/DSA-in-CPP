@@ -27,7 +27,7 @@ void removeDuplicates(Node* head) {
 
 
 void printList(Node* node) {
-    while (node != nullptr) {
+    while (node != NULL) {
         cout << node->data << " "; 
         node = node->next;         
     }

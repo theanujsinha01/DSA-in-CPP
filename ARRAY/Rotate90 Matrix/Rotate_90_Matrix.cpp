@@ -2,7 +2,7 @@
 using namespace std;
 
 // Function to rotate the matrix
-void rotateMatrix(int matrix[10][10], int n) {
+void rotateMatrix(vector<vector<int>>& matrix, int n) {
     // Step 1: Transpose the matrix
     for (int i = 0; i < n; i++) {
         for (int j = i; j < n; j++) {
@@ -12,7 +12,7 @@ void rotateMatrix(int matrix[10][10], int n) {
 
     // Step 2: Reverse each row
     for (int i = 0; i < n; i++) {
-        reverse(matrix[i], matrix[i] + n);  // Reverse the current row
+        reverse(matrix[i].begin(), matrix[i].end());  // Reverse the current row
     }
 }
 
@@ -21,7 +21,8 @@ int main() {
     cout << "Enter the size of the square matrix (n x n): ";
     cin >> n;
 
-    int matrix[10][10];
+    // Use vector of vectors for the matrix
+    vector<vector<int>> matrix(n, vector<int>(n));
 
     // Input matrix
     cout << "Enter the matrix elements:\n";

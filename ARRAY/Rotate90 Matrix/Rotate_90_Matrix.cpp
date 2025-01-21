@@ -10,9 +10,9 @@ void rotateMatrix(int matrix[10][10], int n) {
         }
     }
 
-    
+    // Step 2: Reverse each row
     for (int i = 0; i < n; i++) {
-        reverse(matrix[i], matrix[i]+n);  // Reverse the current row
+        reverse(matrix[i], matrix[i] + n);  // Reverse the current row
     }
 }
 
@@ -23,7 +23,7 @@ int main() {
 
     int matrix[10][10];
 
-    
+    // Input matrix
     cout << "Enter the matrix elements:\n";
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
@@ -31,6 +31,10 @@ int main() {
         }
     }
 
+    // Call the rotateMatrix function
+    rotateMatrix(matrix, n);
+
+    // Output rotated matrix
     cout << "Matrix after 90 degree rotation:\n";
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {

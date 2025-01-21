@@ -10,10 +10,12 @@ void rotateMatrix(vector<vector<int>>& matrix, int n) {
         }
     }
 
-    // Step 2: Reverse each row
+    Step 2: Reverse each row
     for (int i = 0; i < n; i++) {
         reverse(matrix[i].begin(), matrix[i].end());  // Reverse the current row
     }
+    //reverse(matrix.begin(), matrix.end()); // colunm wise reverse
+
 }
 
 int main() {

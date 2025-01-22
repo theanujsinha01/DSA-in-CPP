@@ -1,20 +1,12 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-bool searchSortedMatrix(int matrix[10][10], int rows, int cols, int target) {
-    int i = 0;           // Start from the first row
-    int j = cols - 1;     // Start from the last column
-
-    while (i < rows && j >= 0) {
-        if (matrix[i][j] == target) {
-            return true;  // Element found
-        } else if (matrix[i][j] > target) {
-            j--;  // Move left if current element is larger
-        } else {
-            i++;  // Move down if current element is smaller
+bool searchSortedMatrix(vector<vector<int>>& matrix,int rows,int cols, int target) {
+      for(int i=0;i<rows;i++){
+        if(binary_search(matrix[i].begin(),matrix[i].end(),target)){
+            return true;
         }
-    }
-
+      }
     return false;  // Element not found
 }
 
@@ -25,7 +17,7 @@ int main() {
     cout << "Enter number of rows and columns: ";
     cin >> rows >> cols;
 
-    int matrix[10][10];
+    vector<vector<int>> matrix(rows, vector<int>(cols));
 
     // Input matrix elements
     cout << "Enter sorted matrix elements:\n";

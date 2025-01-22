@@ -12,7 +12,11 @@ void printDiagonals(int matrix[3][3], int n) {
     cout << "Secondary Diagonal: ";
     // Print secondary diagonal (i + j == n - 1)
     for (int i = 0; i < n; i++) {
-        cout << matrix[i][n - i - 1] << " ";  // Elements where row + col == n - 1
+        for(int j=0; j<n; j++) {
+            if(i+j == n-1) {
+                cout << matrix[i][j] << " ";  // Elements where row + col == n - 1
+            }
+        }
     }
     cout << endl;
 }

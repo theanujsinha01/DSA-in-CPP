@@ -6,9 +6,8 @@ int main() {
     map<string, int> wordCount;
     stringstream ss(sentence);
     string word;
-    
+
     while (ss >> word) wordCount[word]++;
-    
     for (auto p : wordCount) cout << p.first << ": " << p.second << endl;
     return 0;
 }

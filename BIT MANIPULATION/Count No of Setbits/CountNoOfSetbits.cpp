@@ -5,13 +5,11 @@ using namespace std;
 int countSetBits(int n) {
     int count = 0;
     while (n) {
-        n = n & (n - 1); 
-           // Remove the rightmost set bit
-        count++;       // Increment count for each set bit
+        n = n & (n - 1); // Remove the rightmost set bit
+        count++;         // Increment count for each set bit
     }
     return count;
 }
-
 
 int main() {
     int num;

@@ -6,7 +6,7 @@ int countTotalBits(int number) {
     if (number == 0) return 1;
 
     int count = 0;
-    while (number != 0) {
+    while (number) {
         number =  number >> 1; // Right shift the number
         count++;      // Increment the count
     }
@@ -14,7 +14,7 @@ int countTotalBits(int number) {
 }
 
 int main() {
-    int number = 4; // Example number
+    int number = 15; // Example number
 
     int bitCount = countTotalBits(number);
     

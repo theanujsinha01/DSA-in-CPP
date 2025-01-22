@@ -8,8 +8,8 @@ int findKthBit(int number, int K) {
 }
 
 int main() {
-    int number = 10; // Example input (binary: 1000)
-    int K = 2;       // We want to find the 1st bit (0-indexed)
+    int number = 8; // Example input (binary: 1000)
+    int K = 3;       // We want to find the 1st bit (0-indexed)
 
     int kthBit = findKthBit(number, K);
     

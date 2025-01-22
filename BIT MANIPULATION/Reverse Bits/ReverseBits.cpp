@@ -4,8 +4,8 @@ using namespace std;
 int countBits(unsigned int n) {
     int count = 0;
     while (n > 0) {
-        count++;
-        n = n >> 1;  
+        n = n >> 1;
+        count++;  
     }
     return count;
 }
@@ -25,7 +25,7 @@ unsigned int reverseBits(unsigned int n) {
 }
 
 int main() {
-    unsigned int num = 8;  // Example input: 19 in decimal (binary 10011)
+    unsigned int num = 16;  // Example input: 19 in decimal (binary 10011)
     cout << "Original number: " << num << endl;
     
     unsigned int reversed = reverseBits(num);

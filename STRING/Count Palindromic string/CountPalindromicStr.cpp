@@ -1,12 +1,13 @@
-#include <bits/stdc++.h>
+#include <string>
+#include <iostream>
 using namespace std;
 
-int countPalindromesAroundCenter(const string& str, int left, int right) {
+int countPalindromesAroundCenter(const string& s, int left, int right) {
     int count = 0;
-    int n = str.size();
+    int n = s.size();
 
-    while (left >= 0 && right < n && str[left] == str[right]) {
-        count++;  // Increment the count for each palindrome
+    while (left >= 0 && right < n && s[left] == s[right]) {
+        count++;  // Count this palindrome
         left--;
         right++;
     }
@@ -14,27 +15,30 @@ int countPalindromesAroundCenter(const string& str, int left, int right) {
     return count;
 }
 
-int countSubstrings(const string& str) {
-    int n = str.size();
-    int count = 0;
+int countSubstrings(string s) {
+    int n = s.size();
+    int totalCount = 0;
 
+    // For odd-length palindromes
     for (int i = 0; i < n; i++) {
-        // Odd-length palindromes (centered at a single character)
-        count += countPalindromesAroundCenter(str, i, i);
-        // Even-length palindromes (centered between two characters)
-        count += countPalindromesAroundCenter(str, i, i + 1);
+        totalCount += countPalindromesAroundCenter(s, i, i);
     }
 
-    return count;
+    // For even-length palindromes
+    for (int i = 0; i < n; i++) {
+        totalCount += countPalindromesAroundCenter(s, i, i + 1);
+    }
+
+    return totalCount;
 }
 
 int main() {
-    string str;
+    string s;
     cout << "Enter a string: ";
-    getline(cin, str);  // Allows input with spaces
+    cin >> s;
 
-    int totalPalindromes = countSubstrings(str);
-    cout << "Total palindromic substrings: " << totalPalindromes << endl;
+    int result = countSubstrings(s);
+    cout << "The total number of palindromic substrings is: " << result << endl;
 
     return 0;
 }

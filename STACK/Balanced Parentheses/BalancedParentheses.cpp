@@ -1,45 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool areParenthesesBalanced( string& expression) {
-    stack<char> s; // Stack to keep track of opening parentheses
-
-    for (char ch : expression) {
-        // If the character is an opening parenthesis, push it onto the stack
+bool isParenthesisBalanced(string& s) {
+    stack<char> st;
+    for (char ch : s) {
+        // Push opening brackets onto the stack
         if (ch == '(' || ch == '{' || ch == '[') {
-            s.push(ch);
-        }
-        // If it's a closing parenthesis, check for matching opening
+            st.push(ch);
+        } 
+        // Check for closing brackets
         else if (ch == ')' || ch == '}' || ch == ']') {
-            // If stack is empty or top doesn't match, it's unbalanced
-            if (s.empty()) {
-                return false;
-            }
-            char top = s.top();
+            if (st.empty()) return false; // Unbalanced if stack is empty
+            char top = st.top();
             if ((ch == ')' && top == '(') ||
                 (ch == '}' && top == '{') ||
                 (ch == ']' && top == '[')) {
-                return true;
+                st.pop(); // Pop matched opening bracket
+            } else {
+                return false; // Mismatched bracket
             }
-            s.pop(); // Pop the matched opening parenthesis
         }
     }
-    
-    // If the stack is empty at the end, parentheses are balanced
-    return s.empty();
+    return st.empty(); // Balanced if stack is empty
 }
 
 int main() {
-    string expression;
+    string s;
+    cout << "Enter a string of parentheses: ";
+    cin >> s;
 
-    cout << "Enter an expression: ";
-    getline(cin, expression); // Get the entire line of input
-
-    if (areParenthesesBalanced(expression)) {
+    if (isParenthesisBalanced(s)) {
         cout << "The parentheses are balanced." << endl;
     } else {
         cout << "The parentheses are not balanced." << endl;
     }
-
     return 0;
 }

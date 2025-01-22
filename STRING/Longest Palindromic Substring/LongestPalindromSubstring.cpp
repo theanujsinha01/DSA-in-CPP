@@ -1,38 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Function to expand around the center and find the longest palindrome
-string expandAroundCenter(const string& s, int left, int right) {
-    while (left >= 0 && right < s.length() && s[left] == s[right]) {
-        left--;   // Move left pointer
-        right++;  // Move right pointer
-    }
-    return s.substr(left + 1, right - left - 1);  // Return the longest palindrome
-}
-
 string longestPalindrome(string s) {
-    if (s.empty()) return "";
-    string longest = s.substr(0, 1); 
+    int n = s.size();
+    int start = 0, maxLen = 1;
 
-    for (int i = 0; i < s.length(); i++) {
-        string oddPalindrome = expandAroundCenter(s, i, i);
-        if (oddPalindrome.length() > longest.length()) {
-            longest = oddPalindrome;
+    // For odd-length palindromes
+    for (int i = 0; i < n; i++) {
+        int l = i, r = i;
+        while (l >= 0 && r < n && s[l] == s[r]) {
+            l--;
+            r++;
         }
-
-        string evenPalindrome = expandAroundCenter(s, i, i + 1);
-        if (evenPalindrome.length() > longest.length()) {
-            longest = evenPalindrome;
+        int len = r - l - 1; // Length of the palindrome
+        if (len > maxLen) {
+            maxLen = len;
+            start = l + 1;
         }
     }
 
-    return longest;
+    // For even-length palindromes
+    for (int i = 0; i < n; i++) {
+        int l = i, r = i + 1;
+        while (l >= 0 && r < n && s[l] == s[r]) {
+            l--;
+            r++;
+        }
+        int len = r - l - 1; // Length of the palindrome
+        if (len > maxLen) {
+            maxLen = len;
+            start = l + 1;
+        }
+    }
+
+    return s.substr(start, maxLen);
 }
 
 int main() {
-    string str;
-    cin >> str;
-    cout << longestPalindrome(str) << endl;
+    string s;
+    cout << "Enter a string: ";
+    cin >> s;
+
+    string result = longestPalindrome(s);
+    cout << "The longest palindromic substring is: " << result << endl;
+
     return 0;
 }
+
 

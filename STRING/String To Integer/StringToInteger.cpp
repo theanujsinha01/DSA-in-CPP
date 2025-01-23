@@ -10,13 +10,16 @@ int myAtoi(const string& str) {
     }
 
     // Step 2: Check for sign
-    if (str[index] == '-' || str[index] == '+') {
-        //sign = (str[index] == '-') ? -1 : 1;
-        if(str[index] == '-'){
-            sign = -1;
-        }
+   
+    if(str[index] == '-'){
+        sign = -1;
         index++;
     }
+        
+    
+    // check for starting 0
+     while(str[index]=='0') index++;
+        
 
     // Step 3: Convert characters to integer
     while (str[index] >= '0' && str[index] <= '9') {

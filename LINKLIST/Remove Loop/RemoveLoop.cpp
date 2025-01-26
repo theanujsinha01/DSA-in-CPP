@@ -39,10 +39,10 @@ bool detectAndRemoveLoop(Node* head) {
 
 void printList(Node* node) {
     while (node != NULL) {
-        cout << node->data << " ";
+        cout << node->data << " -> ";
         node = node->next;
     }
-    cout << endl;
+    cout << "NULL" << endl;
 }
 
 int main() {

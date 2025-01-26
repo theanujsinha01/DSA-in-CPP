@@ -11,35 +11,34 @@ struct Node {
 };
 
 Node* mergeTwoLists(Node* list1, Node* list2) {
-  
-    vector<int> values;
+    if (list1 == NULL) return list2;
+    if (list2 == NULL) return list1;
 
-    Node* current = list1;
-    while (current != NULL) {
-        values.push_back(current->data);
-        current = current->next;
+    Node* head = new Node(0);
+    Node* temp = head;
+
+    while (list1 != NULL && list2 != NULL) {
+        if (list1->data <= list2->data) {
+            temp->next = list1;
+            list1 = list1->next;
+        } else {
+            temp->next = list2;
+            list2 = list2->next;
+        }
+        temp = temp->next;
+    }
+    while(list1 != NULL) {
+        temp->next = list1;
+        list1 = list1->next;
+        temp = temp->next;
+    }
+    while(list2 != NULL) {
+        temp->next = list2;
+        list2 = list2->next;
+        temp = temp->next;
     }
 
-    current = list2;
-    while (current != NULL) {
-        values.push_back(current->data);
-        current = current->next;
-    }
-
-    sort(values.begin(), values.end());
-    if (values.empty()) return NULL;
-
-    Node* mergedHead = new Node(values[0]);  // First node of the merged list
-    Node* tail = mergedHead;                  // Pointer to build the merged list
-
-    // Rebuild the list from the sorted vector
-    for (int i = 1; i < values.size(); i++) {
-        tail->next = new Node(values[i]);
-        tail = tail->next;
-    }
-
-    // Return the head of the merged list
-    return mergedHead;
+    return head->next;
 }
 
 void printList(Node* node) {

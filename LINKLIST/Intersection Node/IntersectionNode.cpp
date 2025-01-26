@@ -43,7 +43,7 @@ int main(){
     headA->next->next->next = new Node(40);
     headA->next->next->next->next = new Node(50);
     Node* headB = new Node(5);
-    headB->next = headA->next->next;
+    headB->next = headA->next;
     printList(headA);
     printList(headB);
     Node* intersectionNode = getIntersectionNode(headA, headB);

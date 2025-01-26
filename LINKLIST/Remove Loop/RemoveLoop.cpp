@@ -14,12 +14,12 @@ struct Node {
 void removeLoop(Node* head) {
     unordered_set<Node*> visitedNodes; // To track visited nodes
     Node* current = head;  // Pointer to traverse the list
-    Node* prev = nullptr;  // To keep track of the previous node
+    Node* prev = NULL;  // To keep track of the previous node
 
-    while (current != nullptr) {
+    while (current != NULL) {
         // If current node is already visited, a loop is found
         if (visitedNodes.count(current)) {
-            prev->next = nullptr; // Break the loop
+            prev->next = NULL; // Break the loop
             return;
         }
 
@@ -32,7 +32,7 @@ void removeLoop(Node* head) {
 
 // Helper function to print the linked list
 void printList(Node* head) {
-    while (head != nullptr) {
+    while (head != NULL) {
         cout << head->data << " -> ";
         head = head->next;
     }

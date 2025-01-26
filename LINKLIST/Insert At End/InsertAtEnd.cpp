@@ -42,8 +42,8 @@ int main() {
 
 
     insertAtEnd(head, 10);
-    insertAtEnd(head, 20);
-    insertAtEnd(head, 30);
+    // insertAtEnd(head, 20);
+    // insertAtEnd(head, 30);
 
 
     cout << "Linked List: ";

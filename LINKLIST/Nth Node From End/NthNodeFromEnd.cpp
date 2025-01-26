@@ -11,7 +11,7 @@ struct Node {
 };
 
 // Function to find the Nth node from the end using vector
-Node* findNthFromEndUsingVector(Node* head, int n) {
+Node* findNthFromEndUsingVector(Node* head, int k) {
     vector<Node*> nodes;
 
     // Traverse the linked list and store the nodes in the vector
@@ -22,12 +22,12 @@ Node* findNthFromEndUsingVector(Node* head, int n) {
     }
 
     // Check if n is valid
-    if (n > nodes.size() || n <= 0) {
+    if (k > nodes.size() || k <= 0) {
         return NULL; // N is greater than the number of nodes in the list or invalid
     }
 
     // Return the Nth node from the end
-    return nodes[nodes.size() - n];
+    return nodes[nodes.size() - k];
 }
 
 int main() {
@@ -37,7 +37,7 @@ int main() {
     head->next->next = new Node(30);
     head->next->next->next = new Node(40);
 
-    int n = 2; // Position from the end
+    int n = 4; // Position from the end
     Node* nthNode = findNthFromEndUsingVector(head, n);
 
     if (nthNode != NULL) {

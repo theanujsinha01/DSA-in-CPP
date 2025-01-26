@@ -11,6 +11,7 @@ struct Node {
 };
 
 void insertAtPosition(Node*& head, int newData, int position) {
+
     Node* addNode = new Node(newData);
 
     // If inserting at the head (position 1)
@@ -22,7 +23,7 @@ void insertAtPosition(Node*& head, int newData, int position) {
 
     // Traverse to the node just before the given position
     Node* temp = head;
-    for (int i = 1; i < position - 1 && temp != NULL; i++) {
+    for (int i = 1; i < position - 1; i++) {
         temp = temp->next;
     }
 
@@ -39,9 +40,10 @@ void insertAtPosition(Node*& head, int newData, int position) {
 
 void printList(Node* node) {
     while (node != NULL) {
-        cout << node->data << " ";
+        cout << node->data << " -> ";
         node = node->next;
     }
+    cout << "NULL" << endl;
 }
 
 int main() {
@@ -49,8 +51,9 @@ int main() {
 
     insertAtPosition(head, 10, 1);
     insertAtPosition(head, 20, 2);
-    insertAtPosition(head, 30, 2); // Insert at position 2 (between 10 and 20)
-    insertAtPosition(head, 40, 4); 
+    insertAtPosition(head, 30, 3);
+
+
 
     cout << "Linked List: ";
     printList(head);

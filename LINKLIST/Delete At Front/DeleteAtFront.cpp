@@ -16,6 +16,11 @@ void deleteAtFront(Node*& head) {
         cout << "The list is empty, nothing to delete." << endl;
         return;
     }
+    if (head->next == NULL) {
+        delete head;
+        head = NULL;
+        return;
+    }
 
     // Move the head to the next node
     Node* temp = head;
@@ -28,10 +33,10 @@ void deleteAtFront(Node*& head) {
 
 void printList(Node* node) {
     while (node != nullptr) {
-        cout << node->data << " ";
+        cout << node->data << " -> ";
         node = node->next;
     }
-    cout << endl;
+    cout << "NULL" << endl;
 }
 
 int main() {

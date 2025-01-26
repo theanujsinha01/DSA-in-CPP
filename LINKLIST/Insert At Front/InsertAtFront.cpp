@@ -11,22 +11,29 @@ struct Node {
 };
 
 void insertAtBeginning(Node*& head, int newData) {
-    // Allocate memory for a new node
+  
     Node* addNode = new Node(newData);
+    if (head == NULL) {
+        head = addNode;
+        return;
+    }
+    if (head->next == NULL) {
+        addNode->next = head;
+        head = addNode;
+        return;
+    }
     
-    // Make next of the new node as the current head
     addNode->next = head;
-    
-    // Move the head to point to the new node
     head = addNode;
 }
 
 // Function to print the Linked List
 void printList(Node* node) {
     while (node != NULL) {
-        cout << node->data << " ";
+        cout << node->data << " -> ";
         node = node->next;
     }
+    cout << "NULL" << endl;
 }
 
 int main() {

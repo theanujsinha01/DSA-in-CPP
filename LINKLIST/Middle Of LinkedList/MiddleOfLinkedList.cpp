@@ -13,8 +13,8 @@ struct Node {
 Node* findMiddle(Node* head) {
     if (head == NULL) return NULL; // If the list is empty
 
-    Node* slow = head; // Initialize slow pointer
-    Node* fast = head; // Initialize fast pointer
+    Node* slow = head; 
+    Node* fast = head; 
 
     // Traverse the list
     while (fast != NULL && fast->next != NULL) {
@@ -27,7 +27,7 @@ Node* findMiddle(Node* head) {
 
 void printList(Node* node) {
     while (node != NULL) {
-        cout << node->data << " "; 
+        cout << node->data << " -> "; 
         node = node->next;         
     }
     cout << endl;

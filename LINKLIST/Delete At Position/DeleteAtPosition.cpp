@@ -6,7 +6,7 @@ struct Node {
     Node* next;
     Node(int val) {
         data = val;
-        next = nullptr;
+        next = NULL;
     }
 };
 
@@ -27,7 +27,7 @@ void deleteAtPosition(Node*& head, int position) {
 
     // Traverse to the node just before the given position
     Node* temp = head;
-    for (int i = 1; (temp != NULL && i < position - 1);  i++) {
+    for (int i = 1; i < position - 1;  i++) {
         temp = temp->next;
     }
 

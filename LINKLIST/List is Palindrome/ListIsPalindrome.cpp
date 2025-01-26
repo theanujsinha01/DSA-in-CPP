@@ -10,29 +10,26 @@ struct Node {
     }
 };
 
-// Function to convert the linked list to a vector
-vector<int> linkedListToVector(Node* head) {
-    vector<int> vec;
-    while (head != NULL) {
-        vec.push_back(head->data);
-        head = head->next;
+
+bool isPalindrome(Node* head) {
+    stack<int> s;
+    Node* temp = head;
+    while (temp != NULL) {
+        s.push(temp->data);
+        temp = temp->next;
     }
-    return vec;
-}
 
-// Function to check if a vector is a palindrome
-bool isPalindrome(vector<int>& vec) {
-    int left = 0, right = vec.size() - 1;
-
-    while (left < right) {
-        if (vec[left] != vec[right]) {
+    temp = head;
+    while (temp != NULL) {
+        int top = s.top();
+        s.pop();
+        if (temp->data != top) {
             return false;
         }
-        left++;
-        right--;
+        temp = temp->next;
     }
-
     return true;
+   
 }
 
 void printList(Node* node) {
@@ -53,11 +50,9 @@ int main() {
     cout << "Original List: ";
     printList(list1);
 
-    // Convert linked list to vector
-    vector<int> vec = linkedListToVector(list1);
 
     // Check if the vector is a palindrome
-    if (isPalindrome(vec)) {
+    if (isPalindrome(list1)) {
         cout << "The linked list is a palindrome." << endl;
     } else {
         cout << "The linked list is not a palindrome." << endl;

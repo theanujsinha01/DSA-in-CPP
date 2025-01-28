@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#define SIZE 5 // Size of the stack
+#define SIZE 10 // Size of the stack
 
 int stack[SIZE]; // Array to store stack elements
 int top = -1;    // Index of the top element (-1 means stack is empty)

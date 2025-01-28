@@ -1,78 +1,55 @@
 #include <iostream>
 using namespace std;
 
-class Queue {
-    public:
-    int front, rear, size;
-    int* queue;
-    
+#define SIZE 5 // Size of the queue
 
-    Queue(int s) {
-        front = rear = -1;
-        size = s;
-        queue = new int[size];
-    }
+int queue[SIZE];
+int front = -1, rear = -1;
 
-    // Add an element to the queue
-    void enqueue(int value) {
-        if (rear == size - 1) {
-            cout << "Queue is full\n";
-            return;
-        }
-        if (front == -1) front = 0;  // First insertion
+// Function to add an element to the queue
+void enqueue(int value) {
+    if (rear == SIZE - 1) {
+        cout << "Queue is full!\n";
+    } else {
+        if (front == -1) front = 0; // Set front to 0 if inserting the first element
         rear++;
         queue[rear] = value;
-        cout << value << " enqueued to the queue\n";
+        cout << value << " added to the queue.\n";
     }
+}
 
-    // Remove an element from the queue
-    void dequeue() {
-        if (front == -1 || front > rear) {
-            cout << "Queue is empty\n";
-            return;
-        }
-        cout << queue[front] << " dequeued from the queue\n";
+// Function to remove an element from the queue
+void dequeue() {
+    if (front == -1 || front > rear) {
+        cout << "Queue is empty!\n";
+    } else {
+        cout << queue[front] << " removed from the queue.\n";
         front++;
     }
+}
 
-    // Get the front element
-    int frontElement() {
-        if (front == -1 || front > rear) {
-            cout << "Queue is empty\n";
-            return -1;
-        }
-        return queue[front];
-    }
-
-    // Display the queue
-    void display() {
-        if (front == -1 || front > rear) {
-            cout << "Queue is empty\n";
-            return;
-        }
-        cout << "Queue elements are: ";
+// Function to display the queue
+void display() {
+    if (front == -1 || front > rear) {
+        cout << "Queue is empty!\n";
+    } else {
+        cout << "Queue elements: ";
         for (int i = front; i <= rear; i++) {
             cout << queue[i] << " ";
         }
         cout << endl;
     }
-};
+}
 
 int main() {
-    Queue q(5); // Queue of size 5
-
-    q.enqueue(10);
-    q.enqueue(20);
-    q.enqueue(30);
-    q.enqueue(40);
-    q.enqueue(50);
-    
-    q.display();
-
-    q.dequeue();
-    q.display();
-
-    cout << "Front element is: " << q.frontElement() << endl;
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    display();
+    dequeue();
+    display();
+    enqueue(40);
+    display();
 
     return 0;
 }

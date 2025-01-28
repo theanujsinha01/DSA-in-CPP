@@ -3,20 +3,24 @@ using namespace std;
 
 int partition(int arr[], int left, int right) {
     int pivot = arr[left]; // Choosing the first element as pivot
-    int i = left; // Index of smaller element
-
-    for (int j = left+1; j <= right; j++) {
-        // If current element is smaller than or equal to pivot
-        if (arr[j] <= pivot) {
-            i++; // Increment index of smaller element
-            swap(arr[i], arr[j]); // Swap current element with the element at i
+    int i = left;
+    int j = right;
+    while(i<j){
+        while(arr[i]<=pivot && i<right){
+            i++;
+        }
+        while(arr[j]>pivot && j>left){
+            j--;
+        }
+        if(i<j){
+            swap(arr[i],arr[j]);
         }
     }
-    swap(arr[i], arr[left]); // Place pivot in the correct position
-    return i; // Return the index of the pivot
+    swap(arr[left],arr[j]);
+    return j;
+
 }
  
-
 void quickSort(int arr[], int left, int right) {
     if (left < right) {
         int pi = partition(arr, left, right); // Partitioning index

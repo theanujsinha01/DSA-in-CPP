@@ -24,8 +24,6 @@ int partition(int arr[], int left, int right) {
 void quickSort(int arr[], int left, int right) {
     if (left < right) {
         int pi = partition(arr, left, right); // Partitioning index
-
-        // Recursively sort elements before and after partition
         quickSort(arr, left, pi - 1);
         quickSort(arr, pi + 1, right);
     }

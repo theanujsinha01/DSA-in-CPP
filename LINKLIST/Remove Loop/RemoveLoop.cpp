@@ -10,23 +10,27 @@ struct Node {
     }
 };
 
-// Function to remove the loop in the linked list
+void removeLoopUtil(Node* loopNode, Node* head) {
+   
+    while(head->next != loopNode->next){
+        head = head->next;
+        loopNode = loopNode->next;
+    }
+    loopNode->next = NULL;
+}
+
 void removeLoop(Node* head) {
-    unordered_set<Node*> visitedNodes; // To track visited nodes
-    Node* current = head;  // Pointer to traverse the list
-    Node* prev = NULL;  // To keep track of the previous node
+    Node* slow = head;
+    Node* fast = head;
 
-    while (current != NULL) {
-        // If current node is already visited, a loop is found
-        if (visitedNodes.count(current)) {
-            prev->next = NULL; // Break the loop
-            return;
+    while (fast != NULL && fast->next != NULL) {
+        slow = slow->next;
+        fast = fast->next->next;
+
+        if (slow == fast) { // Loop detected
+            removeLoopUtil(slow, head);
+            
         }
-
-        // Mark the current node as visited
-        visitedNodes.insert(current);
-        prev = current;        // Update previous pointer
-        current = current->next; // Move to the next node
     }
 }
 
@@ -45,7 +49,6 @@ int main() {
     head->next = new Node(2);
     head->next->next = new Node(3);
     head->next->next->next = new Node(4);
-
     head->next->next->next->next = head->next; // Create a loop (4 -> 2)
 
     removeLoop(head); // Remove the loop

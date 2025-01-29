@@ -2,21 +2,20 @@
 using namespace std;
 
 void merge(int arr[], int start, int mid, int end) {
-    int n1 = mid - start + 1;
-    int n2 = end - mid;
-    int leftArr[n1], rightArr[n2];
 
-    for (int i = 0; i < n1; i++) leftArr[i] = arr[start + i];
-    for (int i = 0; i < n2; i++) rightArr[i] = arr[mid + 1 + i];
+    int n = end - start + 1;
+    int output[n];
+    int i = start, j = mid + 1, k = 0;
 
-    int i = 0, j = 0, k = start;
-    while (i < n1 && j < n2) {
-        if (leftArr[i] <= rightArr[j]) arr[k++] = leftArr[i++];
-        else arr[k++] = rightArr[j++];
+    while (i <= mid && j <= end) {
+        if (arr[i] < arr[j]) output[k++] = arr[i++];
+        else output[k++] = arr[j++];
     }
 
-    while (i < n1) arr[k++] = leftArr[i++];
-    while (j < n2) arr[k++] = rightArr[j++];
+    while (i <= mid) output[k++] = arr[i++];
+    while (j <= end) output[k++] = arr[j++];
+    for (int i = start, k = 0; i <= end; i++, k++) arr[i] = output[k];
+
 }
 
 void mergeSort(int arr[], int start, int end) {

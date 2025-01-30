@@ -1,15 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<pair<int, int>> allPairs(int x, const vector<int> &arr1) {
+vector<vector<int>> allPairs(int x, const vector<int> &arr1) {
     set<int> st;
-    vector<pair<int, int>> ans;
+    set<pair<int, int>> uniquePairs;
     for (int i = 0; i < arr1.size(); i++) {
         int finding = x - arr1[i];
         if (st.count(finding)) {
-            ans.push_back({arr1[i], finding});
+            uniquePairs.insert({min(arr1[i], finding), max(arr1[i], finding)});
         }
         st.insert(arr1[i]);
+    }
+    vector<vector<int>> ans;
+    for (auto it : uniquePairs) {
+        ans.push_back({it.first, it.second});
     }
     return ans;
 }
@@ -27,12 +31,12 @@ int main() {
         cin >> arr1[i];
     }
     
-    vector<pair<int, int>> result = allPairs(x, arr1);
+    vector<vector<int>> result = allPairs(x, arr1);
 
     cout << "Pairs with sum " << x << " are:\n";
-    for ( auto it : result) {
-        cout << "(" << it.first << ", " << it.second << ")\n";
+    for (int i = 0; i < result.size(); i++) {
+        cout << result[i][0] << " " << result[i][1] << endl;
     }
-
+    
     return 0;
 }

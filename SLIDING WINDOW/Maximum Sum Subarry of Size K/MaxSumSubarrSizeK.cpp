@@ -1,27 +1,32 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int maximumSumSubarray(int k, vector<int> &Arr, int N) {
+int maximumSumSubarray(int k, vector<int> &arr, int n) {
     int sum = 0;
-    int mx = INT_MIN;
-    int idx = 0;
-    while (idx < k) {
-        sum = sum + Arr[idx]; // Add current element to the sum
-        idx++;
+    int maxSum = INT_MIN;
+
+    // Process first k elements (First window)
+    for (int i = 0; i < k; i++) {
+        sum += arr[i];  
     }
-    for(int i = 1; i <= N-k; i++) {
-        mx = max(mx, sum); 
-        sum = sum - Arr[i - 1]; // Remove the first element of the window
-        sum = sum + Arr[i+k-1]; // Add the next element to the window
-       
+    maxSum = max(maxSum, sum);  // Store the max sum
+
+    // Process the rest of the array
+    for (int i = k; i < n; i++) {
+        sum += arr[i];       // Add the next element
+        sum -= arr[i - k];   // Remove the element going out of the window
+        maxSum = max(maxSum, sum);  // Update max sum
     }
-    return mx;
+
+    return maxSum;
 }
 
-int main(){
-    vector<int>arr = {1, 2, 9, 4, 12, 3, 7, 8};
-    int n = arr.size();
+int main() {
+    vector<int> arr = {1, 2, 9, 4, 12, 3, 7, 8};
     int k = 3;
+    int n = arr.size();
+
     int ans = maximumSumSubarray(k, arr, n);
-    cout << "Maximum Sum of Subarray size k is: " << ans;
+    cout << "Maximum sum of all subarrays of size " << k << " is: " << ans;
+    return 0;
 }

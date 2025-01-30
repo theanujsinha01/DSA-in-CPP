@@ -18,7 +18,7 @@ vector<int> subarraySum(vector<int>& arr, int target) {
 
         // Check if the current sum equals the target
         if (sum == target) {
-            return {left , right}; // Return 1-based indices
+            return {left + 1, right + 1}; // Return 1-based indices
         }
     }
 
@@ -30,8 +30,11 @@ int main() {
     int target = 12;
 
     vector<int> result = subarraySum(arr, target);
+    cout << "Subarray with sum " << target << " is between indices: ";
     for (auto it : result) {
         cout << it << " ";
     }
+
     return 0;
 }
+

@@ -1,21 +1,20 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int maxProductSubarray(int arr[], int n) {
-    int maxProd = arr[0], minProd = arr[0], result = arr[0];
-
-    for (int i = 1; i < n; i++) {
-        if (arr[i] < 0) {
-            swap(maxProd, minProd);  // Swap if negative
-        }
-
-        maxProd = max(arr[i], maxProd * arr[i]);  // Update max
-        minProd = min(arr[i], minProd * arr[i]);  // Update min
-
-        result = max(result, maxProd);  // Store the max result
+    int prefix=1;
+    int suffix=1;
+    int mx = INT_MIN;
+    for(int i=0;i<n;i++)
+     {
+        if(prefix==0) prefix=1;
+        if(suffix==0) suffix=1;
+        prefix=prefix*arr[i];
+        suffix=suffix*arr[n-1-i];
+        mx= max(mx,max(prefix,suffix));
     }
-
-    return result;
+        
+  return mx;
 }
 
 int main() {

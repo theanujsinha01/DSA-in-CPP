@@ -1,51 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string longestCommonPrefix(vector<string>& strs) {
-        int n = strs.size();
-        if(strs.empty()){
-            return "";
-        }
-            string commonPrefix = strs[0];
-            for(int i=0;i<n;i++){
-                int j=0;
-                while(j<commonPrefix.size() && j<strs[i].size()){
-                    if(commonPrefix[j] != strs[i][j]){
-                        break;
-                    }
-                    else{
-                    j++;
-                }
-            }
-            commonPrefix = commonPrefix.substr(0,j);
-            if(commonPrefix.empty()){
-                return "";
-            }
-        }
-        return commonPrefix;
+string longestCommonPrefix(vector<string> strs) {
+    if (strs.empty()) return "";
 
+    string prefix = strs[0];
+    for (int i = 1; i < strs.size(); i++) {
+        int j = 0;
+        while (j < prefix.size() && j < strs[i].size() && prefix[j] == strs[i][j]) {
+            j++;
+        }
+        prefix = prefix.substr(0, j);  // Update prefix to the common part
+        if (prefix == "") return "";  // No common prefix
     }
+    return prefix;
+}
+
 int main() {
-    vector<string> strs;
-    int n;
-
-    cout << "Enter the number of strings: ";
-    cin >> n;
-
-    cout << "Enter the strings: " << endl;
-    for (int i = 0; i < n; i++) {
-        string s;
-        cin >> s;
-        strs.push_back(s);
-    }
-
-    string result = longestCommonPrefix(strs);
-
-    if (result.empty()) {
-        cout << "There is no common prefix." << endl;
-    } else {
-        cout << "Longest common prefix: " << result << endl;
-    }
-
+    vector<string> strs = {"flower", "flow", "flight"};
+    cout << "Longest Common Prefix: " << longestCommonPrefix(strs) << endl;
     return 0;
 }

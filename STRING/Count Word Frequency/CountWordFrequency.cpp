@@ -3,7 +3,7 @@ using namespace std;
 
 void countWordFrequency(const string& str) {
     unordered_map<string, int> wordCount; // Map to store word frequencies
-    istringstream ss(str); // Stream to read words from the string
+    stringstream ss(str); // Stream to read words from the string
     string word;
 
     // Read each word from the string and count its frequency

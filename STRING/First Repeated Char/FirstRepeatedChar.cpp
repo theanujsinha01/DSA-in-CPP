@@ -6,10 +6,11 @@ char firstRepeatedChar(const string& str) {
 
     // Traverse the string and count the occurrence of each character
     for (char ch : str) {
-        charCount[ch]++; // Increment count for the character
-        // If the character occurs more than once, return it
+        charCount[ch]++; 
+    }
+    for (char ch : str) {
         if (charCount[ch] > 1) {
-            return ch;
+            return ch;  // Return the first repeated character
         }
     }
     

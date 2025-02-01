@@ -8,8 +8,9 @@ char mostFrequentChar(const string& str) {
 
     // Count the frequency of each character
     for (char ch : str) {
-        charCount[ch]++; // Increment the count for the character
-
+        charCount[ch]++; 
+    }
+    for (char ch : str) {
        
         if (charCount[ch] > maxCount) {
             maxCount = charCount[ch]; 

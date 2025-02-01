@@ -2,14 +2,12 @@
 using namespace std;
 
 bool hasUniqueCharacters(const string& str) {
-    unordered_set<char> charSet; // Set to store unique characters
-
+   map<char, int> charMap;
     for (char ch : str) {
-        // If character is already in the set, it's not unique
-        if (charSet.count(ch)) {
-            return false; 
+        if (charMap.count(ch)) {
+            return false;
         }
-        charSet.insert(ch);
+        charMap[ch]++;
     }
 
     return true; 

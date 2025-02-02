@@ -1,50 +1,56 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-void spiralTraversal(int matrix[3][3], int rows, int cols) {
-    int top = 0, bottom = rows - 1, left = 0, right = cols - 1;
+vector<int> spiralOrder(vector<vector<int>>& mat) {
+        vector<int> ans;
+        int startrow = 0, endrow = mat.size() - 1;
+        int startcol = 0, endcol = mat[0].size() - 1;
+        int count = 0, total_elements = mat.size() * mat[0].size();
 
-    while (top <= bottom && left <= right) {
-        // Move right across the top row
-        for (int i = left; i <= right; i++) {
-            cout << matrix[top][i] << " ";
-        }
-        top++;
-
-        // Move down the right column
-        for (int i = top; i <= bottom; i++) {
-            cout << matrix[i][right] << " ";
-        }
-        right--;
-
-        // Move left across the bottom row
-        if (top <= bottom) {
-            for (int i = right; i >= left; i--) {
-                cout << matrix[bottom][i] << " ";
+        while (count < total_elements) {
+            // 1. Print first row (left to right)
+            for (int i = startcol; i <= endcol; i++) {
+                ans.push_back(mat[startrow][i]);
+                count++;
             }
-            bottom--;
+            startrow++;  // Move the start row down
+
+            // 2. Print end column (top to bottom)
+            for (int i = startrow; i <= endrow; i++) {
+                ans.push_back(mat[i][endcol]);
+                count++;
+            }
+            endcol--;  // Move the end column left
+
+            // 3. Print end row (right to left)
+            for (int i = endcol; i >= startcol; i--) {
+                ans.push_back(mat[endrow][i]);
+                count++;
+            }
+            endrow--;  // Move the end row up
+
+            // 4. Print start column (bottom to top)
+            for (int i = endrow; i >= startrow; i--) {
+                ans.push_back(mat[i][startcol]);
+                count++;
+            }
+            startcol++;  // Move the start column right
         }
 
-        // Move up the left column
-        if (left <= right) {
-            for (int i = bottom; i >= top; i--) {
-                cout << matrix[i][left] << " ";
-            }
-            left++;
-        }
+        return ans;
     }
-}
-
 int main() {
    
-    int matrix[3][3] = {
+    vector<vector<int>> mat = {
         {1, 2, 3},
         {4, 5, 6},
         {7, 8, 9}
     };
 
-    cout << "Spiral Traversal: ";
-    spiralTraversal(matrix, 3, 3);
+    vector<int> result = spiralOrder(mat);
+    for (int i = 0; i < result.size(); i++) {
+        cout << result[i] << " ";
+    }
 
     return 0;
 }

@@ -13,10 +13,9 @@ string itoa(int num) {
 
     string result; // To store the result string
 
-    
     while (num > 0) {
-        char digit = (num % 10) + '0'; // Get the last digit and convert to char
-        result = digit + result; // Prepend the digit to the result string
+        char digit = (num % 10) + '0'; 
+        result = digit + result; 
         num /= 10;
     }
 

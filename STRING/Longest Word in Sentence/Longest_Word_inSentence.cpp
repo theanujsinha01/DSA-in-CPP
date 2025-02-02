@@ -2,10 +2,10 @@
 using namespace std;
 
 string longestWord(const string &str) {
-    istringstream stream(str);
+    stringstream ss(str);
     string word, longest;
     
-    while (stream >> word) {
+    while (ss >> word) {
         if (word.length() > longest.length()) {
             longest = word;
         }

@@ -3,8 +3,8 @@ using namespace std;
 struct Node
 {
     int data;
-    struct Node *left;
-    struct Node *right;
+    Node *left;
+    Node *right;
     Node(int val)
     {
         data = val;
@@ -12,7 +12,7 @@ struct Node
         right = NULL;
     }
 };
-void preorder(struct Node *root)
+void preorder(Node *root)
 {
     if (root == NULL)
         return;

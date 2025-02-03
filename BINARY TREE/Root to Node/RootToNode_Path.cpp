@@ -18,8 +18,8 @@ using namespace std;
 struct Node
 {
     int data;
-    struct Node *left;
-    struct Node *right;
+    Node *left;
+    Node *right;
     Node(int val)
     {
         data = val;
@@ -81,7 +81,7 @@ int main()
     root->right = new Node(3);
     root->left->left = new Node(4);
     root->left->right = new Node(5);
-    int target = 5;
+    int target = 3;
     vector<int> result = pathToNode(root, target);
 
     if (result.empty())
@@ -91,9 +91,9 @@ int main()
     else
     {
 
-        for (const auto &ele : result)
+        for (auto ele : result)
         {
-            cout << ele << " ";
+            cout << ele << " -> ";
         }
         cout << endl;
     }

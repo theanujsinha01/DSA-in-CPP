@@ -18,8 +18,8 @@ using namespace std;
 struct Node
 {
     int data;
-    struct Node *left;
-    struct Node *right;
+    Node *left;
+    Node *right;
     Node(int val)
     {
         data = val;
@@ -31,8 +31,8 @@ struct Node
 vector<int> topView(Node *root)
 {
     vector<int> ans;
-    if (root == NULL)
-        return ans;
+    if (root == NULL) return ans;
+
     map<int, int> mp;
     queue<pair<Node *, int>> q;
     q.push({root, 0});
@@ -43,8 +43,8 @@ vector<int> topView(Node *root)
         q.pop();
         Node *temp = pr.first;
         int hd = pr.second;
-        // If this horizontal distance is being seen for the first time
-        if (mp.find(hd) == mp.end())
+ 
+        if (mp.count(hd) == 0) // if hd is not present in map then insert it
         {
             mp[hd] = temp->data;
         }

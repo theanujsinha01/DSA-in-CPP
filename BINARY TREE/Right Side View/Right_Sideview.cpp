@@ -18,8 +18,8 @@ using namespace std;
 struct Node
 {
     int data;
-    struct Node *left;
-    struct Node *right;
+    Node *left;
+    Node *right;
     Node(int val)
     {
         data = val;
@@ -29,14 +29,15 @@ struct Node
 };
 void recursion(Node *root, int level, vector<int> &ans)
 {
-    if (root == NULL)
-        return;
+    if (root == NULL) return;
+    
     if (ans.size() < level)
     {
         ans.push_back(root->data);
     }
     recursion(root->right, level + 1, ans);
     recursion(root->left, level + 1, ans);
+   
 }
 vector<int> rightSideView(Node *root)
 {

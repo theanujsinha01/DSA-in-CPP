@@ -18,8 +18,8 @@ using namespace std;
 struct Node
 {
     int data;
-    struct Node *left;
-    struct Node *right;
+    Node *left;
+    Node *right;
     Node(int val)
     {
         data = val;
@@ -30,8 +30,7 @@ struct Node
 
 int Height(Node *root, int &diameter)
 {
-    if (root == NULL)
-        return 0;
+    if (root == NULL) return 0;
 
     int lh = Height(root->left, diameter);
     int rh = Height(root->right, diameter);

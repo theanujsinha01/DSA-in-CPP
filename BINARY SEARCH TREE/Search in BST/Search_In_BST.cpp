@@ -17,8 +17,8 @@ using namespace std;
 struct Node
 {
     int data;
-    struct Node *left;
-    struct Node *right;
+    Node *left;
+    Node *right;
     Node(int val)
     {
         data = val;
@@ -32,11 +32,11 @@ bool SearchInBST(Node *root, int key)
         return false;
     if(root->data == key)
        return true;
-    if(root->data>key){
-        return SearchInBST(root->left,key);
+    if(root->data < key){
+        return SearchInBST(root->right,key);
     }
 
-    return SearchInBST(root->right,key);
+    return SearchInBST(root->left,key);
     
 }
 

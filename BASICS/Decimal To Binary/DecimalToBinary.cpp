@@ -1,19 +1,18 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main(){
+int main() {
+    int n;
+    cin >> n;
+    int i = 0, ans = 0;
     
-    int decimalNum;
-    cin>>decimalNum;
-    int i =0, ans = 0;
-    while(decimalNum != 0){
-        int bit = decimalNum & 1;
-        ans = ans + (bit * pow(10, i));
-        decimalNum = decimalNum >> 1;
+    while (n > 0) {
+        int lastbit = n & 1;
+        ans = ans + (lastbit * pow(10, i)); // Using i directly
+        n = n >> 1;
         i++;
     }
-    cout<<"Binary equivalent: "<<ans<<endl;
+    
+    cout << "Binary equivalent: " << ans << endl;
     return 0;
- 
-
 }

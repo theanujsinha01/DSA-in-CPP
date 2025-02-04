@@ -1,33 +1,26 @@
-//problem - Add two binary number
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 string addBinary(string a, string b) {
-    string result = "";  // To store the sum
-    int carry = 0;  // To store carry
-    int i = a.length() - 1, j = b.length() - 1;  // Pointers to traverse the strings
+    string result = ""; 
+    int carry = 0; 
+    int i = a.size() - 1, j = b.size() - 1; 
 
-    // Traverse both strings from the rightmost end
-    while (i >= 0 || j >= 0 || carry) {
-        int sum = carry;
-
-        // Add digit from first binary number
+    while (i >= 0 || j >= 0 || carry != 0) {
+        
+        int val1 = 0, val2 = 0;
         if (i >= 0) {
-            sum += a[i] - '0';  // Convert char to int
+            val1 = val1 + a[i] - '0'; 
             i--;
         }
 
-        // Add digit from second binary number
         if (j >= 0) {
-            sum += b[j] - '0';  // Convert char to int
+            val2 = val2 + b[j] - '0';
             j--;
         }
-
-        // Append the sum to result
-        result = char(sum % 2 + '0') + result;
-        
-        // Update carry
-        carry = sum / 2;
+        int sum = val1 + val2 + carry;
+        carry = sum / 10;
+        result = to_string(sum % 10) + result;
     }
 
     return result;

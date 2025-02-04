@@ -2,45 +2,42 @@
 using namespace std;
 
 vector<int> spiralOrder(vector<vector<int>>& mat) {
-        vector<int> ans;
-        int startrow = 0, endrow = mat.size() - 1;
-        int startcol = 0, endcol = mat[0].size() - 1;
-        int count = 0, total_elements = mat.size() * mat[0].size();
+    vector<int> ans;
+    int left = 0, right = mat[0].size();
+    int top = 0, bottom = mat.size();
+    int count = 0, total_elements = mat.size() * mat[0].size();
 
-        while (count < total_elements) {
-            // 1. Print first row (left to right)
-            for (int i = startcol; i <= endcol; i++) {
-                ans.push_back(mat[startrow][i]);
-                count++;
-            }
-            startrow++;  // Move the start row down
-
-            // 2. Print end column (top to bottom)
-            for (int i = startrow; i <= endrow; i++) {
-                ans.push_back(mat[i][endcol]);
-                count++;
-            }
-            endcol--;  // Move the end column left
-
-            // 3. Print end row (right to left)
-            for (int i = endcol; i >= startcol; i--) {
-                ans.push_back(mat[endrow][i]);
-                count++;
-            }
-            endrow--;  // Move the end row up
-
-            // 4. Print start column (bottom to top)
-            for (int i = endrow; i >= startrow; i--) {
-                ans.push_back(mat[i][startcol]);
-                count++;
-            }
-            startcol++;  // Move the start column right
+    while (count < total_elements) {
+        
+        for (int i = left; i < right && count < total_elements; i++) {
+            ans.push_back(mat[top][i]);
+            count++;
         }
+        top++;  
 
-        return ans;
+        for (int i = top; i < bottom && count < total_elements; i++) {
+            ans.push_back(mat[i][right - 1]);
+            count++;
+        }
+        right--;  
+
+        for (int i = right - 1; i >= left && count < total_elements; i--) {
+            ans.push_back(mat[bottom - 1][i]);
+            count++;
+        }
+        bottom--;  
+
+        for (int i = bottom - 1; i >= top && count < total_elements; i--) {
+            ans.push_back(mat[i][left]);
+            count++;
+        }
+        left++; 
     }
+
+    return ans;
+}
+
 int main() {
-   
     vector<vector<int>> mat = {
         {1, 2, 3},
         {4, 5, 6},
@@ -54,3 +51,4 @@ int main() {
 
     return 0;
 }
+

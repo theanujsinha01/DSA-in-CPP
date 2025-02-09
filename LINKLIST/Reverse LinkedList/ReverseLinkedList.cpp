@@ -11,21 +11,21 @@ struct Node {
 };
 
 Node* reverseList(Node* head) {
-    vector<int> ans;
+    stack<int> stk;
 
     // Store the elements of the linked list in a vector
     Node* temp = head;
     while (temp != NULL) {
-        ans.push_back(temp->data);
+        stk.push(temp->data);
         temp = temp->next;
     }
 
     // Reverse the linked list by setting the node values from the vector
     temp = head;
-    int i = ans.size() - 1;
+
     while (temp != NULL) {
-        temp->data = ans[i];
-        i--;
+        temp->data = stk.top();
+        stk.pop();
         temp = temp->next;
     }
 

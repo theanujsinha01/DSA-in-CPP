@@ -1,39 +1,43 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-void bfs(int source, unordered_map<int,vector<int>>& graph, int n){
-    queue<int>q;
-    vector<int>visited(n+1);
-    q.push(source);
-    visited[source] = 1;
+vector<int> bfsOfGraph(int V, vector<vector<int>>& adj) {
+    vector<int> result;
+    vector<bool> visited(V, false);
+    queue<int> q;
 
-    while(q.size()>0){
-        int output = q.front();
+    q.push(0);
+    visited[0] = true;
+
+    while (!q.empty()) {
+        int node = q.front();
         q.pop();
-        cout<<output<<"  ";
-        for(auto nbr : graph[output]){
-            if(!visited[nbr]){
-                visited[nbr] = 1;
-                q.push(nbr);
+        result.push_back(node);
+
+        for (int neighbor : adj[node]) {
+            if (!visited[neighbor]) {
+                q.push(neighbor);
+                visited[neighbor] = true;
             }
         }
     }
+
+    return result;
 }
 
-int main(){
-    
-    vector<vector<int>> edgeList = {
-        {0, 1}, {1, 4}, {1, 2}, {2, 3}
+
+// Example usage
+int main() {
+    int V = 5;
+    vector<vector<int>> adj = {
+        {2, 3}, {4}, {0, 4}, {0}, {1, 2}
     };
-    int nodes = 5;
-    unordered_map<int,vector<int>>graph;
-    for(int i=0; i<edgeList.size(); i++){
-        int a = edgeList[i][0];
-        int b = edgeList[i][1];
-        graph[a].push_back(b);
-        graph[b].push_back(a);
+
+    vector<int> result = bfsOfGraph(V, adj);
+
+    for (int x : result) {
+        cout << x << " ";
     }
 
-    bfs(0, graph, nodes);
-
+    return 0;
 }

@@ -1,61 +1,78 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>  // Includes all standard libraries
 using namespace std;
 
-struct Node {
+class Node {
+public:
     int data;
     Node* next;
-    Node(int val) {
-        data = val;
-        next = NULL;
+    Node(int val) { 
+        data = val; 
+        next = NULL; 
     }
 };
 
-Node* addTwoNumbers(Node* l1, Node* l2) {
+Node* rev(Node* num) {
+    stack<int> st;
+    Node* temp = num;
+
+    while (temp != NULL) {
+        st.push(temp->data);
+        temp = temp->next;
+    }
+    
+    temp = num;
+    while (temp != NULL) {
+        temp->data = st.top();
+        st.pop();
+        temp = temp->next;
+    }
+    return num;
+}
+
+Node* addTwoLists(Node* num1, Node* num2) {
+    num1 = rev(num1);  // Reverse list 1
+    num2 = rev(num2);  // Reverse list 2
+  
     Node* dummy = new Node(0);
     Node* temp = dummy;
     int carry = 0;
 
-    while (l1 != NULL || l2 != NULL || carry != 0) {
-        int val1 = 0, val2 = 0;
-        if (l1 != NULL) {
-            val1 = l1->data;
-            l1 = l1->next;
-        }
-        if (l2 != NULL) {
-            val2 = l2->data;
-            l2 = l2->next;
-        }
+    while (num1 != NULL || num2 != NULL || carry != 0) {
+        int val1 = (num1 != NULL) ? num1->data : 0;
+        int val2 = (num2 != NULL) ? num2->data : 0;
+        
         int sum = val1 + val2 + carry;
         carry = sum / 10;
-        Node* newNode = new Node(sum % 10);
-        temp->next = newNode;
+        
+        temp->next = new Node(sum % 10);
         temp = temp->next;
+        
+        if (num1) num1 = num1->next;
+        if (num2) num2 = num2->next;
     }
-    
-    return dummy->next;
+
+    return rev(dummy->next); // Reverse final sum list before returning
 }
-void printList(Node* node) {
-    while (node != NULL) {
-        cout << node->data << " -> ";
-        node = node->next;
+
+void printList(Node* head) {
+    while (head) {
+        cout << head->data << " ";
+        head = head->next;
     }
     cout << endl;
 }
 
-int main()
-{
-    Node* l1 = new Node(2);
-    l1->next = new Node(4);
-    l1->next->next = new Node(3);
+int main() {
 
-    Node* l2 = new Node(5);
-    l2->next = new Node(6);
-    l2->next->next = new Node(4);
+    Node *num2 = new Node(3);
+    num2->next = new Node(4);
+    num2->next->next = new Node(5);
 
-    Node* result = addTwoNumbers(l1, l2);
-    cout << "Resultant List: ";
-    printList(result);
-
+    Node *num1 = new Node(4);
+    num1->next = new Node(5);
     
+    Node* result = addTwoLists(num1, num2);
+    printList(result); // Expected Output: 4 3 5
+
     return 0;
 }

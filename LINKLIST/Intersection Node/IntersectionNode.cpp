@@ -8,26 +8,20 @@ struct Node{
         next = NULL;
     }
 };
-Node* getIntersectionNode(Node* headA, Node* headB) {
-    if(headA == NULL || headB == NULL){
-        return NULL;
+Node* getIntersectionNode(Node* head1, Node* head2) {
+    if(head1 == NULL or head2 == NULL) return NULL;
+        
+    Node *ptr1 = head1;
+    Node *ptr2 = head2;
+    
+    while(ptr1 != ptr2){
+        if(ptr1 == NULL) ptr1 = head2;
+        else ptr1 = ptr1->next;
+        
+        if(ptr2 == NULL) ptr2 = head1;
+        else ptr2 = ptr2->next;
     }
-    Node* a = headA;
-    Node* b = headB;
-    while(a != b){
-        if(a == NULL){
-            a = headB;
-        }else{
-            a = a->next;
-        }
-        if(b == NULL){
-            b = headA;
-        }else{
-            b = b->next;
-        }
-
-    }
-    return a;
+    return ptr1;
 }
 void printList(Node* node){
     while(node != NULL){

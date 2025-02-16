@@ -1,5 +1,4 @@
-#include <iostream>
-#include <algorithm> // For sort()
+#include <bits/stdc++.h>
 using namespace std;
 
 int findMajorityElement(int arr[], int n) {

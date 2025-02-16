@@ -3,8 +3,8 @@ using namespace std;
 //Kadane's Algo
 
 int maxSubarraySum(int arr[], int n) {
-    int maxSum = INT_MIN;   // Initialize maxSum with the smallest integer
-    int currentSum = 0; // Initialize currentSum to 0
+    int maxSum = INT_MIN;  
+    int currentSum = 0; 
 
     for (int i = 0; i < n; i++) {
         currentSum = currentSum + arr[i];

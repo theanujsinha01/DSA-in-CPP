@@ -7,7 +7,7 @@ int subarraySumEqualsK(vector<int>& nums, int k) {
         for(int i=0; i<n; i++){
             int subarr =0;
             for(int j=i; j<n; j++){
-                subarr  = subarr+nums[j];
+                subarr = subarr+nums[j];
                 if(subarr == k){
                     count++;
 

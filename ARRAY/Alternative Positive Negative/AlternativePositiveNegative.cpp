@@ -29,7 +29,7 @@ void rearrangeArray(vector<int>& nums) {
 
 // Example usage
 int main() {
-    vector<int> nums = {3, -1, 2, -2, 5, -3};
+    vector<int> nums = {3, 11, 2, -2, -5, -3};
     rearrangeArray(nums);
 
     // Print rearranged array

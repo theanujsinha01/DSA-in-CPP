@@ -1,9 +1,9 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 // Function to calculate GCD using recursion
 int gcd(int a, int b) {
-    int n = (a > b) ? b : a; 
+    int n = min(a, b);
     int gcd = 1; 
     for (int i = 1; i <= n; i++) {
         if (a % i == 0 && b % i == 0) {
@@ -12,7 +12,6 @@ int gcd(int a, int b) {
     }
     return gcd; 
 }
-
 
 int main() {
     int num1, num2;

@@ -10,16 +10,15 @@ void sortArray(int arr[], int n) {
         if (arr[mid] == 0) {
             // If the current element is 0, swap with low pointer
             swap(arr[low], arr[mid]);
-            low++; 
-            mid++; 
-        } else if (arr[mid] == 1) {
-            // If the current element is 1, just move the mid pointer
-            mid++;
-        } else {
+            low++;
+        } 
+        if (arr[mid] == 2) {
             // If the current element is 2, swap with high pointer
             swap(arr[mid], arr[high]);
             high--; 
-        }
+            
+        } 
+        mid++;
     }
 }
 

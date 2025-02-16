@@ -5,9 +5,10 @@ void rotateArray(int arr[], int n, int k) {
     k = k % n; 
     if (k == 0) return;
       
-    reverse(arr, arr + n); 
+    reverse(arr, arr + n);  
     reverse(arr, arr + k);  
-    reverse(arr + k, arr + n);         
+    reverse(arr + k, arr + n);  
+     
 }
 
 int main() {

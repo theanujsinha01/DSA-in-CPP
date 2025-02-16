@@ -3,12 +3,9 @@ using namespace std;
 
 int maxLenSubarrayWithZeroSum(const vector<int>& arr) {
     int maxLen = 0;
-
-    // Outer loop for the starting index of the subarray
     for (int i = 0; i < arr.size(); ++i) {
         int sum = 0; // Initialize sum for the current subarray
 
-        // Inner loop for the ending index of the subarray
         for (int j = i; j < arr.size(); ++j) {
             sum = sum + arr[j]; // Add the current element to the sum
 

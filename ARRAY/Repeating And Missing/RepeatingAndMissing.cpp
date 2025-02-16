@@ -8,12 +8,12 @@ void findRepeatingAndMissing(int arr[], int n) {
     for (int i = 0; i < n; i++) {
         freq[arr[i]]++;
     }
-
+    
     int missing = 0, repeating = 0;
-
+    
     // Check each number from 1 to n
     for (int i = 1; i <= n; i++) {
-        if (freq[i] == 0) {
+        if (freq.count(i) == 0) {
             missing = i;  // Missing number
         } else if (freq[i] > 1) {
             repeating = i;  // Repeating number

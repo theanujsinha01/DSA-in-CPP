@@ -18,8 +18,8 @@ int subarraySumEqualsK(vector<int>& nums, int k) {
 }
 
 int main() {
-    vector<int> nums = {1, 1, 1};
-    int K = 2;
+    vector<int> nums = {1, 2, 3,5,6};
+    int K = 6;
     cout << "Number of subarrays with sum " << K << " is: " << subarraySumEqualsK(nums, K) << endl;
     return 0;
 }

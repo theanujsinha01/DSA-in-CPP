@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 bool isPalindrome(int num) {
@@ -11,7 +11,7 @@ bool isPalindrome(int num) {
         reversedNum = reversedNum * 10 +  LastDigit;  
         num /= 10;                       
     }
-
+    
     // Check if the original number is the same as the reversed number
     return originalNum == reversedNum;
 }

@@ -1,16 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-int factorial(int n) {
-    int fact = 1;
-    for (int i = 1; i <= n; i++) {
-        fact = fact*i;
-    }
-    return fact;
-}
 
 // Function to calculate nCr
 int nCr(int n, int r) {
-    return factorial(n) / (factorial(r) * factorial(n - r));
+
+    int va1 = 1;
+    int va2 = 1;
+    for (int i = 1; i <= r; i++) {
+        va1 = va1*n;
+        va2 = va2*i;
+        n--;
+    }
+    return va1 / va2;
 }
 
 int main() {
@@ -20,7 +21,5 @@ int main() {
     cout << "Enter value of r: ";
     cin >> r;
     cout << "nCr = " << nCr(n, r) << endl;
-    cout << nCr(n, r) << endl;
-
     return 0;
 }

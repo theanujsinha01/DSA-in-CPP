@@ -5,19 +5,19 @@ int main() {
     int number;
     cout << "Enter a number: ";
     cin >> number; 
-    bool flage = true; // Prime number hai
 
-    for (int i = 2; i<=number; i++) {
+    if (number < 2) {
+        cout << number << " is not a prime number.\n";
+        return 0;
+    }
+   
+    for (int i = 2; i<=sqrt(number); i++) {
         if (number % i == 0) {
             cout << number << " is not a prime number.\n";
-            flage = false;
-            break;
+            return 0;
         }
-        if(flage == true) {
-            cout << number << " is a prime number.\n";
-            flage = true;
-            break;
-        }
+        
     }
+    cout << number << " is a prime number.\n";
     return 0; 
 }

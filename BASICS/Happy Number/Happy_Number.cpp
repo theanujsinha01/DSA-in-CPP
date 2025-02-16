@@ -15,7 +15,7 @@ int solve(int num) {
 // Function to check if a number is a Happy Number
 bool isHappy(int n) {
     map<int,int> mp;
-    while (n != 1 && mp.count(n) == 0) {
+    while (mp.count(n) == 0) {
         mp[n]++;
         n = solve(n); 
          

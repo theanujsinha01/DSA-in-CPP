@@ -2,12 +2,12 @@
 using namespace std;
 
 int sumOfDigits(int num) {
-    int sum = 0;
+    int ans = 0;
     while (num != 0) {
-        sum = sum + num % 10;  // Add the last digit to sum
+        ans = ans + num % 10;  // Add the last digit to sum
         num = num / 10;        // Remove the last digit
     }
-    return sum;
+    return ans;
 }
 
 int main() {

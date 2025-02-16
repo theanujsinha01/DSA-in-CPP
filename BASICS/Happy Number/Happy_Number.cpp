@@ -14,17 +14,17 @@ int solve(int num) {
 
 // Function to check if a number is a Happy Number
 bool isHappy(int n) {
-    set<int> st;
-    while (1) {
-        if (n == 1) {
-            return true; 
-        }
+    map<int,int> mp;
+    while (n != 1 && mp.count(n) == 0) {
+        mp[n]++;
         n = solve(n); 
-        if (st.count(n)) {
-            return false; // Detected a cycle
-        }
-        st.insert(n); // Track visited numbers
+         
     }
+    if (n == 1) return true;
+    else {
+        return false;
+    } 
+    
 }
 
 int main() {

@@ -4,12 +4,13 @@ using namespace std;
 bool hasUniqueCharacters(const string& str) {
    map<char, int> charMap;
     for (char ch : str) {
-        if (charMap.count(ch)) {
-            return false;
-        }
         charMap[ch]++;
     }
-
+    for (auto it :charMap) {
+        if(it.second > 1){
+            return false;
+        }
+    }
     return true; 
 }
 

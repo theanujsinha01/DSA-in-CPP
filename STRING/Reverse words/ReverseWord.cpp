@@ -2,20 +2,20 @@
 using namespace std;
 
 string reverseWords( string& str) {
-    string reversedStr = "";
+    
     string word;
     stringstream ss(str); // Create a string stream from the input string
-
+    vector<string>reversedStr;
     // Extract words from the string stream and push them onto the stack
     while (ss >> word) {
-         if(reversedStr.size()>0){
-            reversedStr = word +" "+ reversedStr;
-         }
-         else{
-            reversedStr = word;
-         }
+        reversedStr.push_back(word);
     }
-    return reversedStr; 
+    str.clear();
+    for(int i = reversedStr.size() - 1 ; i>=0; i--){
+        str = str + reversedStr[i] + " ";
+    }
+    str.pop_back();
+    return str; 
 }
 
 int main() {

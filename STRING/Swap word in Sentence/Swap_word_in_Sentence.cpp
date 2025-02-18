@@ -16,14 +16,15 @@ void swapWords(string &str, int index1, int index2) {
 
     str.clear();
     for ( auto w : words) {
-        str += w + " ";
+        str = str + w + " ";
     }
     str.pop_back();  // Remove last space
 }
 
 int main() {
-    string str = "Hello World from C++";
-    swapWords(str, 0, 3);
+    string str;
+    getline(cin,str);
+    swapWords(str, 2, 3);
     cout << "After swap: " << str << endl;
     return 0;
 }

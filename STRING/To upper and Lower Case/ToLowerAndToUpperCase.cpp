@@ -2,7 +2,7 @@
 using namespace std;
 
 string toUpperCase(string str) { 
-    for (auto & ch : str) {  // Use reference (&) to modify the original string
+    for (auto  & ch : str) {  // Use reference (&) to modify the original string
         ch = toupper(ch);
     }
     return str;

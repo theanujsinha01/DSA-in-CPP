@@ -23,8 +23,7 @@ struct Node
     Node(int val)
     {
         data = val;
-        left = NULL;
-        right = NULL;
+        left = right =  NULL;
     }
 };
 void recursion(Node *root, int level, vector<int> &ans)

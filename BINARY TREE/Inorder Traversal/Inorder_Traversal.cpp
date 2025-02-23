@@ -8,16 +8,17 @@ struct Node
     Node(int val)
     {
         data = val;
-        left = NULL;
-        right = NULL;
+        left = right = NULL;
     }
 };
 void inorder( Node *root)
 {
-    if (root == NULL) return;
-    inorder(root->left);
-    cout<<root->data<<" ";
-    inorder(root->right);
+    if (root != NULL){
+        inorder(root->left);
+        cout<<root->data<<" ";
+        inorder(root->right);
+    }
+ 
 }
 
 int main(){

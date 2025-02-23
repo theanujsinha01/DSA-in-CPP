@@ -43,15 +43,15 @@ vector<int> bottomView(Node *root)
         Node *temp = pr.first;
         int hd = pr.second;
         mp[hd] = temp->data;
-        if (temp->left != NULL)
-        {
-            q.push({temp->left, hd - 1});
-        }
         if (temp->right != NULL)
         {
             q.push({temp->right, hd + 1});
         }
-       
+        if (temp->left != NULL)
+        {
+            q.push({temp->left, hd - 1});
+        }
+      
     }
      // transfer values from map to ans vector
     for (auto it : mp)

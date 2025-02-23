@@ -27,20 +27,16 @@ struct Node
     }
     
 };
-Node* BST(vector<int>& arr, int left, int right) {
-    if (left >= right) return NULL; 
-    int mid = (left + right) / 2; 
+
+Node* SortedArrToBST(vector<int>& arr, int start, int end) {
+   
+    if (start > end) return NULL;
+    int mid = (start + end) / 2; 
+
     Node* root = new Node(arr[mid]); 
-
-    root->left = BST(arr, left, mid); 
-    root->right = BST(arr, mid + 1, right);
+    root->left = SortedArrToBST(arr, start, mid-1); 
+    root->right = SortedArrToBST(arr, mid + 1, end);
     return root;
-}
-
-Node* SortedArrToBST(vector<int>& arr) {
-    int left = 0;
-    int right = arr.size();
-    return BST(arr, left, right);
 }
 
 void InOrderTraversal(Node *root) {
@@ -52,7 +48,9 @@ void InOrderTraversal(Node *root) {
 
 int main() {
     vector<int> arr = {-10, -3, 0, 5, 9}; 
-    Node* result = SortedArrToBST(arr); 
+    int start = 0;
+    int end = arr.size() - 1;
+    Node* result = SortedArrToBST(arr, start, end); 
     InOrderTraversal(result); 
     cout << endl; 
     return 0;

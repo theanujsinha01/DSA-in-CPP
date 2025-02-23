@@ -27,16 +27,17 @@ struct Node
     }
     
 };
-void Insert(Node* &root, int key) {
+Node* Insert(Node* &root, int key) {
     if (root == NULL) {
         root = new Node(key);
-        return;
+        return root;
     }
     if (root->data < key) {
         Insert(root->right, key);
     } else {
         Insert(root->left, key);
     }
+    return root;
 }
 
 Node* BST_From_Preorder(vector<int>& preorder) {

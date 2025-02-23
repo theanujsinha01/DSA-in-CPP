@@ -8,17 +8,16 @@ struct Node
     Node(int val)
     {
         data = val;
-        left = NULL;
-        right = NULL;
+        left = right = NULL;
     }
 };
 void preorder(Node *root)
 {
-    if (root == NULL)
-        return;
-    cout << root->data << " ";
-    preorder(root->left);
-    preorder(root->right);
+    if (root != NULL){
+        cout<<root->data<<" ";
+        preorder(root->left);
+        preorder(root->right);
+    }
 }
 
 int main()

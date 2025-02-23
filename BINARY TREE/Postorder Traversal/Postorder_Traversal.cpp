@@ -8,18 +8,16 @@ struct Node
     Node(int val)
     {
         data = val;
-        left = NULL;
-        right = NULL;
+        left = right = NULL;
     }
 };
 void postorder(struct Node *root)
 {
-    if (root == NULL)
-        return;
-   
-    postorder(root->left);
-    postorder(root->right);
-    cout << root->data << " ";
+    if (root != NULL){
+        postorder(root->left);
+        postorder(root->right);
+        cout<<root->data<<" ";
+    }
 }
 
 int main()

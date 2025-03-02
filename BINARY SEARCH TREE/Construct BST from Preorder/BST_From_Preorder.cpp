@@ -43,7 +43,7 @@ Node* Insert(Node* root, int key) {
 Node* BST_From_Preorder(vector<int>& preorder) {
     Node* root = NULL;  // Initialize root to NULL
     for (int i = 0; i < preorder.size(); i++) {
-        Insert(root, preorder[i]);  // Insert the actual value, not the index
+       root = Insert(root, preorder[i]);  // Insert the actual value, not the index
     }
     return root;
 }

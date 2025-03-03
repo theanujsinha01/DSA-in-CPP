@@ -13,15 +13,15 @@ struct Node
     }
       
 };
-Node* Insert(Node* &root, int key) {
+Node* Insert(Node*root, int key) {
       if (root == NULL) {
-          root = new Node(key);
-          return root;
+          return new Node(key);
+         
       }
       if (root->data < key) {
-          Insert(root->right, key);
+         root->right = Insert(root->right, key);
       } else {
-          Insert(root->left, key);
+         root->left =  Insert(root->left, key);
       }
       return root;
 }
@@ -29,7 +29,7 @@ Node* Insert(Node* &root, int key) {
 Node* BST_From_Postorder(vector<int>& postorder) {
     Node* root = NULL;  // Initialize root to NULL
     for (int i = postorder.size() - 1; i>=0; i--) {
-        Insert(root, postorder[i]);  // Insert the actual value, not the index
+       root = Insert(root, postorder[i]);  // Insert the actual value, not the index
     }
     return root;
 }

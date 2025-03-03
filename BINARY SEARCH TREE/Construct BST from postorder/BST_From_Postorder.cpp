@@ -13,15 +13,15 @@ struct Node
     }
       
 };
-Node* Insert(Node*root, int key) {
+Node* Insert(Node* &root, int key) {
       if (root == NULL) {
-          return new Node(key);
-         
+          root = new Node(key);
+          return root;
       }
       if (root->data < key) {
-         root->right = Insert(root->right, key);
+          Insert(root->right, key);
       } else {
-         root->left =  Insert(root->left, key);
+          Insert(root->left, key);
       }
       return root;
 }

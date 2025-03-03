@@ -35,7 +35,11 @@ Node* Insert(Node* root, int key) {
     if (root->data < key) {
         root->right = Insert(root->right, key);
     } else {
+<<<<<<< HEAD
        root->left = Insert(root->left, key);
+=======
+        root->left = Insert(root->left, key);
+>>>>>>> d6b10bd888c8027636337669628e4d403d3ee342
     }
     return root;
 }
@@ -43,7 +47,11 @@ Node* Insert(Node* root, int key) {
 Node* BST_From_Preorder(vector<int>& preorder) {
     Node* root = NULL;  // Initialize root to NULL
     for (int i = 0; i < preorder.size(); i++) {
+<<<<<<< HEAD
         root = Insert(root, preorder[i]);  // Insert the actual value, not the index
+=======
+       root = Insert(root, preorder[i]);  // Insert the actual value, not the index
+>>>>>>> d6b10bd888c8027636337669628e4d403d3ee342
     }
     return root;
 }

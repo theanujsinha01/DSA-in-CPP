@@ -2,19 +2,24 @@
 using namespace std;
 
 string compressString(const string &str) {
-    string compressed;
-    int count = 1;
-    
-    for (int i = 1; i < str.length(); i++) {
-        if (str[i] == str[i - 1]) {
-            count++;
-        } else {
-            compressed += string(1, str[i - 1]) + to_string(count);  // Corrected here
-            count = 1;
+    for (auto ch : str) {  // Convert all characters to lowercase
+        ch = tolower(ch);
+    }
+
+    unordered_map<char, int> mp;  // Your logic: Count character frequencies
+    for (char ch : str) {
+        mp[ch]++;
+    }
+
+    string ans = "";
+    for (auto ch : str) {  // Maintain original order
+        if (mp[ch] > 0) {  // Avoid duplicates
+            ans += to_string(mp[ch]) + ch;
+            mp.erase(ch);  // Remove character from map
         }
     }
-    compressed += string(1, str.back()) + to_string(count);  // Corrected here
-    return compressed;
+
+    return ans;
 }
 
 int main() {

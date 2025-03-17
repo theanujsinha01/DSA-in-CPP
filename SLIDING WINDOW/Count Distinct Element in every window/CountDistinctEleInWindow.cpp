@@ -2,34 +2,24 @@
 using namespace std;
 
 vector<int> countDistinctInWindow(vector<int>& arr, int k) {
-    int start = 0;
-    int end = start + k - 1;  
+    int n = arr.size();
     vector<int> ans;
     unordered_map<int, int> freqMap;
+    int start = 0;
+    int end = start + k - 1;  
 
-    // Initialize the first window
-    for (int i = start; i <= end; i++) {
-        freqMap[arr[i]]++;
-    }
-    ans.push_back(freqMap.size());
+    while(end<n) {
+        freqMap.clear(); // Clear the map for each new window
 
-    // Process the remaining windows
-    while (end < arr.size() - 1) {  
-        // Remove the outgoing element
-        freqMap[arr[start]]--;
-        if (freqMap[arr[start]] == 0) {
-            freqMap.erase(arr[start]);
+        // Count distinct elements in the current window
+        for (int i = start; i<=end; i++) {
+            freqMap[arr[i]]++;
         }
-        
-        // Move the window forward
+
+        // Store the distinct count
+        ans.push_back(freqMap.size());
         start++;
         end++;
-
-        // Add the new incoming element
-        freqMap[arr[end]]++;
-
-        // Store the distinct count for the current window
-        ans.push_back(freqMap.size());
     }
     return ans;
 }

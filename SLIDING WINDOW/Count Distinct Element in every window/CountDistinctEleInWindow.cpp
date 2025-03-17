@@ -1,44 +1,46 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> countDistinctInWindow(int K, vector<int>& Arr, int N) {
-    unordered_map<int, int> freqMap; 
-    vector<int> result;
-    int idx = 0;
-    while (idx < K) {
-        freqMap[Arr[idx]]++;
-        idx++;
+vector<int> countDistinctInWindow(vector<int>& arr, int k) {
+    int start = 0;
+    int end = start + k - 1;  
+    vector<int> ans;
+    unordered_map<int, int> freqMap;
+
+    // Initialize the first window
+    for (int i = start; i <= end; i++) {
+        freqMap[arr[i]]++;
     }
-    result.push_back(freqMap.size()); // Add distinct count for the first window
+    ans.push_back(freqMap.size());
 
     // Process the remaining windows
-    for (int i = 1; i <= N - K; i++) {
-        // Remove the element going out of the window
-        freqMap[Arr[i - 1]]--;
-        if (freqMap[Arr[i - 1]] == 0) {
-            freqMap.erase(Arr[i - 1]);
+    while (end < arr.size() - 1) {  
+        // Remove the outgoing element
+        freqMap[arr[start]]--;
+        if (freqMap[arr[start]] == 0) {
+            freqMap.erase(arr[start]);
         }
+        
+        // Move the window forward
+        start++;
+        end++;
 
-        // Add the element coming into the window
-        freqMap[Arr[i + K - 1]]++;
+        // Add the new incoming element
+        freqMap[arr[end]]++;
 
-        // Add the distinct count for the current window
-        result.push_back(freqMap.size());
+        // Store the distinct count for the current window
+        ans.push_back(freqMap.size());
     }
-
-    return result;
+    return ans;
 }
 
 int main() {
-    vector<int> arr = {1,2,1,3,4,2,3};
-    int n = arr.size();
+    vector<int> arr = {1, 2, 1, 3, 4, 2, 3};
     int k = 4;
-    vector<int> ans = countDistinctInWindow(k, arr, n);
-
-    cout << "Distinct elements in every window of size " << k << " are: ";
-    for (int i : ans) {
-        cout << i << " ";
+    
+    vector<int> result = countDistinctInWindow(arr, k);
+    
+    for (int num : result) {
+        cout << num << " ";
     }
-
-    return 0;
 }

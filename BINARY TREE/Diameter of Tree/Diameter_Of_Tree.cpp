@@ -30,23 +30,22 @@ struct Node
 
 int Height(Node *root, int &diameter)
 {
-    if (root == NULL) return 0;
-
-    int lh = Height(root->left, diameter);
-    int rh = Height(root->right, diameter);
-
-    // Update the diameter with the maximum of the current and the sum of left and right heights
-    diameter = max(diameter, lh + rh);
-
-    // Return the height of the current node
-    return 1 + max(lh, rh);
+    if (root == NULL) return 0; // Base case
+        
+    int leftHeight = Height(root->left, diameter);
+    int rightHeight = Height(root->right, diameter);
+    
+    // Corrected formula: Diameter in terms of edges
+    diameter = max(diameter, leftHeight + rightHeight);
+    
+    return 1 + max(leftHeight, rightHeight);
 }
 
 int Diameter(Node *root)
 {
     int diameter = 0;
     Height(root, diameter);
-    return diameter+1;  // Returns the number of edges in the diameter
+    return diameter;
 }
 
 int main()

@@ -7,20 +7,15 @@ string addBinary(string a, string b) {
     int i = a.size() - 1, j = b.size() - 1; 
 
     while (i >= 0 || j >= 0 || carry != 0) {
+        int val1 = (i >= 0) ? a[i] - '0' : 0;
+        int val2 = (j >= 0) ? b[j] - '0' : 0;
         
-        int val1 = 0, val2 = 0;
-        if (i >= 0) {
-            val1 = val1 + a[i] - '0'; 
-            i--;
-        }
-
-        if (j >= 0) {
-            val2 = val2 + b[j] - '0';
-            j--;
-        }
         int sum = val1 + val2 + carry;
-        carry = sum / 10;
-        result = to_string(sum % 10) + result;
+        carry = sum / 2;  
+        result = to_string(sum % 2) + result;  // Binary digit
+        
+        i--;
+        j--;
     }
 
     return result;

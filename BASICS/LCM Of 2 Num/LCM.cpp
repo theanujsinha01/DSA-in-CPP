@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Function to calculate GCD (Greatest Common Divisor)
 int gcd(int a, int b) {
     int n = min(a,b);
     int gcd = 1; 

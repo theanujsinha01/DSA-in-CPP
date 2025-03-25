@@ -8,15 +8,15 @@ int main(){
     cin >> num;
     originalNum = num;
 
-    while (originalNum != 0) {
-        lastDigit = originalNum % 10;  
+    while (num != 0) {
+        lastDigit = num % 10;  // Extract the last digit  
         ans = ans+(lastDigit*lastDigit*lastDigit);  // Add cube of the digit to result
-        originalNum = originalNum / 10;                    
+        num = num / 10;  // Remove the last digit              
     }
-    if (ans == num)
-        cout << num << " is an Armstrong number." << endl;
+    if (ans == originalNum)
+        cout << originalNum<< " is an Armstrong number." << endl;
     else
-        cout << num << " is not an Armstrong number." << endl;
+        cout << originalNum << " is not an Armstrong number." << endl;
 
     return 0;
 }

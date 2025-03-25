@@ -1,23 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+bool isPrime(int n) {
+    if (n < 2) {
+        return false;
+    }
+    for (int i = 2; i<n; i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
 int main() {
     int number;
     cout << "Enter a number: ";
     cin >> number; 
 
-    if (number < 2) {
-        cout << number << " is not a prime number.\n";
-        return 0;
+    if (isPrime(number)) {
+        cout << number << " is a prime number." << endl;
+    } else {
+        cout << number << " is not a prime number." << endl;
     }
-   
-    for (int i = 2; i<=sqrt(number); i++) {
-        if (number % i == 0) {
-            cout << number << " is not a prime number.\n";
-            return 0;
-        }
-        
-    }
-    cout << number << " is a prime number.\n";
     return 0; 
 }

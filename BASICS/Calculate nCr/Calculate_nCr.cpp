@@ -8,8 +8,8 @@ int nCr(int n, int r) {
     int va2 = 1;
     for (int i = 1; i <= r; i++) {
         va1 = va1*n;
-        va2 = va2*i;
         n--;
+        va2 = va2*i;
     }
     return va1 / va2;
 }

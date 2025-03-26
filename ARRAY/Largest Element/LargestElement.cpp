@@ -18,3 +18,5 @@ int main() {
     cout << "Largest element: " << largestEle(arr) << endl;
     return 0;
 }
+// Time Complexity: O(n), where n is the size of the array.
+// Space Complexity: O(1).

@@ -1,37 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void sortArray(int arr[], int n) {
+vector<int> sortArray(vector<int>& arr) {
     int low = 0;   
     int mid = 0;    
-    int high = n - 1; 
+    int high = arr.size() - 1; 
 
     while (mid <= high) {
         if (arr[mid] == 0) {
-            // If the current element is 0, swap with low pointer
             swap(arr[low], arr[mid]);
             low++;
+            mid++;
         } 
-        if (arr[mid] == 2) {
-            // If the current element is 2, swap with high pointer
+        else if (arr[mid] == 2) {
             swap(arr[mid], arr[high]);
-            high--; 
-            
-        } 
-        mid++;
+            high--;
+        }
+        else { 
+             mid++;
+        }
     }
+    return arr;
 }
 
 int main() {
-    int arr[] = {0, 1, 2, 0, 1, 2, 1, 0};
-    int n = 8;
-
-    sortArray(arr, n);
-
+    vector<int> arr = {0, 1, 2, 0, 1, 2};
+    vector<int> ans = sortArray(arr);
+    
     cout << "Sorted array: ";
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
+    for (auto it : ans) {
+        cout << it << " ";
     }
-  
     return 0;
 }
+// Time Complexity: O(N)
+// Space Complexity: O(1)

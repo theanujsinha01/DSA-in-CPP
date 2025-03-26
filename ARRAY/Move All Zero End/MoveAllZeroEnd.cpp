@@ -1,8 +1,9 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-void MoveAllZeroEnd(int arr[], int n) {
-    int temp[n];  // Temporary array to store rearranged numbers
+ vector<int>MoveAllZeroEnd(vector<int>& arr) {
+    int n = arr.size();
+    vector<int> temp(n);
     int index = 0;
 
     for (int i = 0; i < n; i++) {
@@ -21,27 +22,17 @@ void MoveAllZeroEnd(int arr[], int n) {
     for (int i = 0; i < n; i++) {
         arr[i] = temp[i];
     }
+    return arr;
 }
-
-
-
 int main() {
-    int n;
-    cout << "Enter size of array: ";
-    cin >> n;
-
-    int arr[n];
-    cout << "Enter elements of array: ";
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
-
-    MoveAllZeroEnd( arr, n);
+   vector<int> arr = {0, 0, 8, 4, 0, 0, 2, 7, 0, 6, 0};
+   vector<int>ans =  MoveAllZeroEnd(arr);
 
     cout << "Array after rearranging: ";
-    for(auto it : arr){
+    for(auto it : ans){
         cout<<it<<" ";
     }
-
     return 0;
 }
+// Time Complexity: O(n), where n is the size of the array.
+// Space Complexity: O(n), where n is the size of the array.

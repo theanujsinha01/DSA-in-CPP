@@ -24,7 +24,6 @@ void nextPermutation(vector<int>& nums) {
     // Step 4: Reverse the elements after index i
     reverse(nums.begin() + i + 1, nums.end());
 }
-
 int main() {
     vector<int> nums = {1, 6, 3, 5};   
     nextPermutation(nums);
@@ -37,3 +36,5 @@ int main() {
 
     return 0;
 }
+// Time Complexity: O(n), where n is the size of the array.
+// Space Complexity: O(1).

@@ -1,37 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void rotateArray(int arr[], int n, int k) {
+vector<int> rotateArray(vector<int>&arr, int k) {
+    int n = arr.size();
     k = k % n; 
-    if (k == 0) return;
+    if (k == 0) return arr;
       
-    reverse(arr, arr + n);  
-    reverse(arr, arr + k);  
-    reverse(arr + k, arr + n);  
-     
+    reverse(arr.begin(), arr.end());
+    reverse(arr.begin(), arr.begin() + k);
+    reverse(arr.begin() + k, arr.end());
+    return arr;
 }
 
 int main() {
-    int n, k;
-
-    cout << "Enter the size of the array: ";
-    cin >> n;
-
-    int arr[n];
-    cout << "Enter elements of the array: ";
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
-
-    cout << "Enter the number of positions to rotate: ";
-    cin >> k;
-
-    rotateArray(arr, n, k);
+    vector<int> arr = {1, 2, 3, 4, 5, 6, 7};
+    vector<int> ans = rotateArray(arr, 3);
 
     cout << "Array after rotation: ";
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
+    for (auto it : ans) {
+        cout << it << " ";
     }
-
     return 0;
 }

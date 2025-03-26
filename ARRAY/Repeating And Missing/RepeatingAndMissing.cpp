@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void findRepeatingAndMissing(int arr[], int n) {
-     map<int, int> freq;  // Hashmap to store frequencies
+void findRepeatingAndMissing(vector<int>& arr) {
+    int n = arr.size();
+    map<int, int> freq;  
 
-    // Count frequencies of elements in the array
     for (int i = 0; i < n; i++) {
         freq[arr[i]]++;
     }
@@ -15,20 +15,19 @@ void findRepeatingAndMissing(int arr[], int n) {
     for (int i = 1; i <= n; i++) {
         if (freq.count(i) == 0) {
             missing = i;  // Missing number
-        } else if (freq[i] > 1) {
+        }
+        if (freq[i] > 1) {
             repeating = i;  // Repeating number
         }
     }
-
     cout << "Repeating element: " << repeating << endl;
     cout << "Missing element: " << missing << endl;
 }
 
 int main() {
-    int arr[] = {1, 2, 2, 4};  
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    findRepeatingAndMissing(arr, n);
-
+    vector<int>arr = {1, 2, 2, 4};  
+    findRepeatingAndMissing(arr);
     return 0;
 }
+// Time Complexity: O(n), where n is the size of the array.
+// Space Complexity: O(n), where n is the size of the array.

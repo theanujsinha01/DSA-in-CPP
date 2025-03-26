@@ -1,30 +1,20 @@
-// PROBLEM :
-// Find the Smallest Element in an Array
-
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int n;
-    cout << "Enter the number of elements: ";
-    cin >> n;
-    int arr[n];
-
-    cout << "Enter the elements of the array: ";
+int minEle(vector<int>& arr) {
+    int n = arr.size();
+    int smallest = arr[0];
     for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
-
-    int smallest = INT_MAX;
-
-    // Loop to find the smallest element
-    for (int i = 0; i < n; i++) { 
         if (arr[i] < smallest) {
             smallest = arr[i];
         }
     }
-
-    cout << "The smallest element is: " << smallest << endl;
-
+    return smallest;
+}
+int main() {
+    vector<int> arr = {9, 2, 3, 6};
+    cout << "Smallest element: " << minEle(arr) << endl;
     return 0;
 }
+// Time Complexity: O(n), where n is the size of the array.
+// Space Complexity: O(1).

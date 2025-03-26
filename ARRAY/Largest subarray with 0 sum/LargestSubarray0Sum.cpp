@@ -4,12 +4,10 @@ using namespace std;
 int maxLenSubarrayWithZeroSum(const vector<int>& arr) {
     int maxLen = 0;
     for (int i = 0; i < arr.size(); ++i) {
-        int sum = 0; // Initialize sum for the current subarray
+        int sum = 0;
 
         for (int j = i; j < arr.size(); ++j) {
-            sum = sum + arr[j]; // Add the current element to the sum
-
-            // If sum becomes 0, update the maximum length
+            sum = sum + arr[j]; 
             if (sum == 0) {
                 maxLen = max(maxLen, j - i + 1);
             }

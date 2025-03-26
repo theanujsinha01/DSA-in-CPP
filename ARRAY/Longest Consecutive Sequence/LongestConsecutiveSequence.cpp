@@ -1,10 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int findLongestConsecutiveSequence(int arr[], int n) {
+int findLongestConsecutiveSequence(vector<int>arr, int n) {
     
-
-    sort(arr, arr + n);
+    sort(arr.begin(), arr.end());
     int longestStreak = 1, currentStreak = 1;
     
     for (int i = 1; i < n; i++) {
@@ -17,12 +16,12 @@ int findLongestConsecutiveSequence(int arr[], int n) {
         longestStreak = max(longestStreak, currentStreak); 
     }
 
-    return max(longestStreak, currentStreak);  // In case the longest streak ends at the last element
+    return max(longestStreak, currentStreak);
 }
 
 int main() {
-    int arr[] = {11, 12, 2, 1, 3, 10};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    vector<int>arr = {11, 12, 2, 1, 3, 10};
+    int n = arr.size();
     cout << "Longest Consecutive Sequence Length: " << findLongestConsecutiveSequence(arr, n) << endl;
     return 0;
 }

@@ -2,7 +2,7 @@
 using namespace std;
 
 void findKthLargestAndSmallest(int arr[], int n, int k) {
-    // Sort the array
+  
     sort(arr, arr + n);
 
     int kthSmallest = arr[k - 1];

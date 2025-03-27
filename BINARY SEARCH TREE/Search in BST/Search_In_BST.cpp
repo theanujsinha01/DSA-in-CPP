@@ -1,63 +1,44 @@
-// Problem :----
-/* Given the root of a binary Search Tree
- return valu is present  or not in BST
-
-                        5       OUTPUT :------
-                     /    \       input = 3 , return true
-                    2      6 
-                  /  \
-                 1    3
-
-
-
-  */
-
 #include <bits/stdc++.h>
 using namespace std;
-struct Node
-{
+
+struct Node {
     int data;
-    Node *left;
-    Node *right;
-    Node(int val)
-    {
+    Node *left, *right;
+    Node(int val) {
         data = val;
-        left = NULL;
-        right = NULL;
+        left = right = NULL;
     }
 };
-bool SearchInBST(Node *root, int key)
-{
-    if (root == NULL)
-        return false;
-    if(root->data == key)
-       return true;
-    if(root->data < key){
-        return SearchInBST(root->right,key);
-    }
 
-    return SearchInBST(root->left,key);
-    
+// Inorder Traversal to store elements in an array
+void StoreInOrder(Node* root, vector<int>& arr) {
+    if (!root) return;
+    StoreInOrder(root->left, arr);
+    arr.push_back(root->data);
+    StoreInOrder(root->right, arr);
 }
 
+// Function to search key in the stored inorder array
+bool SearchInArray(Node* root, int key) {
+    vector<int> vec;  // Create a vector to store inorder traversal
+    StoreInOrder(root, vec);
+    return binary_search(vec.begin(), vec.end(), key);
+}
 
-int main()
-{
-   Node *root = new Node(5);
+int main() {
+    Node *root = new Node(5);
     root->left = new Node(2);
     root->right = new Node(6);
     root->left->left = new Node(1);
     root->left->right = new Node(3);
 
-    bool result = SearchInBST(root,3);
+    int key = 3;
+    if (SearchInArray(root, key))
+        cout << "Key Present in BST" << endl;
+    else
+        cout << "Key NOT Present in BST" << endl;
 
-    if(result){
-        cout<<" Key Present in BST"<<endl;
-    }
-    else{
-       cout<<" Key NOT Present in BST"<<endl; 
-    }
-
-
-    
+    return 0;
 }
+// Time Complexity: O(N)
+// Space Complexity: O(N)

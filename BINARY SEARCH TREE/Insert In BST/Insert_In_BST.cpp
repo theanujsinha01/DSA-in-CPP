@@ -1,17 +1,3 @@
-// Problem :----
-/* Given the root of a binary Search Tree
-  insert a key in BST
-
-                        5       OUTPUT :------
-                     /    \       key = 7
-                    2      6 
-                  /  \      \
-                 1    3      7
-
-
-
-  */
-
 #include <bits/stdc++.h>
 using namespace std;
 struct Node
@@ -49,9 +35,6 @@ void InOrderTraversal(Node *root) {
     cout << root->data << " ";
     InOrderTraversal(root->right);
 }
-
-
-
 int main() {
     Node *root = new Node(5);
     root->left = new Node(2);
@@ -63,3 +46,5 @@ int main() {
     InOrderTraversal(result);
     return 0;
 }
+// Time Complexity: O(N)
+// Space Complexity: O(N)

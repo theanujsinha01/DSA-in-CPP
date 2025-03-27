@@ -1,17 +1,3 @@
-// Problem :----
-/* Given the root of a binary Search Tree
- return max and min value of  BST
-
-                        5       OUTPUT :------
-                     /    \       max = 6, min = 1
-                    2      6 
-                  /  \
-                 1    3
-
-
-
-  */
-
 #include <bits/stdc++.h>
 using namespace std;
 struct Node

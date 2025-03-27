@@ -1,17 +1,3 @@
-// Problem :----
-/* Given the root of a binary Search Tree
-   return  BST from sorted arr
-
-                        0       OUTPUT :------
-                     /    \       arr = 
-                  -10      5     { -10,-3,0,5,9 }
-                     \      \
-                     -3      9
-
-
-
-  */
-
 #include <bits/stdc++.h>
 using namespace std;
 struct Node

@@ -77,3 +77,6 @@ int main() {
 
     return 0;
 }
+
+//time complexity: O(h) where h is the height of the tree
+//space complexity: O(h) where h is the height of the tree

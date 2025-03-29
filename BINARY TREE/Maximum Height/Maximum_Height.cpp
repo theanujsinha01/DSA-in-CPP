@@ -1,17 +1,3 @@
-// Problem :----
-/* Given the root of a binary Tree
- return Maximum Height of Tree
-
-
-                       1        OUTPUT :------
-                     /    \       {3}
-                    2      3
-                  /  \
-                 4    5
-
-
-
-  */
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -30,12 +16,9 @@ struct Node
 
 int Height(Node *root)
 {
-   
-    if (root == NULL) return 0;
-    
-    return 1+max(Height(root->left),Height(root->right));
 
-  
+    if (root == NULL) return 0;
+    return 1+max(Height(root->left),Height(root->right));  
 }
 
 int main()
@@ -50,3 +33,5 @@ int main()
     cout<<"Maximum Height of Tree : -- "<<result<<endl;
     
 }
+//time complexity : O(N) where N is the number of nodes in the tree
+// space complexity : O(N) for the recursion stack used in the algorithm

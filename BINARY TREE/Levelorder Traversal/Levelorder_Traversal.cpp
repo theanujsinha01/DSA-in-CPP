@@ -1,18 +1,3 @@
-// Problem :----
-/* Given the root of a binary Tree
- return an array containing the level order traversal
- of the tree
-
-                 ......1....      OUTPUT :------
-                     /    \       { [1], [2,3], [4,5]}
-                 ...2......3
-                  /  \
-              ...4....5....
-
-
-
-  */
-
 #include <bits/stdc++.h>
 using namespace std;
 struct Node
@@ -52,24 +37,21 @@ vector<vector<int>> levelOrder(Node *root)
               q.push(currNode -> right);
           }
       }
-      
       return ans;
-
 }
-
 int main()
 {
     Node *root = new Node(1);
     root->left = new Node(2);
     root->right = new Node(3);
  
-    
     vector<vector<int>>result = levelOrder(root);
-    
-    for (const auto& row : result) { 
-        for (const auto& element : row) { 
+    for (auto row : result) { 
+        for (auto element : row) { 
             cout << element << " ";
         }
         cout << endl; 
     }
 }
+// time complexity : O(N) where N is the number of nodes in the tree
+// space complexity : O(N) for the queue used in the algorithm

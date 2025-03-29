@@ -55,10 +55,12 @@ int main()
 
     vector<int>result = rightSideView(root);
 
-    for (const auto& ele : result)
+    for (auto ele : result)
     {
        cout<<ele<<" ";
         
     }
     
 }
+// time complexity : O(N) where N is the number of nodes in the tree
+// space complexity : O(N) for the recursion stack used in the algorithm

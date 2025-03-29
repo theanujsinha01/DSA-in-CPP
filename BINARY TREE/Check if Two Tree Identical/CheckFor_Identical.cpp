@@ -67,3 +67,5 @@ int main()
    bool result = isSameTree(root1,root2); 
    cout<<"Tree is Identical ? : "<<result<<endl;
 }
+//     // Time Complexity : O(N) where N is the number of nodes in the tree
+//     // Space Complexity : O(N) for the queue and map used in the algorithm

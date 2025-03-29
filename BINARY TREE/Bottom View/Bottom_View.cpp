@@ -1,22 +1,7 @@
-// Problem :----
-/* Given the root of a binary Tree
- return an array containing the bottom view  traversal
- of the tree
-
-                       1        OUTPUT :------
-                     /    \       { 4,2,5,3}
-                    2      3
-                  /  \
-                 4    5
-
-
-
-  */
-
-  #include <bits/stdc++.h>
-  using namespace std;
+#include <bits/stdc++.h>
+using namespace std;
   
-  struct Node {
+struct Node {
       int data;
       Node *left, *right;
       Node(int val) {
@@ -24,9 +9,9 @@
           left = NULL;
           right = NULL;
       }
-  };
+};
   
-  vector<int> bottomView(Node *root) {
+vector<int> bottomView(Node *root) {
       vector<int> ans;
       if (root == NULL) return ans;
   
@@ -55,9 +40,8 @@
           ans.push_back(it.second);
       }
       return ans;
-  }
-  
-  int main() {
+}
+int main() {
       Node *root = new Node(1);
       root->left = new Node(2);
       root->right = new Node(3);
@@ -70,5 +54,7 @@
           cout << ele << " ";
       }
       return 0;
-  }
+}
+    // Time Complexity : O(N) where N is the number of nodes in the tree
+    // Space Complexity : O(N) for the queue and map used in the algorithm
   

@@ -31,22 +31,23 @@ struct Node
 int Height(Node *root)
 {
    
-    if (root == NULL) return 0;
-        
+    if (root == NULL) return 0;   
     return max(Height(root->left),Height(root->right));
 
   
 }
 bool isBalanced(Node*root){
     if(root == NULL) return true;
-    if(abs(Height(root->left)-Height(root->right))>1)
-    return false;
+    if(abs(Height(root->left)-Height(root->right))>1){
+        return false;
+    }
 
-    if(isBalanced(root->left)&& isBalanced(root->right))
-    return true;
-
-
-    return false;
+    if(isBalanced(root->left)&& isBalanced(root->right)){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 int main()
@@ -61,3 +62,5 @@ int main()
     cout<<" Tree is Balanced ? : "<<result<<endl;
     
 }
+//     // Time Complexity : O(N) where N is the number of nodes in the tree
+//     // Space Complexity : O(N) for the queue and map used in the algorithm

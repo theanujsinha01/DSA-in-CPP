@@ -1,12 +1,12 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int countTotalBits(int number) {
-    // If the number is 0, it requires 1 bit
+   
     if (number == 0) return 1;
 
     int count = 0;
-    while (number) {
+    while (number > 0) {
         number =  number >> 1; // Right shift the number
         count++;      // Increment the count
     }
@@ -15,10 +15,8 @@ int countTotalBits(int number) {
 
 int main() {
     int number = 15; // Example number
-
     int bitCount = countTotalBits(number);
     
     cout << "Total number of bits required to represent " << number << " is: " << bitCount << endl;
-
     return 0;
 }

@@ -1,9 +1,12 @@
-#include <iostream>
+#include <bits/stdc++.h> 
 using namespace std;
 
-// Function to check if a number is a power of two
 bool isPowerOfTwo(int n) {
-    return (n > 0) && ((n & (n - 1)) == 0);
+    if((n & (n - 1)) == 0){
+        return true; // n is a power of two
+    } else {
+        return false; // n is not a power of two
+    }
 }
 
 int main() {
@@ -20,3 +23,5 @@ int main() {
 
     return 0;
 }
+//time complexity: O(1)
+//space complexity: O(1)

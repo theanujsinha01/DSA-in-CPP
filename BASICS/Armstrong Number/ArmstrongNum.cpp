@@ -20,3 +20,20 @@ int main(){
 
     return 0;
 }
+//time complexity: O(d), where d is the number of digits in the number.
+// Space complexity: O(1), as we are using a constant amount of space for variables.
+
+// Algorithm: Check if a Number is an Armstrong Number
+// Start
+
+// Input an integer num, store it in originalNum, initialize ans = 0.
+
+// While num ≠ 0:
+
+// Extract last digit lastDigit = num % 10, add its cube to ans.
+
+// ans = ans + (lastDigit * lastDigit * lastDigit), update num = num / 10.
+
+// If ans == originalNum, print "Armstrong number", else print "Not an Armstrong number".
+
+// End.

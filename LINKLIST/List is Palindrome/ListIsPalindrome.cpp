@@ -60,3 +60,17 @@ int main() {
 
     return 0;
 }
+// // Time complexity: O(n), where n is the number of nodes in the linked list.
+// // Space complexity: O(n), for the stack used to store the elements of the linked list.
+
+// Input head of the linked list.
+
+// Store node values in a stack while traversing the list.
+
+// Reset traversal and compare each node’s value with the top of the stack.
+
+// If any value doesn’t match, return false.
+
+// If all values match, return true.
+
+// End.

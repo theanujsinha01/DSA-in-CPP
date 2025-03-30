@@ -66,3 +66,12 @@ int main() {
 
     return 0; 
 }
+// // Time complexity: O(n), where n is the number of nodes in the linked list.
+// // Space complexity: O(1), as we are using a constant amount of space for counting.
+
+// 1. Count occurrences of 0s, 1s, and 2s in the linked list.  
+// 2. Traverse the list again and update nodes with 0s first.  
+// 3. Then update nodes with 1s.  
+// 4. Finally, update nodes with 2s.  
+// 5. Maintain original node structure, modifying only values.  
+// 6. Return the sorted linked list.

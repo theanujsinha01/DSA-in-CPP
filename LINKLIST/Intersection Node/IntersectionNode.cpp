@@ -48,3 +48,21 @@ int main(){
     }
     return 0;   
 }
+// // Time complexity: O(m + n), where m and n are the lengths of the two linked lists.
+// // Space complexity: O(1), as we are using a constant amount of space for pointers.
+
+// Input two linked lists, head1 and head2. If either is NULL, return NULL.
+
+// Initialize ptr1 = head1 and ptr2 = head2.
+
+// While ptr1 ≠ ptr2:
+
+// Move ptr1 to ptr1->next (or head2 if ptr1 == NULL).
+
+// Move ptr2 to ptr2->next (or head1 if ptr2 == NULL).
+
+// Return ptr1 (intersection node) or NULL if no intersection exists.
+
+// Print the linked lists and their intersection node (if found).
+
+// End.

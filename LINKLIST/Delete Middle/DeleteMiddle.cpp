@@ -41,3 +41,20 @@ int main(){
     printList(head);
     return 0;   
 }
+// // Time complexity: O(n), where n is the number of nodes in the linked list.
+// // Space complexity: O(1), as we are using a constant amount of space for pointers.
+
+// Algorithm: Delete Middle Node of a Linked List (8 Lines)
+// Input head of the linked list. If head is NULL or has only one node, return.
+
+// Initialize slow = head, fast = head, and prev = NULL.
+
+// While fast and fast->next are not NULL:
+
+// Move prev = slow, slow = slow->next, fast = fast->next->next.
+
+// Set prev->next = slow->next, delete slow (middle node).
+
+// Print the linked list.
+
+// End.

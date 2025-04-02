@@ -47,17 +47,11 @@ int main() {
     list1->next->next->next = new Node(2);
     list1->next->next->next->next = new Node(1);
 
-    cout << "Original List: ";
-    printList(list1);
-
-
-    // Check if the vector is a palindrome
     if (isPalindrome(list1)) {
         cout << "The linked list is a palindrome." << endl;
     } else {
         cout << "The linked list is not a palindrome." << endl;
     }
-
     return 0;
 }
 // // Time complexity: O(n), where n is the number of nodes in the linked list.

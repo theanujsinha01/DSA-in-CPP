@@ -11,26 +11,15 @@ struct Node {
 };
 
 void deleteAtEnd(Node*& head) {
-    // If the list is empty
-    if (head == NULL) {
-        cout << "The list is empty, nothing to delete." << endl;
-        return;
-    }
 
-    // If there is only one node in the list
-    if (head->next == NULL) {
+    if (head == NULL) return; // If list is empty
+    if (head->next == NULL) { 
         delete head;
-        head = NULL;
         return;
-    }
-
-    // Traverse to the second last node
+    } // If only one node
+    
     Node* temp = head;
-    while (temp->next->next != NULL) {
-        temp = temp->next;
-    }
-
-    // Delete the last node
+    while (temp->next->next) temp = temp->next;
     delete temp->next;
     temp->next = NULL;
 }
@@ -49,14 +38,9 @@ int main() {
     head->next = new Node(20);
     head->next->next = new Node(30);
     head->next->next->next = new Node(40);
-    
 
-    cout << "Original Linked List: ";
     printList(head);
-
     deleteAtEnd(head);
-    cout << "After deleting at end: ";
     printList(head);
-
     return 0;
 }

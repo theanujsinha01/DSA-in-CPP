@@ -11,20 +11,10 @@ struct Node {
 };
 
 void insertAtBeginning(Node*& head, int newData) {
-  
-    Node* addNode = new Node(newData);
-    if (head == NULL) {
-        head = addNode;
-        return;
-    }
-    if (head->next == NULL) {
-        addNode->next = head;
-        head = addNode;
-        return;
-    }
-    
-    addNode->next = head;
-    head = addNode;
+
+    Node* newNode = new Node(newData);
+    newNode->next = head;
+    head = newNode;
 }
 
 // Function to print the Linked List
@@ -43,8 +33,6 @@ int main() {
     insertAtBeginning(head, 20);
     insertAtBeginning(head, 30);
 
-    cout << "Linked List: ";
     printList(head);
-
     return 0;
 }

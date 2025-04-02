@@ -14,12 +14,10 @@ int findLength(Node* head) {
     int length = 0;
     Node* temp = head;
 
-    // Traverse the list and count nodes
     while (temp != NULL) {
         length++;
         temp = temp->next;
     }
-
     return length;
 }
 
@@ -41,9 +39,7 @@ int main() {
     cout << "Linked List: ";
     printList(head);
 
-    // Find the length of the linked list
     int length = findLength(head);
     cout << "Length of the linked list: " << length << endl;
-
     return 0;
 }

@@ -19,21 +19,18 @@ void insertAtPosition(Node*& head, int newData, int position) {
         addNode->next = head;
         head = addNode;
         return;
-    }
+    } .
 
-    // Traverse to the node just before the given position
     Node* temp = head;
     for (int i = 1; i < position - 1; i++) {
         temp = temp->next;
     }
 
-    // If the position is out of bounds
     if (temp == NULL) {
         cout << "Position out of bounds" << endl;
         return;
     }
 
-    // Insert the new node at the given position
     addNode->next = temp->next;
     temp->next = addNode;
 }
@@ -51,12 +48,8 @@ int main() {
 
     insertAtPosition(head, 10, 1);
     insertAtPosition(head, 20, 2);
-    insertAtPosition(head, 30, 3);
+    insertAtPosition(head, 30, 3)
 
-
-
-    cout << "Linked List: ";
     printList(head);
-
     return 0;
 }

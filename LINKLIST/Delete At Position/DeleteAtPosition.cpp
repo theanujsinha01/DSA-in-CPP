@@ -12,20 +12,15 @@ struct Node {
 
 void deleteAtPosition(Node*& head, int position) {
     // If the list is empty
-    if (head == NULL) {
-        cout << "The list is empty, nothing to delete." << endl;
-        return;
-    }
-
-    // If the position is the head (position 1)
+    if (head == NULL) return;
+   
     if (position == 1) {
         Node* temp = head;
-        head = head->next; // Move head to the next node
+        head = head->next; 
         delete temp;
         return;
     }
 
-    // Traverse to the node just before the given position
     Node* temp = head;
     for (int i = 1; i < position - 1;  i++) {
         temp = temp->next;
@@ -36,12 +31,8 @@ void deleteAtPosition(Node*& head, int position) {
         cout << "Position out of bounds" << endl;
         return;
     }
-
-    // Node temp->next is the node to be deleted
     Node* nodeToDelete = temp->next;
-    temp->next = temp->next->next; // Skip the node to be deleted
-
-    // Free the memory of the node to be deleted
+    temp->next = temp->next->next; 
     delete nodeToDelete;
 }
 
@@ -60,12 +51,8 @@ int main() {
     head->next->next = new Node(30);
     head->next->next->next = new Node(40);
 
-    cout << "Original Linked List: ";
     printList(head);
-
-    deleteAtPosition(head, 2);
-    cout << "After deleting at position 3: ";
+    deleteAtPosition(head, 4);
     printList(head);
-
     return 0;
 }

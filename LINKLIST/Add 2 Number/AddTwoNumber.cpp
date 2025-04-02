@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>  // Includes all standard libraries
 using namespace std;
 
-class Node {
-public:
+struct Node {
     int data;
     Node* next;
     Node(int val) { 
@@ -38,17 +37,22 @@ Node* addTwoLists(Node* num1, Node* num2) {
     int carry = 0;
 
     while (num1 != NULL || num2 != NULL || carry != 0) {
-        int val1 = (num1 != NULL) ? num1->data : 0;
-        int val2 = (num2 != NULL) ? num2->data : 0;
-        
+      
+        int val1 = 0, val2 = 0; 
+        if(num1){
+            val1 = num1->data;
+            num1 = num1->next;
+        } 
+        if(num2){
+            val2 = num2->data;
+            num2 = num2->next;
+        }    
         int sum = val1 + val2 + carry;
         carry = sum / 10;
         
         temp->next = new Node(sum % 10);
         temp = temp->next;
-        
-        if (num1) num1 = num1->next;
-        if (num2) num2 = num2->next;
+
     }
 
     return rev(dummy->next); // Reverse final sum list before returning
@@ -73,6 +77,7 @@ int main() {
     
     Node* result = addTwoLists(num1, num2);
     printList(result); // Expected Output: 4 3 5
-
     return 0;
 }
+// Time Complexity: O(max(m, n)), where m and n are the lengths of the two linked lists. The algorithm traverses both lists once to reverse them and then again to add the numbers, leading to a linear time complexity relative to the length of the longer list.
+// Space Complexity: O(max(m, n)), where m and n are the lengths of the two linked lists. The algorithm uses a stack to store the digits of the first list, which requires space proportional to the length of that list. Additionally, a new linked list is created to store the result, which also requires space proportional to the length of the longer input list.

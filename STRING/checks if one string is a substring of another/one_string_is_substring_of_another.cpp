@@ -14,3 +14,6 @@ int main() {
         cout << "Substring not found" << endl;
     return 0;
 }
+
+// Time Complexity: O(n), where n is the length of str1. The find function may need to check each character in str1 once.
+// Space Complexity: O(1), as we are not using any additional space that grows with the input size.

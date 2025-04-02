@@ -17,3 +17,5 @@ int main() {
     else cout << "No non-repeated character found" << endl;
     return 0;
 }
+// Time Complexity: O(n), where n is the length of the string. Each character is processed twice: once for counting and once for finding the first non-repeated character.
+// Space Complexity: O(n), where n is the number of unique characters in the string. The unordered_map stores the frequency of each character.

@@ -1,40 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-    char firstUniqChar(string s) {
-        unordered_map<char, int> charCount;
-
-        // Count the frequency of each character
-        for (char ch : s) {
-            charCount[ch]++;
-        }
-
-        // Find the first character with a count of 1
-        for (int i = 0; i < s.size(); i++) {
-            if (charCount[s[i]] == 1) {
-                return s[i]; // Return the index of the first non-repeating character
-            }
-        }
-
-        return '\0'; 
-    }
-
+char firstUniqChar(string s) {
+    unordered_map<char, int> freq;
+    for (char ch : s) freq[ch]++;
+    for (char ch : s) if (freq[ch] == 1) return ch;
+    return '\0';
+}
 
 int main() {
-
     string str;
-
     cout << "Enter a string: ";
-    getline(cin, str); // Use getline to allow spaces in input
-
+    getline(cin, str);
     char result = firstUniqChar(str);
-
-    if (result != '\0') {
-        cout << "The index of the first non-repeating character is: " << result << endl;
-    } else {
-        cout << "There are no non-repeating characters." << endl;
-    }
-
+    cout << (result ? "First non-repeating character: " + string(1, result) : "No unique character") << endl;
     return 0;
 }
+// Time Complexity: O(n), where n is the length of the string. Each character is processed twice: once for counting and once for finding the first unique character.
+// Space Complexity: O(n), where n is the number of unique characters in the string. The unordered_map stores the frequency of each character.

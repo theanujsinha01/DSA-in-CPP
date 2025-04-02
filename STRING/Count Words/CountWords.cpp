@@ -4,13 +4,12 @@ using namespace std;
 int countWords( string& str) {
     stringstream ss(str); // Create a stringstream object
     string word;
-    int count = 0;
+    vector<string> words; 
 
-    while (ss >> word) { // Extract words from the string
-        count++;
+    while (ss >> word) {
+        words.push_back(word);
     }
-
-    return count;
+    return words.size(); 
 }
 
 int main() {
@@ -20,6 +19,7 @@ int main() {
 
     int wordCount = countWords(str);
     cout << "Total words: " << wordCount << endl;
-
     return 0;
 }
+// // Time Complexity: O(n), where n is the number of characters in the string. Each character is processed once.
+// // Space Complexity: O(m), where m is the number of words in the string. The space used to store the words in the vector.

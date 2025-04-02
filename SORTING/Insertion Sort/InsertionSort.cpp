@@ -1,37 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void insertionSort(int arr[], int n) {
+vector<int> insertionSort(vector<int>& arr) {
 
-    for (int i = 1; i < n; i++) { // Start from the second element
-        int key = arr[i]; // Element to be inserted
+    int n = arr.size();
+    for (int i = 1; i < n; i++) {
+       
+        int key = arr[i]; 
         int j = i - 1;
  
         while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j]; // Shift element to the right
+            arr[j + 1] = arr[j];
             j--;
         }
-        arr[j + 1] = key; // Place key at the correct position
+        arr[j + 1] = key; 
     }
+    return arr; 
 }
 
 int main() {
-    int arr[] = {5, 4, 3, 2, 1}; 
-    int n = 5;
+   vector<int> arr = {12, 11, 13, 5, 6};
+   vector<int> sortedArr = insertionSort(arr);
 
-    cout << "Unsorted array: ";
-    for (auto it : arr) {
+    for (auto it : sortedArr) {
         cout << it << " ";
     }
-    cout << endl;
-
-    insertionSort(arr, n);
-
-    cout << "Sorted array: ";
-    for (auto it : arr) {
-        cout << it << " ";
-    }
-    cout << endl;
-
     return 0;
 }
+// // Time Complexity: O(n^2), where n is the number of elements in the array. The algorithm uses two nested loops to compare and insert elements.
+// // Space Complexity: O(1), as it sorts the array in place and does not use any additional data structures that grow with input size.

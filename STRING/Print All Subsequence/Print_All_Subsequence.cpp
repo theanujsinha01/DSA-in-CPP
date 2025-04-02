@@ -1,23 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void printSubsequences(string &str, string &result, int index) {
-    
-    if (index == str.size()) {
-        cout << result << endl;
-        return;
-    }
-
-    result.push_back(str[index]);
-    printSubsequences(str, result, index + 1);
-
-    result.pop_back();
-    printSubsequences(str, result, index + 1);
+void subseq(string &s, string res, int i) {
+    if (i == s.size()) { cout << res << endl; return; }
+    subseq(s, res + s[i], i + 1);
+    subseq(s, res, i + 1);
 }
 
 int main() {
-    string str = "abc";  
-    string result = "";  
-    printSubsequences(str, result, 0); 
-    return 0;
+    string s = "abc";
+    subseq(s, "", 0);
 }
+// // time complexity: O(2^n)
+// // space complexity: O(n)

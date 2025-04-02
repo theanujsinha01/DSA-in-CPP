@@ -19,4 +19,6 @@ int main() {
     printPermutations(str);
     return 0;
 }
+// time complexity: O(n! * n) where n is the length of the string
+// space complexity: O(n) for the recursion stack
 

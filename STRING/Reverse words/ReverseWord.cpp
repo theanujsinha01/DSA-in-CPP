@@ -4,9 +4,9 @@ using namespace std;
 string reverseWords( string& str) {
     
     string word;
-    stringstream ss(str); // Create a string stream from the input string
+    stringstream ss(str); 
     vector<string>reversedStr;
-    // Extract words from the string stream and push them onto the stack
+    
     while (ss >> word) {
         reversedStr.push_back(word);
     }
@@ -28,3 +28,5 @@ int main() {
 
     return 0;
 }
+// time complexity: O(n)
+// space complexity: O(n)

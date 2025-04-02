@@ -17,8 +17,6 @@ char mostFrequentChar(const string& str) {
             mostFrequent = ch; 
         }
     }
- 
-
     return mostFrequent; 
 }
 
@@ -29,6 +27,7 @@ int main() {
 
     char result = mostFrequentChar(str);
     cout << "The most frequent character is: " << result << endl;
-
     return 0;
 }
+// time complexity: O(n) where n is the length of the string
+// space complexity: O(n) for the unordered_map

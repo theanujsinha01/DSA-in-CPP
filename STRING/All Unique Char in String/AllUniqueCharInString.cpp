@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool hasUniqueCharacters(const string& str) {
+bool hasUniqueCharacters( string& str) {
    map<char, int> charMap;
     for (char ch : str) {
         charMap[ch]++;

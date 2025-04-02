@@ -2,38 +2,22 @@
 using namespace std;
 
 string itoa(int num) {
-    
     if (num == 0) return "0";
-
-    bool isNegative = false; // To track if the number is negative
-    if (num < 0) {
-        isNegative = true; 
-        num = -num; 
-    }
-
-    string result; // To store the result string
-
-    while (num > 0) {
-        char digit = (num % 10) + '0'; 
-        result = digit + result; 
+    string res = (num < 0 ? "-" : "");
+    num = abs(num);
+    while (num) {
+        res += (num % 10) + '0';
         num /= 10;
     }
-
-    // If the number was negative, prepend the minus sign
-    if (isNegative) {
-        result = '-' + result;
-    }
-
-    return result; 
+    if (res[0] == '-') reverse(res.begin() + 1, res.end());
+    else reverse(res.begin(), res.end());
+    return res;
 }
 
 int main() {
-    int number;
-    cout << "Enter an integer: ";
-    cin >> number; 
-
-    string str = itoa(number); 
-    cout << "String representation: " << str << endl; 
-
-    return 0;
+    int n;
+    cin >> n;
+    cout << itoa(n) << endl;
 }
+// Time Complexity: O(log n), where n is the number of digits in the integer. Each digit is processed once.
+// Space Complexity: O(1), if we consider the space used by the output string to be constant. However, if we consider the space used by the input integer, it would be O(log n) for the output string.

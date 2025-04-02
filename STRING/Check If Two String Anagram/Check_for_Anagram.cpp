@@ -14,3 +14,5 @@ int main() {
     cout << (areAnagrams(str1, str2) ? "Anagrams" : "Not Anagrams") << endl;
     return 0;
 }
+// Time Complexity: O(n log n), where n is the length of the strings. Sorting takes O(n log n) time.
+// Space Complexity: O(1), if we consider the space used by the sorting algorithm to be constant. However, if we consider the space used by the input strings, it would be O(n).

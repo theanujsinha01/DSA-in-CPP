@@ -2,39 +2,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void isPalindrome (string str) {
+bool isPalindrome (string str) {
   
-     
-    int left = 0, right = str.size() - 1;
-  
-      bool flag = true;
-      
-    while (left < right) {
-
-        // If any character not match, break the
-        // loop, string is not palindrome
-        if (str[left] != str[right]) {
-            flag = false;
-            break;
-        }
-        left++;
-        right--;
+  int left = 0, right = str.size() - 1;
+  bool flag = true; 
+  while (left < right) {
+    if (str[left] != str[right]) {
+        return false; // Not a palindrome
     }
-      
-    if (flag)
-        cout << "\"" << str
-          << "\" is palindrome." << endl;
-          
-    else
-        cout << "\"" << str
-          << "\" is NOT palindrome." << endl;
+      left++;
+      right--;
+  }
+  return true; // Is a palindrome
 }
   
-
 int main() {
-  
-      // Checking if given strings are palindrome
-    isPalindrome("ABCDCBA");
-    isPalindrome("ABCD");            
+    string str;
+    cout << "Enter a string: ";
+    cin >> str;
+    if (isPalindrome(str)) {
+        cout << "The string is a palindrome." << endl;
+    } else {
+        cout << "The string is not a palindrome." << endl;
+    }           
     return 0;
 }

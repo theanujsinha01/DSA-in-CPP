@@ -11,20 +11,20 @@ struct Node {
 };
 
 void removeDuplicates(Node* head) {
-    Node* current = head; // Start with the head of the list
-
-    while (current != NULL && current->next != NULL) {
-       
-        if (current->data == current->next->data) {
-            Node* temp = current->next; // Store the next node(duplicate)
-            current->next = current->next->next; // Skip the next node(duplicate)
-            delete temp;
-        } else {
-            current = current->next; 
-        }
+    
+    set<int> seen; // To store unique values
+    Node* temp = head;
+    while (temp != NULL) {
+        seen.insert(temp->data); 
+        temp = temp->next; 
     }
+    temp = head;
+    for(auto it : seen) {
+        temp->data = it; // Assign unique values back to the list
+        temp = temp->next;
+    }
+    if (temp != NULL) temp->next = NULL;
 }
-
 
 void printList(Node* node) {
     while (node != NULL) {
@@ -41,13 +41,8 @@ int main() {
     head->next->next = new Node(20);
     head->next->next->next = new Node(40);
 
-    cout << "Linked List before removing duplicates: ";
     printList(head);
-
     removeDuplicates(head);
-
-    cout << "Linked List after removing duplicates: ";
     printList(head); 
-
     return 0; 
 }

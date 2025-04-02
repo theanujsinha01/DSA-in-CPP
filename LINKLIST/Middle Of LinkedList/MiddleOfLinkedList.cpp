@@ -16,13 +16,11 @@ Node* findMiddle(Node* head) {
     Node* slow = head; 
     Node* fast = head; 
 
-    // Traverse the list
     while (fast != NULL && fast->next != NULL) {
         slow = slow->next;         // Move slow pointer one step
         fast = fast->next->next;  // Move fast pointer two steps
     }
-
-    return slow; // Slow pointer is now at the middle
+    return slow; 
 }
 
 void printList(Node* node) {

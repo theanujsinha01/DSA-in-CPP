@@ -1,37 +1,33 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
+vector<vector<int>> transpose(vector<vector<int>>& mat) {
+    int n = mat.size();
+    for (int i = 0; i < n; i++) {
+        for (int j = i; j < n; j++) {
+            swap(mat[i][j], mat[j][i]);
+        }
+    }
+    return mat;
+}
+
 int main() {
-    int rows, cols;
 
-    cout << "Enter the number of rows and columns of the matrix: ";
-    cin >> rows >> cols;
-
-    int matrix[rows][cols];
-
-
-    cout << "Enter the elements of the matrix:\n";
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            cin >> matrix[i][j];
-        }
-    }
-
-    // Find the transpose
-    for (int i = 0; i < rows; i++) {
-        for (int j = i; j < cols; j++) {
-           swap(matrix[i][j], matrix[j][i]);
-        }
-    }
-
-    // Output the transpose
-    cout << "Transpose of the matrix:\n";
-    for (int i = 0; i < cols; i++) {
-        for (int j = 0; j < rows; j++) {
-            cout << matrix[i][j] << " ";
+    vector<vector<int>> mat = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+    vector<vector<int>> ans = transpose(mat);
+    cout << "Matrix after transposing:\n";
+    for (int i = 0; i < ans.size(); i++) {
+        for (int j = 0; j < ans[0].size(); j++) {
+            cout << mat[i][j] << " ";
         }
         cout << endl;
     }
-
     return 0;
 }
+// time complexity: O(n^2)
+// space complexity: O(1)
+

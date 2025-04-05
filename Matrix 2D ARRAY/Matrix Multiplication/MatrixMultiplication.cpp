@@ -1,67 +1,37 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-void multiplyMatrices(int Mat1[10][10], int Mat2[10][10], int resultMat[10][10], int r1, int c1, int r2, int c2) {
+vector<vector<int>> multiply(vector<vector<int>>& A, vector<vector<int>>& B, int r1, int c1, int c2) {
 
-    // Initializing result matrix to 0
-    for (int i = 0; i < r1; i++) {
-        for (int j = 0; j < c2; j++) {
-            resultMat[i][j] = 0;
-        }
-    }
+    vector<vector<int>> C(r1, vector<int>(c2, 0));
+    for (int i = 0; i < r1; i++)
+        for (int j = 0; j < c2; j++)
+            for (int k = 0; k < c1; k++)
+                C[i][j] += A[i][k] * B[k][j];
 
-    // Matrix multiplication logic
-    for (int i = 0; i < r1; i++) {
-        for (int j = 0; j < c2; j++) {
-            for (int k = 0; k < c1; k++) {
-                resultMat[i][j] =  resultMat[i][j] + Mat1[i][k] * Mat2[k][j];
-            }
-        }
-    }
+    return C;
 }
 
 int main() {
     int r1, c1, r2, c2;
-    int Mat1[10][10], Mat2[10][10], resultMat[10][10];
+    cin >> r1 >> c1 >> r2 >> c2;
 
-    // Input dimensions of the matrices
-    cout << "Enter rows and columns for the first matrix: ";
-    cin >> r1 >> c1;
-    cout << "Enter rows and columns for the second matrix: ";
-    cin >> r2 >> c2;
-
-    // Check if multiplication is possible
     if (c1 != r2) {
-        cout << "Matrix multiplication not possible!" << endl;
+        cout << "Can't multiply!\n";
         return 0;
     }
 
-    // Input first matrix
-    cout << "Enter elements of the first matrix:\n";
-    for (int i = 0; i < r1; i++) {
-        for (int j = 0; j < c1; j++) {
-            cin >> Mat1[i][j];
-        }
+    vector<vector<int>> A(r1, vector<int>(c1));
+    vector<vector<int>> B(r2, vector<int>(c2));
+
+    vector<vector<int>> ans = multiply(A, B, r1, c1, c2);
+
+    for (auto row : ans) {
+        for (int val : row)
+            cout << val << " ";
+        cout << "\n";
     }
-
-    // Input second matrix
-    cout << "Enter elements of the second matrix:\n";
-    for (int i = 0; i < r2; i++) {
-        for (int j = 0; j < c2; j++) {
-            cin >>Mat2[i][j];
-        }
-    }
-
-    multiplyMatrices(Mat1, Mat2, resultMat, r1, c1, r2, c2);
-
-    // Output the result matrix
-    cout << "Resultant matrix after multiplication:\n";
-    for (int i = 0; i < r1; i++) {
-        for (int j = 0; j < c2; j++) {
-            cout << resultMat[i][j] << " ";
-        }
-        cout << endl;
-    }
-
     return 0;
 }
+// time complexity: O(n^3)
+// space complexity: O(n^2)

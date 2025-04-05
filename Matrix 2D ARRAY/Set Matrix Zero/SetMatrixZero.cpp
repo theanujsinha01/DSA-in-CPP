@@ -1,55 +1,41 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-void setMatrixZeroes(int matrix[3][3], int rows, int cols) {
-    // Step 1: Find zeroes and mark them
-    bool rowZero[3] = {false}; // To mark rows
-    bool colZero[3] = {false}; // To mark columns
+vector<vector<int>> setZero(vector<vector<int>> &m) {
+    int r = m.size(), c = m[0].size();
+    vector<bool> row(r, false), col(c, false);
 
-    // Check the matrix for zeroes
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            if (matrix[i][j] == 0) {
-                rowZero[i] = true;  // Mark the row
-                colZero[j] = true;  // Mark the column
+    for (int i = 0; i < r; i++){
+        for (int j = 0; j < c; j++)
+            if (m[i][j] == 0) {
+                row[i] = true;
+                col[j] = true;
             }
-        }
     }
 
-    // Step 2: Set marked rows and columns to zero
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            if (rowZero[i] || colZero[j]) {
-                matrix[i][j] = 0;  // Set to zero
-            }
-        }
+    for (int i = 0; i < r; i++){
+        for (int j = 0; j < c; j++)
+            if (row[i] or col[j])
+                m[i][j] = 0;
     }
-}
-
-void printMatrix(int matrix[3][3], int rows, int cols) {
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
-            cout << matrix[i][j] << " ";
-        }
-        cout << endl;
-    }
+    return m;
 }
 
 int main() {
-   
-    int matrix[3][3] = {
+    vector<vector<int>> m = {
         {1, 1, 1},
         {1, 0, 1},
         {1, 1, 1}
     };
-
-    cout << "Original Matrix:" << endl;
-    printMatrix(matrix, 3, 3);
-
-    setMatrixZeroes(matrix, 3, 3);  
-
-    cout << "Matrix after setting zeroes:" << endl;
-    printMatrix(matrix, 3, 3);
-
+    vector<vector<int>> ans = setZero(m);
+    cout << "Matrix after setting zeros:\n";
+    for (int i = 0; i < ans.size(); i++) {
+        for (int j = 0; j < ans[0].size(); j++) {
+            cout << m[i][j] << " ";
+        }
+        cout << endl;
+    }
     return 0;
 }
+// // time complexity: O(n*m)
+// // space complexity: O(n+m)

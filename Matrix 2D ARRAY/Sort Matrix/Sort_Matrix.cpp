@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void sortMatrix(vector<vector<int>>& mat) {
+vector<vector<int>> sortMatrix(vector<vector<int>>& mat) {
     vector<int> temp;
     int rows = mat.size();
     int cols = mat[0].size();
     
-    // Flatten the matrix into a single array
+    // convert the matrix into a single array
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             temp.push_back(mat[i][j]);
@@ -23,6 +23,7 @@ void sortMatrix(vector<vector<int>>& mat) {
             mat[i][j] = temp[k++];
         }
     }
+    return mat; 
 }
 
 int main() {
@@ -32,15 +33,16 @@ int main() {
         {2, 4, 6}
     };
 
-    sortMatrix(mat);
+    vector<vector<int>> ans = sortMatrix(mat);
     
     cout << "Sorted Matrix:\n";
-    for (int i = 0; i < mat.size(); i++) {
-        for (int j = 0; j < mat[0].size(); j++) {
-            cout << mat[i][j] << " ";
+    for (int i = 0; i < ans.size(); i++) {
+        for (int j = 0; j < ans[0].size(); j++) {
+            cout << ans[i][j] << " ";
         }
         cout << endl;
     }
-    
     return 0;
 }
+// time complexity: O(n*m*log(n*m))
+// space complexity: O(n*m)

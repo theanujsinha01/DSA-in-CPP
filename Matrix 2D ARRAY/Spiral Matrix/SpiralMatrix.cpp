@@ -3,37 +3,35 @@ using namespace std;
 
 vector<int> spiralOrder(vector<vector<int>>& mat) {
     vector<int> ans;
-    int left = 0, right = mat[0].size();
-    int top = 0, bottom = mat.size();
-    int count = 0, total_elements = mat.size() * mat[0].size();
+    int left = 0, right = mat[0].size() - 1;
+    int top = 0, bottom = mat.size() - 1;
+    int count = 0, total = mat.size() * mat[0].size();
 
-    while (count < total_elements) {
-        
-        for (int i = left; i < right && count < total_elements; i++) {
+    while (count < total) {
+        for (int i = left; i <= right && count < total; i++) {
             ans.push_back(mat[top][i]);
             count++;
         }
-        top++;  
+        top++;
 
-        for (int i = top; i < bottom && count < total_elements; i++) {
-            ans.push_back(mat[i][right - 1]);
+        for (int i = top; i <= bottom && count < total; i++) {
+            ans.push_back(mat[i][right]);
             count++;
         }
-        right--;  
+        right--;
 
-        for (int i = right - 1; i >= left && count < total_elements; i--) {
-            ans.push_back(mat[bottom - 1][i]);
+        for (int i = right; i >= left && count < total; i--) {
+            ans.push_back(mat[bottom][i]);
             count++;
         }
-        bottom--;  
+        bottom--;
 
-        for (int i = bottom - 1; i >= top && count < total_elements; i--) {
+        for (int i = bottom; i >= top && count < total; i--) {
             ans.push_back(mat[i][left]);
             count++;
         }
-        left++; 
+        left++;
     }
-
     return ans;
 }
 
@@ -48,7 +46,7 @@ int main() {
     for (int i = 0; i < result.size(); i++) {
         cout << result[i] << " ";
     }
-
     return 0;
 }
-
+// // time complexity: O(n*m)
+// // space complexity: O(1)

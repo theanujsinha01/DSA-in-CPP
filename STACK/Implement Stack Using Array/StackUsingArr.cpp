@@ -54,3 +54,5 @@ int main() {
 
     return 0;
 }
+// time complexity: O(1) for push and pop operations
+// space complexity: O(n) for the stack array

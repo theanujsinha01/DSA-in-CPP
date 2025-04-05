@@ -4,35 +4,36 @@ using namespace std;
 bool isParenthesisBalanced(string& s) {
     stack<char> st;
     for (char ch : s) {
-        // Push opening brackets onto the stack
+       
         if (ch == '(' || ch == '{' || ch == '[') {
             st.push(ch);
         } 
         // Check for closing brackets
         else if (ch == ')' || ch == '}' || ch == ']') {
-            if (st.empty()) return false; // Unbalanced if stack is empty
             char top = st.top();
             if ((ch == ')' && top == '(') ||
                 (ch == '}' && top == '{') ||
                 (ch == ']' && top == '[')) {
                 st.pop(); // Pop matched opening bracket
-            } else {
-                return false; // Mismatched bracket
-            }
+            } 
         }
     }
-    return st.empty(); // Balanced if stack is empty
+    if (st.empty()) {
+        return true; // All brackets matched
+    } else {
+        return false; // Unmatched opening brackets remain
+    }
 }
 
 int main() {
-    string s;
-    cout << "Enter a string of parentheses: ";
-    cin >> s;
 
+    string s = "{[({{}}]}"; // Example input
     if (isParenthesisBalanced(s)) {
-        cout << "The parentheses are balanced." << endl;
+        cout << "Balanced Parentheses\n";
     } else {
-        cout << "The parentheses are not balanced." << endl;
+        cout << "Unbalanced Parentheses\n";
     }
     return 0;
 }
+// // time complexity: O(n)
+// // space complexity: O(n)

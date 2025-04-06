@@ -1,45 +1,35 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Function to perform binary search
-int binarySearch(int arr[], int size, int target) {
+int binarySearch(vector<int>& arr, int target) {
     int left = 0;
-    int right = size - 1;
+    int right = arr.size() - 1; 
 
     while (left <= right) {
-        int mid = left + (right - left) / 2; // Calculate mid-point
+        int mid = (left + right) / 2; 
 
         if (arr[mid] == target) {
-            return mid; // Return the index if the target is found
+            return mid; 
         } else if (arr[mid] < target) {
-            left = mid + 1; // Search in the right half
+            left = mid + 1; 
         } else {
-            right = mid - 1; // Search in the left half
+            right = mid - 1;
         }
     }
-    return -1; // Return -1 if the target is not found
+    return -1; 
 }
 
 int main() {
-    int arr[] = {5, 2, 9, 1, 5, 6};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    
-    // Sort the array before performing binary search
-    sort(arr, arr + size);
-
-    int target;
-    cout << "Enter the number you want to search: ";
-    cin >> target;
-
-    // Call the binary search function
-    int result = binarySearch(arr, size, target);
-
-    // Output the result
+    vector<int>arr = {5, 2, 9, 1, 5, 6};
+    int target = 5;
+    sort(arr.begin(), arr.end());
+    int result = binarySearch(arr, target);
     if (result != -1) {
         cout << "Element found at index: " << result << endl;
     } else {
-        cout << "Element not found in the array." << endl;
+        cout << "Element not found" << endl;
     }
-
     return 0;
 }
+// time complexity: O(log n) where n is the size of the array
+// space complexity: O(1) as we are using only a few variables for calculations

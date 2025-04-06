@@ -38,7 +38,6 @@ int main() {
     
     vector<int> arr = {10,6,11,9,7};
     vector<int> ans = mergeSort(arr, 0, arr.size() - 1);
- 
     for (auto it : ans) cout << it << " ";
     return 0;
 }

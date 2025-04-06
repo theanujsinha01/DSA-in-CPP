@@ -25,6 +25,7 @@ int main() {
     for (auto it : result) {
         cout << it << " ";
     }
-
     return 0;
 }
+// time complexity: O(n) for the entire array
+// space complexity: O(n) for the stack

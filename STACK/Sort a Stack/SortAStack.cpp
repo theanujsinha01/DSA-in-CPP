@@ -1,35 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void sortedInsert(stack<int>& s, int topElement) {
-    // If stack is empty or the top element is smaller than or equal to the current element
-    if (s.empty() || s.top() <= topElement) {
-        s.push(topElement);
-    } else {
-        // Remove the top element and recursively insert the element
-        int top = s.top();
-        s.pop();
-        sortedInsert(s, topElement);
-
-        // Push the top element back after the insertion
-        s.push(top);
-    }
-}
-
 void sortStack(stack<int>& s) {
-    if (s.size()>0) {
-        // Remove the top element
-        int topElement = s.top();
+
+    vector<int> temp;
+    while (s.size() > 0) {
+        temp.push_back(s.top());
         s.pop();
-
-        // Recursively sort the remaining stack
-        sortStack(s);
-
-        // Insert the top element back in the sorted stack
-        sortedInsert(s, topElement);
+    }
+    sort(temp.begin(), temp.end(), greater<int>()); // Sort in descending order
+    for (int i = temp.size() - 1; i >= 0; i--) {
+        s.push(temp[i]);
     }
 }
-
 
 void printStack(stack<int> s) {
     while (s.size()>0) {
@@ -41,19 +24,17 @@ void printStack(stack<int> s) {
 
 int main() {
     stack<int> s;
-
     s.push(4);
-    s.push(3);
     s.push(2);
     s.push(1);
+    s.push(3);
 
     cout << "Original Stack: ";
     printStack(s);
-
     sortStack(s);
-
     cout << "Sorted Stack: ";
     printStack(s);
-
     return 0;
 }
+// Time Complexity: O(n log n) - Sorting the vector takes O(n log n) time
+// Space Complexity: O(n) - Using a vector to store the elements of the stack

@@ -25,6 +25,7 @@ int main() {
     for (auto it : result) {
         cout << it << " ";
     }
-
     return 0;
 }
+// Time Complexity: O(n) - Each element is pushed and popped from the stack at most once
+// Space Complexity: O(n) - Stack and result array

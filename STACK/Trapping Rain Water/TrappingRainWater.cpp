@@ -3,8 +3,7 @@ using namespace std;
 
 int trap(vector<int>& height) {
     int n = height.size();
-    if (n == 0) return 0;  // Handle empty input
-
+    
     vector<int> mxLeft(n);   // Vector to store max heights on the left
     vector<int> mxRight(n);  // Vector to store max heights on the right
 
@@ -22,15 +21,14 @@ int trap(vector<int>& height) {
 
     vector<int> water(n); // Initialize the water vector
     for (int i = 0; i < n; i++) {
-        water[i] = min(mxLeft[i], mxRight[i]) - height[i]; // Corrected the min calculation
+        water[i] = min(mxLeft[i], mxRight[i]) - height[i];
     }
 
-    int Sum = 0; // Variable to store the total trapped water
+    int Sum = 0; 
     for (int i = 0; i < n; i++) {
         Sum += water[i]; 
     }
-
-    return Sum; // Return the total trapped water
+    return Sum; 
 }
 
 int main() {
@@ -39,3 +37,5 @@ int main() {
     cout << "Trapped Rain Water: " << result << " units" << endl;
     return 0;
 }
+// Time Complexity: O(n) - We traverse the height array three times
+// Space Complexity: O(n) - We use two additional arrays of size n to store the max heights

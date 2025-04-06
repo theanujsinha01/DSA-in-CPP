@@ -1,36 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
-void findDuplicates(int arr[], int n) {
-    set<int> uniqueElements;
-    set<int> duplicates;
 
-    for (int i = 0; i < n; i++) {
-        if (uniqueElements.count(arr[i])) {
-            // Element already exists, it's a duplicate
-            duplicates.insert(arr[i]);
-        } 
-            // Add element to the set
-            uniqueElements.insert(arr[i]);
-        
-    }
-
-    // Print duplicates
-    if (duplicates.empty()) {
-        cout << "No duplicates found." << endl;
-    } else {
-        cout << "Duplicates: ";
-        for (int val : duplicates) {
-            cout << val << " ";
+set<int> findDuplicates(vector<int>& arr) {
+    set<int> seen, duplicates;
+    for (auto it : arr) {
+        if (seen.count(it)) {
+            duplicates.insert(it);  // Already seen → it's a duplicate
+        } else {
+            seen.insert(it);       // First time seeing this number
         }
-        cout << endl;
     }
+    return duplicates;
 }
 
 int main() {
-    int arr[] = {1, 2, 3, 4, 2};
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    findDuplicates(arr, n);
-
+    vector<int> arr = {1, 2, 3, 4, 5, 1, 2, 3};
+    set<int> ans = findDuplicates(arr);
+    cout << "Duplicate elements: ";
+    for (int x : ans) {
+        cout << x << " ";
+    }
     return 0;
 }
+// time complexity: O(n), space complexity: O(n)
+// This code finds duplicate elements in an array using a set.

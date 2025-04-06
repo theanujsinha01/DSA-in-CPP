@@ -24,6 +24,7 @@ int main() {
 
     int result = maximumSumSubarray(k, arr);
     cout << "Maximum sum of all subarrays of size " << k << " is: " << result << endl;
-
     return 0;
 }
+// time complexity: O(n*k) where n is the size of the array and k is the size of the window
+// space complexity: O(1) as we are using only a few variables for calculations

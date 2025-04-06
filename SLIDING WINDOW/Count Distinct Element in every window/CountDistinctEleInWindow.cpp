@@ -29,8 +29,9 @@ int main() {
     int k = 4;
     
     vector<int> result = countDistinctInWindow(arr, k);
-    
     for (int num : result) {
         cout << num << " ";
     }
 }
+// time complexity: O(n*k) where n is the size of the array and k is the size of the window
+// space complexity: O(n) for the frequency map

@@ -31,3 +31,5 @@ int main() {
         cout << num << " ";
     }
 }
+// time complexity: O(n) where n is the size of the array
+// space complexity: O(1) as we are using only a few variables for calculations

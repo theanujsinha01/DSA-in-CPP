@@ -24,11 +24,11 @@ int main() {
     int k = 3;
 
     vector<int> result = maxOfSubarrays(arr, k);
-
     cout << "Maximum of each subarray of size " << k << " is: ";
     for (auto it : result) {
         cout << it << " ";
     }
-
     return 0;
 }
+// time complexity: O(n*k) where n is the size of the array and k is the size of the window
+// space complexity: O(n) for the result array

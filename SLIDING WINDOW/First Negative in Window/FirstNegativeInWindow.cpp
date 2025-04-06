@@ -16,7 +16,6 @@ vector<int> FirstNegativeInteger(vector<int>& arr, int k) {
             }
         }
         if (!found) ans.push_back(0); 
-        
         start++;
         end++;
     }
@@ -32,6 +31,7 @@ int main() {
     for (int num : result) {
         cout << num << " ";
     }
-    
     return 0;
 }
+// time complexity: O(n*k) where n is the size of the array and k is the size of the window
+// space complexity: O(n) for the result array

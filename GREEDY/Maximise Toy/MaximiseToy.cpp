@@ -1,30 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int toyCount(int N, int K, vector<int>& arr) {
+int toyCount(int K, vector<int>& arr) {
+    
     sort(arr.begin(), arr.end());
     int sum = 0;
 
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < arr.size(); i++) {
         sum += arr[i];
         if (sum > K) return i;
     }
-    return N;
+    return arr.size();
 }
 
 int main() {
-    int N, K;
-    cout << "Enter the number of toys (N) and maximum money (K): ";
-    cin >> N >> K;
+   
+    int k = 10; // Budget
+    vector<int> arr = {1, 2, 3, 4, 5}; // Prices of toys
 
-    vector<int> arr(N);
-    cout << "Enter the prices of the toys: ";
-    for (int i = 0; i < N; i++) {
-        cin >> arr[i];
-    }
-
-    int result = toyCount(N, K, arr);
+    int result = toyCount(k, arr);
     cout << "Maximum toys that can be bought: " << result << endl;
-
     return 0;
 }
+// time complexity: O(nlogn) for sorting + O(n) for the loop = O(nlogn)
+// space complexity: O(1) for the sum variable and O(n) for the sorting

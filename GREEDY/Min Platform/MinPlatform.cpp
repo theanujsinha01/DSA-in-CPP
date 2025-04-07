@@ -31,7 +31,8 @@ int main() {
     vector<int>dep = {1100, 1130, 1300, 1230};
 
     int ans = findPlatform(arr, dep);
-   
     cout << "Min Platform required  : "<<ans;
  
 }
+// time complexity: O(nlogn) for sorting + O(n) for the loop = O(nlogn)
+// space complexity: O(1) for the platform variable and O(n) for the sorting

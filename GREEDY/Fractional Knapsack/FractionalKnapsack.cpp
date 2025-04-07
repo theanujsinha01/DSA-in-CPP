@@ -1,56 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-double fractionalKnapsack(int W, int values[], int weights[], int n) {
-    vector<pair<double, int>> unitValue; // Stores value/weight and index
+double fractionalKnapsack(int W, vector<int> &val, vector<int> &wt) {
+    vector<pair<double, int>> ratio;
 
-    // Calculate value/weight for each item and store in the vector
-    for (int i = 0; i < n; i++) {
-        unitValue.push_back({(double)values[i] / weights[i], i});
+    for (int i = 0; i < val.size(); i++) {
+        double r = (double)val[i] / wt[i];
+        ratio.push_back({r, i});
     }
 
-    // Sort items based on value per weight in descending order
-    sort(unitValue.rbegin(), unitValue.rend());
+    sort(ratio.rbegin(), ratio.rend()); // sort by ratio high to low
+    double total = 0;
 
-    double ans = 0;
+    for (int i = 0; i < ratio.size(); i++) {
+        int idx = ratio[i].second;
+        double r = ratio[i].first;
 
-    for (int i = 0; i < n; i++) {
-        int idx = unitValue[i].second; // Get the index of the current item
-
-        if (weights[idx] <= W) {
-            // Take the entire item if it fits
-            ans += values[idx];
-            W -= weights[idx];
+        if (wt[idx] <= W) {
+            total += val[idx];
+            W -= wt[idx];
         } else {
-            // Take the fractional part of the item
-            ans += unitValue[i].first * W;
+            total += r * W;
             break;
         }
     }
-
-    return ans;
+    return total;
 }
 
 int main() {
-    int n, W;
-
-    cout << "Enter number of items: ";
-    cin >> n;
-
-    int values[n], weights[n];
-
-    // Input values and weights
-    for (int i = 0; i < n; i++) {
-        cout << "Enter value and weight for item " << i + 1 << ": ";
-        cin >> values[i] >> weights[i];
-    }
-
-    cout << "Enter knapsack capacity: ";
-    cin >> W;
-
-    double maxValue = fractionalKnapsack(W, values, weights, n);
-
-    cout << "Maximum value in Knapsack = " << maxValue << endl;
-
+     
+    vector<int> val = {60, 100, 120};
+    vector<int> wt = {10, 20, 30};
+    int W = 50; // Capacity of knapsack
+    
+    double maxValue = fractionalKnapsack(W, val, wt);
+    cout << "Max value: " << maxValue << endl;
     return 0;
 }

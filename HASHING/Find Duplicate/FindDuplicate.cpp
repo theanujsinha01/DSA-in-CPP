@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> findDuplicates(const vector<int>& arr) {
+vector<int> findDuplicates(vector<int>& arr) {
     unordered_map<int, int> mp; 
     vector<int> duplicates;   
 
@@ -22,7 +22,6 @@ vector<int> findDuplicates(const vector<int>& arr) {
 
 int main() {
     vector<int> arr = {1, 2, 3, 4, 5, 2, 3, 6, 7, 8, 4};
-
     vector<int> duplicates = findDuplicates(arr);
 
     cout << "Duplicate elements are: ";
@@ -30,6 +29,5 @@ int main() {
         cout << num << " ";
     }
     cout << endl;
-
     return 0;
 }

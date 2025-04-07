@@ -20,3 +20,5 @@ int main() {
 
     return 0;
 }
+// time complexity: O(log n) because we are dividing the number by 10 in each recursive call
+// space complexity: O(log n) because of the recursion stack

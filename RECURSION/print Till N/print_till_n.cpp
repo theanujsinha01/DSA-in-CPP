@@ -17,4 +17,6 @@ int main() {
     cout << endl;   // To end the line after printing the sequence
     return 0;
 }
+// time complexity: O(n) because we are making n recursive calls
+// space complexity: O(n) because of the recursion stack
 

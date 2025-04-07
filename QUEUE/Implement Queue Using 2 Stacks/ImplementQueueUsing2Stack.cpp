@@ -67,6 +67,5 @@ int main() {
     q.dequeue();
 
     cout << "Front element is: " << q.front() << endl;
-
     return 0;
 }

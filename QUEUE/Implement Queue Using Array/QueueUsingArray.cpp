@@ -1,40 +1,29 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-#define SIZE 5 // Size of the queue
+vector<int> queue; // dynamic queue
 
-int queue[SIZE];
-int front = -1, rear = -1;
-
-// Function to add an element to the queue
 void enqueue(int value) {
-    if (rear == SIZE - 1) {
-        cout << "Queue is full!\n";
-    } else {
-        if (front == -1) front = 0; // Set front to 0 if inserting the first element
-        rear++;
-        queue[rear] = value;
-        cout << value << " added to the queue.\n";
-    }
+    queue.push_back(value);
+    cout << value << " added to the queue.\n";
 }
 
-// Function to remove an element from the queue
 void dequeue() {
-    if (front == -1 || front > rear) {
+    if (queue.size()==0) {
         cout << "Queue is empty!\n";
     } else {
-        cout << queue[front] << " removed from the queue.\n";
-        front++;
+        cout << queue.front() << " removed from the queue.\n";
+        queue.erase(queue.begin()); // remove first element
     }
 }
 
-// Function to display the queue
 void display() {
-    if (front == -1 || front > rear) {
+    if (queue.size()==0) {
         cout << "Queue is empty!\n";
     } else {
         cout << "Queue elements: ";
-        for (int i = front; i <= rear; i++) {
+        for (int i = 0; i < queue.size(); i++) {
             cout << queue[i] << " ";
         }
         cout << endl;
@@ -53,3 +42,8 @@ int main() {
 
     return 0;
 }
+
+// Time complexity:
+// enqueue → O(1)
+// dequeue → O(n) (because of erase from front)
+// Space complexity → O(n)

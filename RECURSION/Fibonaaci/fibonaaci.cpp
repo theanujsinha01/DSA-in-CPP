@@ -14,3 +14,5 @@ int main() {
     cout << "Fibonaaci of " << number << " is " << fibonaci(number) << endl; 
     return 0;
 }
+// time complexity: O(2^n) because we are making two recursive calls for each n
+// space complexity: O(n) because of the recursion stack

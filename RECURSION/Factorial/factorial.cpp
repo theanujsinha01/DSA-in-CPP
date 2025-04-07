@@ -15,3 +15,5 @@ int main() {
     cout << "Factorial of " << number << " is " << factorial(number) << endl;  // Output: 120
     return 0;
 }
+// time complexity: O(n) because we are making n recursive calls
+// space complexity: O(n) because of the recursion stack

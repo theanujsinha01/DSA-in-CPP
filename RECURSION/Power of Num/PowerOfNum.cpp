@@ -15,3 +15,5 @@ int main() {
     cout << a << "^" << b << " = " << power(a, b) << endl;
     return 0;
 }
+// time complexity: O(b) because we are making b recursive calls
+// space complexity: O(b) because of the recursion stack

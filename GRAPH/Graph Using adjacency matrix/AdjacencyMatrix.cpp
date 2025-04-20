@@ -31,6 +31,7 @@ int main(){
     }
 
     printGraph(adjacencyMatrix);
-
     return 0;
 }
+// Time Complexity: O(E)
+// Space Complexity: O(V^2)

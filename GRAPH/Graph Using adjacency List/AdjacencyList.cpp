@@ -28,3 +28,5 @@ int main(){
     printGraph(graph);
     return 0;
 }
+//  Time Complexity: O(E)
+//  Space Complexity: O(V + E)

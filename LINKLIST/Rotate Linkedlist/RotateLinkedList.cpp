@@ -28,7 +28,7 @@ Node* rotateLinkedList(Node* head, int k) {
 
     // Find the node just before the new head (length - k - 1)
     temp = head;
-    for (int i = 1; i < length - k; ++i) {
+    for (int i = 1; i < length - k; i++) {
         temp = temp->next;
     }
 

@@ -41,5 +41,5 @@ int main() {
     for (auto it : ans) cout << it << " ";
     return 0;
 }
-// Time Complexity: O(n log n), where n is the number of elements in the array. The algorithm divides the array into halves and merges them, leading to a logarithmic number of levels of recursion, each requiring linear time to merge.
-// Space Complexity: O(n), where n is the number of elements in the array. The algorithm uses an auxiliary array to store the merged result, which requires additional space proportional to the size of the input array.
+// Time Complexity: O(n log n) in all cases (best, average, worst)
+// Space Complexity: O(n) due to the temporary array used for merging

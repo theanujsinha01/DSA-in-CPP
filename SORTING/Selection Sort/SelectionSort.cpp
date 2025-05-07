@@ -22,5 +22,5 @@ int main() {
     for (auto it : ans) cout << it << " ";
     return 0;
 }
-// Time Complexity: O(n^2), where n is the number of elements in the array. The algorithm consists of two nested loops: the outer loop iterates through each element, and the inner loop finds the minimum element in the remaining unsorted portion of the array, leading to a quadratic time complexity.
-// Space Complexity: O(1), as the sorting is done in place and no additional space is required for storing the sorted array. The algorithm only uses a constant amount of extra space for variables like minIndex and i, j.
+// Time Complexity: O(n^2) in all cases (best, average, worst)
+// Space Complexity: O(1) as it sorts the array in place

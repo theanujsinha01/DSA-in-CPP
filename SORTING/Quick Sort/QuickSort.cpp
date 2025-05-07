@@ -36,5 +36,5 @@ int main() {
     for (auto it : ans) cout << it << " ";
     return 0;
 }
-// Time Complexity: O(n log n) on average, O(n^2) in the worst case (when the array is already sorted or reverse sorted). The average case occurs when the pivot divides the array into two roughly equal halves at each step, leading to logarithmic depth of recursion. The worst case occurs when the pivot is always the smallest or largest element, leading to linear depth of recursion.
-// Space Complexity: O(log n) for the recursive stack space in the average case, O(n) in the worst case. The space complexity is determined by the depth of the recursion stack, which can go up to log n in the average case and n in the worst case.
+// Time Complexity: O(n log n) on average, O(n^2) in the worst case (when the array is already sorted or reverse sorted)
+// Space Complexity: O(log n) due to recursive stack space in the average case, O(n) in the worst case

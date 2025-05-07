@@ -27,5 +27,5 @@ int main() {
     }
     return 0;
 }
-// // Time Complexity: O(n^2), where n is the number of elements in the array. The algorithm uses two nested loops to compare and insert elements.
-// // Space Complexity: O(1), as it sorts the array in place and does not use any additional data structures that grow with input size.
+// Time Complexity: O(n^2) in the worst case (when the array is sorted in reverse order), O(n) in the best case (when the array is already sorted)
+// Space Complexity: O(1) as it sorts the array in place

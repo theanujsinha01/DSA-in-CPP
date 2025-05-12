@@ -1,2 +1,0 @@
-
-    result = rev(result);

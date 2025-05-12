@@ -1,24 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void findKthLargestAndSmallest(int arr[], int n, int k) {
-  
-    sort(arr, arr + n);
+int KthLargest(vector<int>&v, int k) {
+    sort(v.begin(), v.end());
+    int n = v.size();
+    return v[n - k];
 
-    int kthSmallest = arr[k - 1];
-    int kthLargest = arr[n - k];
-
-    cout << "Kth Smallest Element: " << kthSmallest << endl;
-    cout << "Kth Largest Element: " << kthLargest << endl;
-
+}
+int KthSmallest(vector<int>&v, int k) {
+    sort(v.begin(), v.end());
+    return v[k - 1];
 }
 
 int main() {
-    int arr[] = {7, 10, 4, 3, 20, 15};
-    int n = 6;
+    vector<int>arr = {1,2,3,4,5,6};
     int k = 2; // Example: Find 3rd smallest and largest
 
-    findKthLargestAndSmallest(arr, n, k);
-
+    int kthLargest = KthLargest(arr, k);
+    int kthSmallest = KthSmallest(arr, k);
+    cout << "Kth Largest: " << kthLargest << endl;
+    cout << "Kth Smallest: " << kthSmallest << endl;
     return 0;
 }

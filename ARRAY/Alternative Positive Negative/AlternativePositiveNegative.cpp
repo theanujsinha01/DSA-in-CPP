@@ -34,3 +34,5 @@ int main() {
     }
     return 0;
 }
+// Time complexity: O(n), where n is the size of the input array nums.
+// Space complexity: O(n), for the two vectors to store positive and negative numbers.

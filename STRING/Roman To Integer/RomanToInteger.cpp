@@ -7,9 +7,9 @@ int romanToInt(string s) {
     int total = 0;
     for (int i = 0; i < s.size(); i++) {
         if (i < s.size() - 1 && mp[s[i]] < mp[s[i + 1]]) 
-            total -= mp[s[i]];
+            total = total - mp[s[i]];
         else 
-            total += mp[s[i]];
+            total = total + mp[s[i]];
     }
     return total;
 }

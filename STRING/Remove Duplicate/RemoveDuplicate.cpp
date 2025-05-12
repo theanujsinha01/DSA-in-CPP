@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string removeDuplicates(const string& str) {
+string removeDuplicates(string& str) {
     set<char> st(str.begin(), str.end());
     string result = "";
     for (char ch : st) {
@@ -11,10 +11,7 @@ string removeDuplicates(const string& str) {
 }
 
 int main() {
-    string str;
-    cout << "Enter a string: ";
-    cin >> str;
-
+    string str = "geeksforgeeks";
     string result = removeDuplicates(str);
     cout << "String after removing duplicates: " << result << endl;
     return 0;

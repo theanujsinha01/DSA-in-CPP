@@ -21,10 +21,7 @@ char mostFrequentChar(const string& str) {
 }
 
 int main() {
-    string str;
-    cout << "Enter a string: ";
-    cin >> str;
-
+    string str = "geeksforgeeks"; // Example string
     char result = mostFrequentChar(str);
     cout << "The most frequent character is: " << result << endl;
     return 0;

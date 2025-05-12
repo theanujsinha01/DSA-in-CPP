@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void countCases(const string &str) {
+void countCases(string &str) {
     int upper = 0, lower = 0;
     for (char ch : str) {
         if (isupper(ch)) 

@@ -15,9 +15,7 @@ bool hasUniqueCharacters( string& str) {
 }
 
 int main() {
-    string input;
-    cout << "Enter a string: ";
-    getline(cin, input);
+    string input = "abcdefg";
 
     if (hasUniqueCharacters(input)) {
         cout << "The string has all unique characters." << endl;

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-string compress(const vector<char>& str) {
+string compress(vector<char>& str) {
     map<char, int> freq;
     for (char ch : str) freq[ch]++;
 

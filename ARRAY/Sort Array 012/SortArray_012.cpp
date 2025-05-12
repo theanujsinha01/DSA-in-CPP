@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> sortArray(vector<int>& arr) {
+vector<int> sortArray(vector<int>& arr) { 
     int low = 0;   
     int mid = 0;    
     int high = arr.size() - 1; 

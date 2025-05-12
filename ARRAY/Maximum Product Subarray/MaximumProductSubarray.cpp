@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int maxProductSubarray(vector<int>arr, int n) {
+int maxProductSubarray(vector<int>&arr) {
     
   int ans = INT_MIN;
   int product = 1;
+  int n = arr.size();
   
   for(int i=0; i<n; i++){
     product = product * arr[i];
@@ -23,9 +24,7 @@ int maxProductSubarray(vector<int>arr, int n) {
 
 int main() {
     vector<int>arr = {2, -100, 2, 4};
-    int n = arr.size();
-
-    cout << "Maximum product: " << maxProductSubarray(arr, n) << endl;
-
+    int result = maxProductSubarray(arr);
+    cout << "Maximum product of a subarray is: " << result << endl;
     return 0;
 }

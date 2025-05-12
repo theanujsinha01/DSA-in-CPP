@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
- vector<int>MoveAllZeroEnd(vector<int>& arr) {
+vector<int>MoveAllZeroEnd(vector<int>& arr) {
     int n = arr.size();
     vector<int> temp(n);
     int index = 0;
@@ -25,7 +25,7 @@ using namespace std;
     return arr;
 }
 int main() {
-   vector<int> arr = {0, 0, 8, 4, 0, 0, 2, 7, 0, 6, 0};
+   vector<int> arr = {0, 8, 4, 0, 2, 7, 0, 6};
    vector<int>ans =  MoveAllZeroEnd(arr);
 
     cout << "Array after rearranging: ";

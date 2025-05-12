@@ -16,7 +16,8 @@ int secondMax(vector<int>&arr){
 }
 int main() {
     vector<int>arr = {1, 2, 3, 4, 5};
-    cout << "Second largest element: " << secondMax(arr) << endl;
+    int ans = secondMax(arr);
+    cout << "Second largest element: " << ans << endl;
     return 0;
 }
 // Time Complexity: O(n), where n is the size of the array.

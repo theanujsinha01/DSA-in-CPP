@@ -2,9 +2,10 @@
 using namespace std;
 //Kadane's Algo
 
-int maxSubarraySum(int arr[], int n) {
+int maxSubarraySum(vector<int>& arr) {
     int maxSum = INT_MIN;  
-    int currentSum = 0; 
+    int currentSum = 0;
+    int n = arr.size();
 
     for (int i = 0; i < n; i++) {
         currentSum = currentSum + arr[i];
@@ -19,19 +20,9 @@ int maxSubarraySum(int arr[], int n) {
 }
 
 int main() {
-    int n;
 
-    cout << "Enter the size of the array: ";
-    cin >> n;
-
-    int arr[n];
-    cout << "Enter elements of the array: ";
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
-
-    int result = maxSubarraySum(arr, n);
+    vector<int> arr = {1, -2, 3, 4, -1, 2, 1, -5, 4};
+    int result = maxSubarraySum(arr);
     cout << "Maximum sum of a subarray is: " << result << endl;
-
     return 0;
 }

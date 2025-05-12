@@ -8,7 +8,7 @@ int maxProfit(vector<int>& prices) {
     for (int i = 1; i < prices.size(); i++) {
        
         if (prices[i] > prices[i - 1]) {
-            Profit = Profit + prices[i] - prices[i - 1];
+            Profit = Profit + (prices[i] - prices[i - 1]);
         }
     }
     return Profit;

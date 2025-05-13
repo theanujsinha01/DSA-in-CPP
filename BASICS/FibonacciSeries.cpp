@@ -9,11 +9,10 @@ int printFibonacci(int n) {
 }
 
 int main() {
-    int n;
-    cout << "Enter the number of terms: ";
-    cin >> n;
-
+    int n = 10; // Number of terms
     cout << "Fibonacci Series: ";
-    cout << printFibonacci(n) << endl;
+    for (int i = 0; i < n; i++) {
+        cout << printFibonacci(i) << " ";
+    }
     return 0;
 }

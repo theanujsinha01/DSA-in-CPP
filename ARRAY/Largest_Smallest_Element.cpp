@@ -13,9 +13,25 @@ int largestEle(vector<int>& arr) {
     }
     return largest;
 }
+
+int SmallestEle(vector<int>& arr) {
+    int n = arr.size();
+    int smallest = arr[0]; // store min value
+
+    // Loop to find the smallest element
+    for(int i = 1; i < n; i++) {
+        if(arr[i] < smallest) {
+            smallest = arr[i];
+        }
+    }
+    return smallest;
+}
 int main() {
     vector<int> arr = {1, 2, 3, 4, 5};
-    cout << "Largest element: " << largestEle(arr) << endl;
+    int largest = largestEle(arr);
+    int smallest = SmallestEle(arr);
+    cout << "Smallest element: " << smallest << endl;
+    cout << "Largest element: " << largest << endl;
     return 0;
 }
 // Time Complexity: O(n), where n is the size of the array.

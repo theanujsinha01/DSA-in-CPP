@@ -1,21 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> insertionSort(vector<int>& arr) {
-
+vector<int> insertionSort(vector<int> arr) {
     int n = arr.size();
+
     for (int i = 1; i < n; i++) {
-       
-        int key = arr[i]; 
+        int key = arr[i]; // current element
         int j = i - 1;
- 
+
+        // move bigger elements to the right
         while (j >= 0 && arr[j] > key) {
             arr[j + 1] = arr[j];
             j--;
         }
-        arr[j + 1] = key; 
+
+        arr[j + 1] = key; // put key in the right place
     }
-    return arr; 
+
+    return arr;
 }
 
 int main() {

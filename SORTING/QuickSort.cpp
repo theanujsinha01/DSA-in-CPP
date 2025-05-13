@@ -36,5 +36,5 @@ int main() {
     for (auto it : ans) cout << it << " ";
     return 0;
 }
-// Time Complexity: O(n log n) on average, O(n^2) in the worst case (when the array is already sorted or reverse sorted)
-// Space Complexity: O(log n) due to recursive stack space in the average case, O(n) in the worst case
+// Time Complexity: O(n log n) on average, O(n^2) in the worst case (when the array is already sorted)
+// Space Complexity: O(log n) due to the recursive stack space

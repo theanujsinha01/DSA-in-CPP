@@ -4,13 +4,16 @@ using namespace std;
 vector<int> selectionSort(vector<int>& arr) {
     int n = arr.size(); 
     for (int i = 0; i < n - 1; i++) {
-        int minIndex = i; // Assume the minimum is the first element of the 
-        for (int j = i + 1; j < n; j++) { 
-            if (arr[j] < arr[minIndex]) { // Find the index of the minimum element
-                minIndex = j; // Update minIndex if a smaller element is found
+        int minVal = arr[i];
+        int minIndex = i;
+
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < minVal) {
+                minVal = arr[j];
+                minIndex = j;
             }
         }
-       
+
         swap(arr[i], arr[minIndex]);
     }
     return arr; 
@@ -22,5 +25,5 @@ int main() {
     for (auto it : ans) cout << it << " ";
     return 0;
 }
-// Time Complexity: O(n^2) in all cases (best, average, worst)
-// Space Complexity: O(1) as it sorts the array in place
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)

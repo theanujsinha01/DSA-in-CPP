@@ -50,15 +50,5 @@ int main() {
 // Time complexity: O(n), where n is the number of nodes in the linked list.
 // Space complexity: O(1), as we are using only two pointers (slow and fast) regardless of the size of the linked list.
 
-// Input head of the linked list, initialize slow = head, fast = head.
 
-// While fast and fast->next are not NULL:
-
-// Move slow one step, fast two steps.
-
-// If slow == fast, return true (cycle detected).
-
-// Return false (no cycle found).
-
-// End.
 

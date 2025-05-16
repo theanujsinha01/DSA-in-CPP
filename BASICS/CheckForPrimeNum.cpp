@@ -25,3 +25,31 @@ int main() {
     }
     return 0; 
 }
+// time complexity = O(n)
+// space complexity = O(1)
+//----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Input number
+
+// Call isPrime(number)
+
+// Function isPrime(n):
+//     If n < 2:
+//         Return false
+
+//     For i from 2 to n-1:
+//         If n % i == 0:
+//             Return false
+
+//     Return true
+
+// If isPrime is true:
+//     Print "Prime number"
+// Else:
+//     Print "Not a prime number"
+
+// End
+//----------------------------------------------------------------------------------

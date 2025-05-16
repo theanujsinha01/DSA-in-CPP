@@ -50,3 +50,25 @@ int main() {
 
     return 0;
 }
+// time complexity: O(n)
+// space complexity: O(1)
+
+//...............................................................................
+
+
+// pseudo code
+
+// Start
+
+// Input: linked list and a target value
+// Set temp = head
+
+// While temp is not NULL:
+//     If temp.data == target:
+//         Return true (element found)
+//     Move temp to next
+
+// If loop ends, return false (element not found)
+
+// End
+//...............................................................................

@@ -27,3 +27,21 @@ int main() {
 }
 // Time Complexity: O(n^2) in all cases (best, average, worst)
 // Space Complexity: O(1) as it sorts the array in place
+
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Input array arr
+// n = size of arr
+
+// For i from 0 to n-1:
+//     For j from 0 to n-2:
+//         If arr[j] > arr[j+1]:
+//             Swap arr[j] and arr[j+1]
+
+// Print sorted array
+
+// End
+// ----------------------------------------------------------------------------------

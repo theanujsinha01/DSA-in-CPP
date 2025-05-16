@@ -68,10 +68,39 @@ int main() {
 }
 // // Time complexity: O(n), where n is the number of nodes in the linked list.
 // // Space complexity: O(1), as we are using a constant amount of space for counting.
+// // ----------------------------------------------------------------------------------
+// pseudo code 
 
-// 1. Count occurrences of 0s, 1s, and 2s in the linked list.  
-// 2. Traverse the list again and update nodes with 0s first.  
-// 3. Then update nodes with 1s.  
-// 4. Finally, update nodes with 2s.  
-// 5. Maintain original node structure, modifying only values.  
-// 6. Return the sorted linked list.
+// Start
+
+// Input: linked list with values 0, 1, 2 only
+// Initialize count0, count1, count2 = 0
+// temp = head
+
+// Traverse the list:
+//     If temp.data == 0: count0++
+//     Else if temp.data == 1: count1++
+//     Else count2++
+//     Move temp to next node
+
+// temp = head
+
+// While count0 > 0:
+//     temp.data = 0
+//     temp = temp.next
+//     count0--
+
+// While count1 > 0:
+//     temp.data = 1
+//     temp = temp.next
+//     count1--
+
+// While count2 > 0:
+//     temp.data = 2
+//     temp = temp.next
+//     count2--
+
+// Print sorted linked list
+
+// End
+// ----------------------------------------------------------------------------------

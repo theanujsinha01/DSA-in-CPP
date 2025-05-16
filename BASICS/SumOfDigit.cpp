@@ -19,3 +19,23 @@ int main() {
 
     return 0;
 }
+
+// time complexity: O(d), where d is the number of digits in the number.
+// space complexity: O(1), as we are using a constant amount of space for variables.
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Input number
+// Set ans = 0
+
+// While number is not 0:
+//     lastDigit = number % 10
+//     ans = ans + lastDigit
+//     number = number / 10   // Remove last digit
+
+// Print ans  // sum of digits
+
+// End
+// ----------------------------------------------------------------------------------

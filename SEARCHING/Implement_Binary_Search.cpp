@@ -33,3 +33,30 @@ int main() {
 }
 // time complexity: O(log n) where n is the size of the array
 // space complexity: O(1) as we are using only a few variables for calculations
+
+//...............................................................................
+// pseudo code
+
+// Start
+
+// Input: sorted array arr, target value
+
+// Set left = 0
+// Set right = size of arr - 1
+
+// While left <= right:
+//     mid = (left + right) / 2
+
+//     If arr[mid] == target:
+//         Return mid (found target)
+
+//     Else if arr[mid] < target:
+//         left = mid + 1
+
+//     Else:
+//         right = mid - 1
+
+// Return -1 (target not found)
+
+// End
+//...............................................................................

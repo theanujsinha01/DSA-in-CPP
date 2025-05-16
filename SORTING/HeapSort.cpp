@@ -39,3 +39,39 @@ int main() {
 
 // Time Complexity: O(n log n)
 // Space Complexity: O(1) (in-place sorting)
+
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// FUNCTION heapify(array, size, root):
+//     largest = root
+//     left = 2 * root + 1
+//     right = 2 * root + 2
+
+//     IF left < size AND array[left] > array[largest]:
+//         largest = left
+
+//     IF right < size AND array[right] > array[largest]:
+//         largest = right
+
+//     IF largest != root:
+//         SWAP array[root] and array[largest]
+//         heapify(array, size, largest)
+
+// FUNCTION heapSort(array):
+//     size = length of array
+
+//     // Build max heap
+//     FOR i from (size / 2 - 1) down to 0:
+//         heapify(array, size, i)
+
+//     // Extract elements from heap one by one
+//     FOR i from (size - 1) down to 1:
+//         SWAP array[0] and array[i]
+//         heapify(array, i, 0)
+
+// MAIN:
+//     array = [list of numbers]
+//     heapSort(array)
+//     PRINT sorted array
+// ----------------------------------------------------------------------------------

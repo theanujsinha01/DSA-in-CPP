@@ -58,3 +58,36 @@ int main() {
 
     return 0;
 }
+
+// time complexity: O(n)
+// space complexity: O(1)
+//................................................................................
+// pseudo code
+
+// Pseudo code to remove loop in linked list
+
+// Start
+
+// Input: head of linked list
+
+// slow = head
+// fast = head
+
+// While fast is not NULL and fast.next is not NULL:
+//    slow = slow.next
+//    fast = fast.next.next
+
+//    If slow == fast:   // Loop found
+//       Call removeLoopUtil(slow, head)
+//       Return
+
+// Function removeLoopUtil(loopNode, head):
+
+// While head.next != loopNode.next:
+//    head = head.next
+//    loopNode = loopNode.next
+
+// loopNode.next = NULL  // Break the loop
+
+// End
+//...............................................................................

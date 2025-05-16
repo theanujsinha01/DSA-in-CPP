@@ -42,3 +42,31 @@ int main() {
     }
     return 0;
 }
+
+// Time Complexity: O(n)
+// Space Complexity: O(n) for storing the nodes in a vector
+//...............................................................................
+// pseudo code
+
+// Pseudo code to find Nth node from end using vector
+
+// Start
+
+// Input: head of linked list, number k
+
+// Create empty vector nodes
+
+// temp = head
+
+// While temp is not NULL:
+//    Add temp.data to nodes
+//    temp = temp.next
+
+// If k is bigger than size of nodes or k <= 0:
+//    Return -1 (invalid)
+
+// Else:
+//    Return nodes[size of nodes - k]
+
+// End
+//...............................................................................

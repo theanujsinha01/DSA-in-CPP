@@ -24,3 +24,21 @@ int main() {
 }
 // time complexity: O(n) where n is the size of the array
 // space complexity: O(1) as we are using only a few variables for calculations
+
+//...............................................................................
+// pseudo code
+
+
+// Start
+
+// Input: array arr, target value
+// Set n = size of arr
+
+// For i = 0 to n-1:
+//     If arr[i] == target:
+//         Return i  // target found at index i
+
+// Return -1  // target not found in arr
+
+// End
+//...............................................................................

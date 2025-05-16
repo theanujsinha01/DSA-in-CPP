@@ -43,3 +43,53 @@ int main() {
 }
 // Time Complexity: O(n log n) in all cases (best, average, worst)
 // Space Complexity: O(n) due to the temporary array used for merging
+
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Input array arr
+// n = size of arr
+
+// Call mergeSort(arr, 0, n-1)
+
+// Function mergeSort(arr, start, end):
+//     If start >= end:
+//         return
+
+//     mid = (start + end) / 2
+
+//     mergeSort(arr, start, mid)
+//     mergeSort(arr, mid + 1, end)
+
+//     merge(arr, start, mid, end)
+
+// Function merge(arr, start, mid, end):
+//     Create empty list output
+//     i = start
+//     j = mid + 1
+
+//     While i <= mid and j <= end:
+//         If arr[i] < arr[j]:
+//             Append arr[i] to output
+//             i = i + 1
+//         Else:
+//             Append arr[j] to output
+//             j = j + 1
+
+//     While i <= mid:
+//         Append arr[i] to output
+//         i = i + 1
+
+//     While j <= end:
+//         Append arr[j] to output
+//         j = j + 1
+
+//     For k from 0 to length(output) - 1:
+//         arr[start + k] = output[k]
+
+// Print sorted array
+
+// End
+// ----------------------------------------------------------------------------------

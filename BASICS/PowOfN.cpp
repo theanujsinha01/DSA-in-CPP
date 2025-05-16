@@ -23,3 +23,23 @@ int main() {
 
     return 0;
 }
+
+// time complexity: O(n), where n is the exponent.
+// space complexity: O(1), as we are using a constant amount of space for variables.
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Input base
+// Input power
+
+// Set result = 1
+
+// For i = 0 to power - 1:
+//     result = result * base
+
+// Print result
+
+// End
+// ----------------------------------------------------------------------------------

@@ -43,3 +43,23 @@ int main() {
     cout << "Length of the linked list: " << length << endl;
     return 0;
 }
+
+// time complexity: O(n)
+// space complexity: O(1)
+
+//...............................................................................
+// pseudo code
+
+// Start
+// Input: head of linked list
+
+// length = 0
+// temp = head
+
+// while temp is not NULL:
+//     length = length + 1
+//     temp = temp.next
+
+// return length
+// End
+//...............................................................................

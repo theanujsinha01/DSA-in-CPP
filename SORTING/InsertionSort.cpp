@@ -31,3 +31,27 @@ int main() {
 }
 // Time Complexity: O(n^2) in the worst case (when the array is sorted in reverse order), O(n) in the best case (when the array is already sorted)
 // Space Complexity: O(1) as it sorts the array in place
+
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+
+// Start
+
+// Input array arr
+// n = size of arr
+
+// For i from 1 to n-1:
+//     key = arr[i]
+//     j = i - 1
+
+//     While j >= 0 and arr[j] > key:
+//         arr[j + 1] = arr[j]
+//         j = j - 1
+
+//     arr[j + 1] = key
+
+// Print sorted array
+
+// End
+//----------------------------------------------------------------------------------

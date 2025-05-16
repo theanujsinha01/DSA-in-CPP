@@ -27,3 +27,26 @@ int main() {
 }
 // Time Complexity: O(n^2)
 // Space Complexity: O(1)
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Input array arr
+// n = size of arr
+
+// For i from 0 to n-2:
+//     minVal = arr[i]
+//     minIndex = i
+
+//     For j from i+1 to n-1:
+//         If arr[j] < minVal:
+//             minVal = arr[j]
+//             minIndex = j
+
+//     Swap arr[i] and arr[minIndex]
+
+// Print sorted array
+
+// End
+// ----------------------------------------------------------------------------------

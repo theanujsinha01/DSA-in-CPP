@@ -39,3 +39,38 @@ int main() {
 }
 // Time Complexity: O(n) - We traverse the height array three times
 // Space Complexity: O(n) - We use two additional arrays of size n to store the max heights
+
+
+//..............................................................................
+// Pseudocode for trapping rain water
+
+// Start
+
+// Input: array height with size n
+
+// Step 1: Create two arrays mxLeft and mxRight of size n
+
+// Step 2: Fill mxLeft:
+//   mxLeft[0] = height[0]
+//   For i from 1 to n-1:
+//     mxLeft[i] = max(mxLeft[i-1], height[i])
+
+// Step 3: Fill mxRight:
+//   mxRight[n-1] = height[n-1]
+//   For i from n-2 down to 0:
+//     mxRight[i] = max(mxRight[i+1], height[i])
+
+// Step 4: Create array water of size n
+
+// Step 5: For i from 0 to n-1:
+//   water[i] = min(mxLeft[i], mxRight[i]) - height[i]
+
+// Step 6: Initialize Sum = 0
+
+// Step 7: For i from 0 to n-1:
+//   Sum = Sum + water[i]
+
+// Step 8: Return Sum
+
+// End
+//..............................................................................

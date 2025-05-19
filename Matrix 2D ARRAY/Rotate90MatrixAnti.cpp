@@ -34,3 +34,21 @@ int main() {
 }
 // time complexity: O(n^2)
 // space complexity: O(1)
+
+//...............................................................................
+// Pseudocode for rotateMatrixAnticlockwise(matrix)
+
+// Input: square matrix of size n x n
+
+// Step 1: Transpose the matrix
+// for i from 0 to n-1:
+//     for j from i to n-1:
+//         swap matrix[i][j] and matrix[j][i]
+
+// Step 2: Reverse each column of the matrix
+// reverse(matrix.begin(), matrix.end());
+
+// Output: rotated matrix (90 degrees anticlockwise)
+
+// End
+//...............................................................................

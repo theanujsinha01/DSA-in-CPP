@@ -35,3 +35,31 @@ int main() {
 }
 // time complexity: O(n*k) where n is the size of the array and k is the size of the window
 // space complexity: O(n) for the result array
+
+
+//...............................................................................
+// Pseudocode for finding first negative integer in every window of size k
+
+// Start
+
+// Input: array arr, window size k
+// Output: list ans with first negative number in each window (or 0 if none)
+
+// Initialize ans as empty list
+// Initialize start = 0, end = k - 1
+
+// While end < length of arr:
+//    found = false
+//    For i from start to end:
+//       If arr[i] < 0:
+//          Add arr[i] to ans
+//          found = true
+//          Break loop
+//    If not found:
+//       Add 0 to ans
+//    Increment start and end by 1
+
+// Return ans
+
+// End
+//...............................................................................

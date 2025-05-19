@@ -28,3 +28,27 @@ int main() {
     }
     return 0;
 }
+// time complexity: O(n) where n is the size of the array
+// space complexity: O(n) for the map storing indices of elements
+
+//...............................................................................
+// Pseudocode to find two indices in array whose elements sum to target
+
+// Start
+
+// Input: array arr, integer target
+// Output: pair of indices (i, j) where arr[i] + arr[j] = target, or (-1, -1) if none
+
+// Create empty map mp to store element -> index
+
+// For i from 0 to length of arr - 1:
+//    finding = target - arr[i]
+//    If finding is in mp:
+//       Return (mp[finding], i)
+//    Else:
+//       Store mp[arr[i]] = i
+
+// Return (-1, -1)  // no pair found
+
+// End
+//...............................................................................

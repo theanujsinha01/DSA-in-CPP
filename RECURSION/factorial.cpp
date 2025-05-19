@@ -17,3 +17,21 @@ int main() {
 }
 // time complexity: O(n) because we are making n recursive calls
 // space complexity: O(n) because of the recursion stack
+
+//.............................................................................
+// Pseudocode for factorial using recursion
+
+// Start
+
+// Function factorial(n):
+//   If n <= 1:
+//     Return 1         // base case
+//   Else:
+//     Return n * factorial(n - 1)  // recursive call
+
+// In main:
+//   Input number from user
+//   Print factorial(number)
+
+// End
+//.............................................................................

@@ -22,3 +22,26 @@ int main() {
 }
 // Time complexity: O(n) for counting frequencies and O(m) for finding the most frequent element, total O(n + m)
 // Space complexity: O(m) for the frequency map, where m is the number of unique elements in arr
+
+
+//...............................................................................
+// Pseudocode to find most frequent element in an array
+
+// Start
+
+// Input: array arr
+// Output: element with highest frequency
+
+// Create empty map freq to store counts of each element
+// For each element x in arr:
+//    Increase freq[x] by 1
+
+// Initialize mostFrequent = first element of arr
+// For each (element, count) pair in freq:
+//    If count > freq[mostFrequent]:
+//       Update mostFrequent = element
+
+// Return mostFrequent
+
+// End
+//...............................................................................

@@ -24,3 +24,24 @@ int main() {
 }
 // time complexity: O(n), space complexity: O(n)
 // This code finds duplicate elements in an array using a set.
+
+//..............................................................................
+// Pseudocode for finding duplicates in an array
+
+// Start
+
+// Input: array arr with size n
+
+// Step 1: Create empty set seen
+// Step 2: Create empty set duplicates
+
+// Step 3: For each element x in arr:
+//   If x is in seen:
+//     Add x to duplicates
+//   Else:
+//     Add x to seen
+
+// Step 4: Return duplicates
+
+// End
+//..............................................................................

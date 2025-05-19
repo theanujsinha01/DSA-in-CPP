@@ -58,3 +58,43 @@ int main() {
 
 // Time Complexity: O(log n) for insert and extractMax
 // Space Complexity: O(n) for the heap array
+
+//...............................................................................
+// Pseudocode for Max-Heap operations
+
+// Start
+
+// Function heapify(v, n, i):
+//   largest = i
+//   l = 2*i + 1
+//   r = 2*i + 2
+//   If l < n and v[l] > v[largest]:
+//       largest = l
+//   If r < n and v[r] > v[largest]:
+//       largest = r
+//   If largest != i:
+//       Swap v[i] and v[largest]
+//       Call heapify(v, n, largest)
+
+// Function insertKey(v, key):
+//   i = size of v
+//   Append key to v
+//   While i > 0:
+//       parent = (i - 1) / 2
+//       If v[parent] >= v[i]:
+//           Break
+//       Swap v[parent] and v[i]
+//       i = parent
+
+// Function extractMax(v):
+//   If v is empty:
+//       Return -1
+//   maxVal = v[0]
+//   v[0] = last element in v
+//   Remove last element from v
+//   If v not empty:
+//       Call heapify(v, size of v, 0)
+//   Return maxVal
+
+// End
+//...............................................................................

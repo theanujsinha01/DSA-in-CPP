@@ -28,3 +28,5 @@ int main() {
     cout << "After swap: " << str << endl;
     return 0;
 }
+// time complexity: O(n) where n is the number of words in the sentence
+// space complexity: O(n) for the vector storing words

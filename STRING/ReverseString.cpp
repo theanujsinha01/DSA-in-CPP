@@ -21,5 +21,5 @@ int main()
     cout << "Reversed string: " << ans << endl;
     return 0;
 }
-// // time complexity: O(n)
-// // space complexity: O(1)
+// time complexity: O(n)
+// space complexity: O(1)

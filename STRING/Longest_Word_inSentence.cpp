@@ -23,5 +23,5 @@ int main() {
     cout << "Longest word: " << longestWord(str) << endl;
     return 0;
 }
-// Time Complexity: O(n), where n is the number of characters in the string. Each character is processed once.
-// Space Complexity: O(m), where m is the number of words in the string. The space used to store the words in the vector.
+// time complexity: O(n) where n is the number of words in the sentence
+// space complexity: O(n) for the vector storing words

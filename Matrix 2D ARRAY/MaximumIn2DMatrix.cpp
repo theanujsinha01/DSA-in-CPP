@@ -26,3 +26,24 @@ int main() {
 }
 // time complexity: O(n*m)
 // space complexity: O(1)
+
+
+//...............................................................................
+// pseudo code
+
+// Start
+
+// Input: matrix of size rows x cols
+
+// Step 1: Initialize max_value to smallest integer (like -∞)
+
+// Step 2: Loop through all elements
+// For i = 0 to rows - 1:
+//     For j = 0 to cols - 1:
+//         If matrix[i][j] > max_value:
+//             max_value = matrix[i][j]
+
+// Step 3: Return max_value
+
+// End
+//...............................................................................

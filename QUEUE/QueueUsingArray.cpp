@@ -47,3 +47,41 @@ int main() {
 // enqueue → O(1)
 // dequeue → O(n) (because of erase from front)
 // Space complexity → O(n)
+
+
+//.............................................................................
+// Pseudocode for dynamic queue with vector
+
+// Start
+
+// Initialize empty list queue
+
+// Function enqueue(value):
+//   Add value to the end of queue
+//   Print "value added to the queue"
+
+// Function dequeue():
+//   If queue is empty:
+//     Print "Queue is empty!"
+//   Else:
+//     Print first element removed from queue
+//     Remove first element from queue
+
+// Function display():
+//   If queue is empty:
+//     Print "Queue is empty!"
+//   Else:
+//     Print all elements of queue
+
+// In main:
+//   enqueue(10)
+//   enqueue(20)
+//   enqueue(30)
+//   display()
+//   dequeue()
+//   display()
+//   enqueue(40)
+//   display()
+
+// End
+//.............................................................................

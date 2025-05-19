@@ -37,5 +37,32 @@ int main() {
     }
     return 0;
 }
-// // time complexity: O(n*m)
-// // space complexity: O(n+m)
+// time complexity: O(n*m)
+// space complexity: O(n+m)
+
+//...............................................................................
+// Pseudocode
+
+// Start
+
+// Input: matrix m with r rows and c columns
+
+// Step 1: Create two arrays row[] and col[] of size r and c, all false
+
+// Step 2: Traverse the matrix
+// For i = 0 to r-1:
+//    For j = 0 to c-1:
+//        If m[i][j] == 0:
+//            row[i] = true
+//            col[j] = true
+
+// Step 3: Update the matrix
+// For i = 0 to r-1:
+//    For j = 0 to c-1:
+//        If row[i] is true or col[j] is true:
+//            m[i][j] = 0
+
+// Step 4: Return the updated matrix
+
+// End
+//...............................................................................

@@ -35,3 +35,27 @@ int main() {
 }
 // time complexity: O(n*k) where n is the size of the array and k is the size of the window
 // space complexity: O(n) for the frequency map
+
+
+//...............................................................................
+// Pseudocode for counting distinct elements in every window of size k
+
+// Start
+
+// Input: array arr, window size k
+// Output: list ans with counts of distinct elements in each window
+
+// Initialize ans as empty list
+// Initialize start = 0, end = k - 1
+
+// While end < length of arr:
+//    Create empty frequency map freqMap
+//    For i from start to end:
+//       Increment freqMap[arr[i]]
+//    Add size of freqMap (number of distinct elements) to ans
+//    Increment start and end by 1
+
+// Return ans
+
+// End
+//...............................................................................

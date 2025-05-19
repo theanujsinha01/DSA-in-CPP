@@ -35,3 +35,29 @@ int main() {
 }
 // time complexity: O(n^3)
 // space complexity: O(n^2)
+
+//...............................................................................
+// pseudo code
+
+
+// Start
+
+// Input: matrices A and B, with sizes r1 x c1 and r2 x c2 respectively
+
+// Step 1: Check if multiplication is possible
+// If c1 != r2:
+//     Print "Can't multiply!"
+//     Return or exit
+
+// Step 2: Initialize result matrix C of size r1 x c2 with all zeros
+
+// Step 3: Multiply matrices
+// For i = 0 to r1 - 1:
+//     For j = 0 to c2 - 1:
+//         For k = 0 to c1 - 1:
+//             C[i][j] = C[i][j] + A[i][k] * B[k][j]
+
+// Step 4: Return or print matrix C
+
+// End
+//...............................................................................

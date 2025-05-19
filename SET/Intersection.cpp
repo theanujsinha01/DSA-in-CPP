@@ -22,3 +22,21 @@ int main() {
 }
 // time complexity: O(n + m) where n and m are the sizes of the two sets
 // space complexity: O(n) where n is the size of the result set
+
+//..............................................................................
+// Pseudocode for finding intersection of two sets
+
+// Start
+
+// Input: sets s1 and s2
+
+// Step 1: Create empty set result
+
+// Step 2: For each element x in s1:
+//   If x is in s2:
+//     Add x to result
+
+// Step 3: Return result
+
+// End
+//..............................................................................

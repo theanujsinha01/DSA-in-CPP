@@ -48,5 +48,42 @@ int main() {
     }
     return 0;
 }
-// // time complexity: O(n*m)
-// // space complexity: O(1)
+// time complexity: O(n*m)
+// space complexity: O(1)
+
+//.............................................................................
+// Pseudocode for spiralOrder
+
+// Start
+
+// Input: matrix mat with rows and cols
+
+// Initialize left = 0, right = cols-1, top = 0, bottom = rows-1
+// Initialize count = 0, total = rows * cols
+// Create empty list ans
+
+// While count < total
+//   Loop i from left to right while count < total
+//     Add mat[top][i] to ans
+//     count++
+//   top++
+
+//   Loop i from top to bottom while count < total
+//     Add mat[i][right] to ans
+//     count++
+//   right--
+
+//   Loop i from right to left while count < total
+//     Add mat[bottom][i] to ans
+//     count++
+//   bottom--
+
+//   Loop i from bottom to top while count < total
+//     Add mat[i][left] to ans
+//     count++
+//   left++
+
+// Return ans
+
+// End
+//.............................................................................

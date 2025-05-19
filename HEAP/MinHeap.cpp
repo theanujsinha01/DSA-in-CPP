@@ -63,3 +63,43 @@ int main() {
 
 // Time Complexity: O(log n) for insert and extractMin
 // Space Complexity: O(n) for the heap array
+
+//...............................................................................
+// Pseudocode for Min-Heap operations
+
+// Start
+
+// Function heapify(v, n, i):
+//   smallest = i
+//   left = 2*i + 1
+//   right = 2*i + 2
+//   If left < n and v[left] < v[smallest]:
+//       smallest = left
+//   If right < n and v[right] < v[smallest]:
+//       smallest = right
+//   If smallest != i:
+//       Swap v[i] and v[smallest]
+//       Call heapify(v, n, smallest)
+
+// Function insertKey(v, key):
+//   i = size of v
+//   Append key to v
+//   While i > 0:
+//       parent = (i - 1) / 2
+//       If v[parent] <= v[i]:
+//           Break
+//       Swap v[parent] and v[i]
+//       i = parent
+
+// Function extractMin(v):
+//   If v is empty:
+//       Return -1
+//   minVal = v[0]
+//   v[0] = last element in v
+//   Remove last element from v
+//   If v not empty:
+//       Call heapify(v, size of v, 0)
+//   Return minVal
+
+// End
+//...............................................................................

@@ -1,18 +1,3 @@
-// Problem :----
-/* Given the root of a binary Tree
- return Check if Binary Tree is Balance
-
-
-                       1        OUTPUT :------
-                     /    \       True
-                    2      3
-                  /  \
-                 4    5
-
-
-
-  */
-
 #include <bits/stdc++.h>
 using namespace std;
 struct Node

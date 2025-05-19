@@ -31,3 +31,28 @@ int main() {
     cout << endl;
     return 0;
 }
+// time complexity: O(n) where n is the size of the array
+// space complexity: O(n) for the map storing frequencies
+
+//...............................................................................
+// Pseudocode to find duplicate elements in an array
+
+// Start
+
+// Input: array arr
+// Output: list duplicates containing elements that appear more than once
+
+// Initialize empty map mp to store frequency
+// Initialize empty list duplicates
+
+// For each element x in arr:
+//    mp[x] = mp[x] + 1
+
+// For each key, value in mp:
+//    If value > 1:
+//       Add key to duplicates
+
+// Return duplicates
+
+// End
+//...............................................................................

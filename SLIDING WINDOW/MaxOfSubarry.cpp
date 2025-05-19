@@ -32,3 +32,26 @@ int main() {
 }
 // time complexity: O(n*k) where n is the size of the array and k is the size of the window
 // space complexity: O(n) for the result array
+
+//...............................................................................
+// Pseudocode for finding maximum in every window of size k
+
+// Start
+
+// Input: array arr, window size k
+// Output: list ans with max element in each window
+
+// Initialize ans as empty list
+// Initialize start = 0, end = k - 1
+
+// While end < length of arr:
+//    maxElement = very small number (e.g. -∞)
+//    For i from start to end:
+//       maxElement = max(maxElement, arr[i])
+//    Add maxElement to ans
+//    Increment start and end by 1
+
+// Return ans
+
+// End
+//...............................................................................

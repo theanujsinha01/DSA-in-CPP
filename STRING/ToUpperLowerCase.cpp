@@ -31,3 +31,5 @@ int main() {
 
     return 0;
 }
+// time complexity: O(n) where n is the length of the string
+// space complexity: O(1) as we are modifying the string in place

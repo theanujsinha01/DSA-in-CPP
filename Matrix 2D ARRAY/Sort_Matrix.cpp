@@ -46,3 +46,24 @@ int main() {
 }
 // time complexity: O(n*m*log(n*m))
 // space complexity: O(n*m)
+
+//.............................................................................
+// Pseudocode for sortMatrix
+
+// Start
+
+// Input: matrix mat with rows and cols
+
+// Step 1: Create an empty list temp
+
+// Step 2: Loop through each element in mat
+//   Add each element to temp
+
+// Step 3: Sort temp
+
+// Step 4: Put sorted values back into mat in row-wise order
+
+// Step 5: Return mat
+
+// End
+//.............................................................................

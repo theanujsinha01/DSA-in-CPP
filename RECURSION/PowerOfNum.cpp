@@ -17,3 +17,22 @@ int main() {
 }
 // time complexity: O(b) because we are making b recursive calls
 // space complexity: O(b) because of the recursion stack
+
+//.............................................................................
+// Pseudocode for power(a, b) using recursion
+
+// Start
+
+// Function power(a, b):
+//   If b == 0:
+//     Return 1       // base case: any number ^ 0 = 1
+//   Else:
+//     Return a * power(a, b - 1)   // recursive call
+
+// In main:
+//   Input a (base) and b (exponent)
+//   Print power(a, b)
+
+// End
+//.............................................................................
+

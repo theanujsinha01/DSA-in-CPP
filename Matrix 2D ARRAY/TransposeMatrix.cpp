@@ -31,3 +31,18 @@ int main() {
 // time complexity: O(n^2)
 // space complexity: O(1)
 
+//.............................................................................
+// Pseudocode for transpose matrix
+
+// Start
+
+// Input: square matrix mat of size n x n
+
+// Loop i from 0 to n-1
+//   Loop j from i to n-1
+//     Swap mat[i][j] and mat[j][i]
+
+// Return mat
+
+// End
+//.............................................................................

@@ -33,3 +33,27 @@ int main() {
     }
     return 0;
 }
+
+// time complexity: O(n)
+// space complexity: O(n)
+
+//.............................................................................
+// Pseudocode for reverseQueue
+
+// Start
+
+// Input: queue q
+
+// Step 1: Create an empty stack s
+
+// Step 2: While q is not empty
+//    Remove front element from q and push it to s
+
+// Step 3: While s is not empty
+//    Pop top element from s and push it back to q
+
+// Return q
+
+// End
+//.............................................................................
+

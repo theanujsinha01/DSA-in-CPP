@@ -28,3 +28,29 @@ int main() {
 }
 // time complexity: O(1) for all operations
 // space complexity: O(n) for the stack
+
+//.............................................................................
+// Pseudocode for MinStack
+
+// Start
+
+// Create two stacks: mainStack and minStack
+
+// push(x):
+//   push x into mainStack
+//   if minStack is empty or x <= top of minStack:
+//       push x into minStack
+
+// pop():
+//   if top of mainStack == top of minStack:
+//       pop from minStack
+//   pop from mainStack
+
+// top():
+//   return top of mainStack
+
+// getMin():
+//   return top of minStack
+
+// End
+//.............................................................................

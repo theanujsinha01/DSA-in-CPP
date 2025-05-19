@@ -28,5 +28,19 @@ int main() {
     }
     return 0;
 }
-// // time complexity: O(nlogn)
-// // space complexity: O(1)
+//time complexity: O(nlogn)
+//space complexity: O(1)
+
+//...............................................................................
+// pseudo code
+
+
+// Input: sorted matrix and target value
+
+// For each row in matrix:
+//     Use binary search in that row to find target
+//     If found, return true
+
+// If target is not found in any row, return false
+// End
+//...............................................................................

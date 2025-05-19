@@ -16,3 +16,25 @@ int main() {
     }
     return 0;
 }
+
+// time complexity: O(n) where n is the size of the array
+// space complexity: O(n) for the map storing frequencies
+
+//...............................................................................
+// Pseudocode for counting frequency of elements in an array
+
+// Start
+
+// Input: array arr
+// Output: map freq with each element and its frequency
+
+// Initialize empty map freq
+
+// For each element x in arr:
+//    freq[x] = freq[x] + 1
+
+// For each key, value in freq:
+//    Print key and value
+
+// End
+//...............................................................................

@@ -36,3 +36,24 @@ int main() {
 }
 // time complexity: O(n^2)
 // space complexity: O(1)
+
+//...............................................................................
+// pseudo code
+
+// Start
+
+// Input: square matrix of size n x n
+
+// Step 1: Transpose the matrix
+// For i = 0 to n - 1:
+//     For j = i to n - 1:
+//         Swap matrix[i][j] and matrix[j][i]
+
+// Step 2: Reverse each row
+// For i = 0 to n - 1:
+//     Reverse matrix[i]
+
+// Step 3: Return matrix
+
+// End
+//...............................................................................

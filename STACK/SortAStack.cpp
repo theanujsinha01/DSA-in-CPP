@@ -38,3 +38,22 @@ int main() {
 }
 // Time Complexity: O(n log n) - Sorting the vector takes O(n log n) time
 // Space Complexity: O(n) - Using a vector to store the elements of the stack
+
+//..............................................................................
+// Pseudocode for sortStack
+
+// Start
+
+// Input: stack s
+
+// Step 1: Create an empty list temp
+
+// Step 2: While stack s is not empty:
+//           Pop top element from s and add it to temp
+
+// Step 3: Sort temp in descending order
+
+// Step 4: Push elements from temp back into stack s in reverse order
+
+// End
+//..............................................................................

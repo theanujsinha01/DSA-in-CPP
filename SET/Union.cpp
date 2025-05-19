@@ -16,3 +16,21 @@ int main() {
     }
     return 0;
 }
+// time complexity: O(n + m) where n and m are the sizes of the two sets
+// space complexity: O(n) where n is the size of the result set
+
+//...............................................................................
+// Pseudocode for union of two sets
+
+// Start
+
+// Input: sets s1 and s2
+
+// Step 1: Create a new set result and copy all elements of s1 into it
+
+// Step 2: Insert all elements of s2 into result (duplicates ignored automatically)
+
+// Step 3: Return result
+
+// End
+//...............................................................................

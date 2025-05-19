@@ -28,3 +28,32 @@ int main() {
     }
     return 0;
 }
+// time complexity: O(n)
+// space complexity: O(n)
+
+//..............................................................................
+// Pseudocode for finding all pairs with sum x
+
+// Start
+
+// Input: integer x, array arr1 with size n
+
+// Step 1: Create empty set st
+// Step 2: Create empty set uniquePairs
+
+// Step 3: For i from 0 to n-1:
+//   finding = x - arr1[i]
+//   If finding is in set st:
+//     pair = (min(arr1[i], finding), max(arr1[i], finding))
+//     Add pair to uniquePairs
+//   Add arr1[i] to set st
+
+// Step 4: Create empty list ans
+
+// Step 5: For each pair in uniquePairs:
+//   Add pair to ans
+
+// Step 6: Return ans
+
+// End
+//..............................................................................

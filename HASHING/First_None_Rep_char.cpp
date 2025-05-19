@@ -23,3 +23,26 @@ int main() {
 }
 // Time complexity: O(n) for counting and O(n) for finding the first non-repeating character, total O(n)
 // Space complexity: O(1) for the frequency map (limited to 256 characters)
+
+
+//...............................................................................
+// Pseudocode to find first non-repeating character in a string
+
+// Start
+
+// Input: string str
+// Output: first non-repeating character or null if none
+
+// Create empty frequency map freq
+
+// For each character c in str:
+//    Increase freq[c] by 1
+
+// For each character c in str:
+//    If freq[c] == 1:
+//       Return c
+
+// Return null (no non-repeating character found)
+
+// End
+//...............................................................................

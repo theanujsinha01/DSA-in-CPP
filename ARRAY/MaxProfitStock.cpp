@@ -19,3 +19,29 @@ int main() {
     cout << "Maximum profit: " << maxProfit(prices) << endl;
     return 0;
 }
+// time complexity: O(n), where n is the size of the input array prices.
+// space complexity: O(1), as we are using a constant amount of extra space for the Profit variable.
+
+// ----------------------------------------------------------------------------------
+// Pseudo code
+
+// Start
+
+// Input: array prices
+
+// Function maxProfit:
+//     If size of prices == 0:
+//         Return 0
+//     Set Profit = 0
+//     For i = 1 to prices.size() - 1:
+//         If prices[i] > prices[i - 1]:
+//             Profit = Profit + (prices[i] - prices[i - 1])
+//     Return Profit
+
+// In main:
+//     Input array prices = {16, 11, 5, 3, 6, 12}
+//     Call maxProfit(prices) → Profit
+//     Print Profit
+
+// End
+// ----------------------------------------------------------------------------------

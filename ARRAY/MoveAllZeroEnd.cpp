@@ -36,3 +36,38 @@ int main() {
 }
 // Time Complexity: O(n), where n is the size of the array.
 // Space Complexity: O(n), where n is the size of the array.
+
+// ----------------------------------------------------------------------------------
+// Pseudo code
+
+// Start
+
+// Input: array arr
+
+// Function MoveAllZeroEnd:
+//     Set n = size of arr
+//     Create temp array of size n
+//     Set index = 0
+
+//     For i = 0 to n-1:
+//         If arr[i] != 0:
+//             temp[index] = arr[i]
+//             index = index + 1
+
+//     For i = 0 to n-1:
+//         If arr[i] == 0:
+//             temp[index] = arr[i]
+//             index = index + 1
+
+//     For i = 0 to n-1:
+//         arr[i] = temp[i]
+
+//     Return arr
+
+// In main:
+//     Input arr = {0, 8, 4, 0, 2, 7, 0, 6}
+//     Call MoveAllZeroEnd(arr) → ans
+//     Print ans
+
+// End
+// ----------------------------------------------------------------------------------

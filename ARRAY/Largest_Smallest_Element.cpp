@@ -36,3 +36,34 @@ int main() {
 }
 // Time Complexity: O(n), where n is the size of the array.
 // Space Complexity: O(1).
+
+// ----------------------------------------------------------------------------------
+// Pseudo code
+
+// Start
+
+// Input: array arr
+
+// Function largestEle:
+//     Set largest = arr[0]
+//     For i = 1 to arr.size() - 1:
+//         If arr[i] > largest:
+//             largest = arr[i]
+//     Return largest
+
+// Function SmallestEle:
+//     Set smallest = arr[0]
+//     For i = 1 to arr.size() - 1:
+//         If arr[i] < smallest:
+//             smallest = arr[i]
+//     Return smallest
+
+// In main:
+//     Input array arr = {1, 2, 3, 4, 5}
+//     Call largestEle(arr) → largest
+//     Call SmallestEle(arr) → smallest
+//     Print smallest
+//     Print largest
+
+// End
+// ----------------------------------------------------------------------------------

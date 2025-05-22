@@ -36,3 +36,37 @@ int main() {
 }
 // Time Complexity: O(n), where n is the size of the array.
 // Space Complexity: O(n), where n is the size of the array.
+
+// ----------------------------------------------------------------------------------
+// Pseudo code
+
+// Start
+
+// Input: array arr of size n
+
+// Function rearrange:
+//     Create a temporary array temp of size n
+//     Set index = 0
+
+//     For i = 0 to n-1:
+//         If arr[i] < 0:
+//             temp[index] = arr[i]
+//             index = index + 1
+
+//     For i = 0 to n-1:
+//         If arr[i] >= 0:
+//             temp[index] = arr[i]
+//             index = index + 1
+
+//     For i = 0 to n-1:
+//         arr[i] = temp[i]
+
+//     Return arr
+
+// In main:
+//     Input arr = {-1, 2, -3, 4, 5, 6, -7, 8, 9}
+//     Call rearrange(arr) → arr
+//     Print arr
+
+// End
+// ----------------------------------------------------------------------------------

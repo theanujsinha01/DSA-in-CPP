@@ -24,3 +24,30 @@ int main() {
 }
 // Time Complexity: O(n)
 // Space Complexity: O(1)
+
+
+// ----------------------------------------------------------------------------------
+// Pseudo code
+
+// Start
+
+// Input: array arr with n elements, rotate count k
+
+// Function rotateArray:
+//     Set n = size of arr
+//     Set k = k % n  // to handle k > n
+//     If k == 0, return arr
+
+//     Reverse the whole array
+//     Reverse the first k elements
+//     Reverse the elements from k to end
+
+//     Return arr
+
+// In main:
+//     Input arr = {1, 2, 3, 4, 5, 6, 7}, k = 3
+//     Call rotateArray(arr, k) → ans
+//     Print ans
+
+// End
+// ----------------------------------------------------------------------------------

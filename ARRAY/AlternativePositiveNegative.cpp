@@ -36,3 +36,33 @@ int main() {
 }
 // Time complexity: O(n), where n is the size of the input array nums.
 // Space complexity: O(n), for the two vectors to store positive and negative numbers.
+
+// ----------------------------------------------------------------------------------
+// Pseudo code
+
+// Start
+
+// Input an array called nums
+// Create two empty arrays: po and ne
+
+// For each element in nums:
+//     If element is >= 0:
+//         Add it to po
+//     Else:
+//         Add it to ne
+
+// Set i = 0, j = 0, k = 0
+
+// While i < size of nums:
+//     If i is even:
+//         nums[i] = po[j]
+//         j = j + 1
+//     Else:
+//         nums[i] = ne[k]
+//         k = k + 1
+//     i = i + 1
+
+// Print all elements of nums
+
+// End
+// ----------------------------------------------------------------------------------

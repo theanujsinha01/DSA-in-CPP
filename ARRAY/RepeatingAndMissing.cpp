@@ -46,3 +46,37 @@ int main() {
 }
 // Time Complexity: O(n), where n is the size of the array.
 // Space Complexity: O(n), where n is the size of the array.
+
+// ----------------------------------------------------------------------------------
+// Pseudo code
+
+// Start
+
+// Input: array arr of size n containing numbers from 1 to n with one repeating and one missing number
+
+// Function findRepeating:
+//     Create empty map freq
+//     For i = 0 to n-1:
+//         freq[arr[i]] = freq[arr[i]] + 1
+//     For i = 0 to n-1:
+//         If freq[arr[i]] > 1:
+//             Return arr[i]
+
+// Function findMissing:
+//     Create empty map freq
+//     For i = 0 to n-1:
+//         freq[arr[i]] = freq[arr[i]] + 1
+//     For i = 1 to n:
+//         If freq[i] == 0:
+//             Return i
+//     Return -1  // If no missing number found
+
+// In main:
+//     Input arr = {1, 2, 2, 4}
+//     Call findRepeating(arr) → repeating
+//     Call findMissing(arr) → missing
+//     Print repeating
+//     Print missing
+
+// End
+// ----------------------------------------------------------------------------------

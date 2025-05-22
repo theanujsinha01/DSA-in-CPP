@@ -35,3 +35,34 @@ int main() {
 }
 // Time Complexity: O(N)
 // Space Complexity: O(1)
+
+// ----------------------------------------------------------------------------------
+// Pseudo code
+
+// Start
+
+// Input: array arr with elements 0, 1, and 2
+
+// Function sortArray:
+//     Set low = 0, mid = 0, high = size of arr - 1
+
+//     While mid <= high:
+//         If arr[mid] == 0:
+//             Swap arr[low] and arr[mid]
+//             low = low + 1
+//             mid = mid + 1
+//         Else if arr[mid] == 2:
+//             Swap arr[mid] and arr[high]
+//             high = high - 1
+//         Else:  // arr[mid] == 1
+//             mid = mid + 1
+
+//     Return arr
+
+// In main:
+//     Input arr = {0, 1, 2, 0, 1, 2}
+//     Call sortArray(arr) → ans
+//     Print ans
+
+// End
+// ----------------------------------------------------------------------------------

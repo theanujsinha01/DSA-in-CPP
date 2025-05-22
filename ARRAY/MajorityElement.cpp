@@ -13,3 +13,25 @@ int main() {
 
     return 0;
 }
+// time complexity: O(n log n), where n is the size of the input array arr.
+// space complexity: O(1), as we are using a constant amount of extra space for the result variable.
+
+// ----------------------------------------------------------------------------------
+// Pseudo code
+
+// Start
+
+// Input: array arr and size n
+
+// Function findMajorityElement:
+//     Sort the array arr
+//     Return element at index n / 2
+
+// In main:
+//     Input array arr = {2, 2, 1, 1, 2, 2, 2}
+//     Set n = size of arr
+//     Call findMajorityElement(arr, n)
+//     Print the result
+
+// End
+// ----------------------------------------------------------------------------------

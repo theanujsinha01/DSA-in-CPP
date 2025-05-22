@@ -22,3 +22,32 @@ int main() {
          << maxLenSubarrayWithZeroSum(arr) << endl;
     return 0;
 }
+// time complexity: O(n^2), where n is the size of the input array arr.
+// space complexity: O(1), as we are using a constant amount of extra space for the sum and maxLen variables.
+
+// ----------------------------------------------------------------------------------
+// Pseudo code
+
+// Start
+
+// Input: array arr
+
+// Function maxLenSubarrayWithZeroSum:
+//     Set maxLen = 0
+
+//     For i = 0 to arr.size() - 1:
+//         Set sum = 0
+//         For j = i to arr.size() - 1:
+//             sum = sum + arr[j]
+//             If sum == 0:
+//                 length = j - i + 1
+//                 maxLen = max(maxLen, length)
+//     Return maxLen
+
+// In main:
+//     Input array arr = {1, 2, -2, 4, -4}
+//     Call maxLenSubarrayWithZeroSum(arr)
+//     Print result
+
+// End
+// ----------------------------------------------------------------------------------

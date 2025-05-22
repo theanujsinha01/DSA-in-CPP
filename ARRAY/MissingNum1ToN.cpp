@@ -22,3 +22,29 @@ int main() {
 }
 // Time Complexity: O(n), where n is the size of the array.
 // Space Complexity: O(1).
+
+// ----------------------------------------------------------------------------------
+// Pseudo code
+
+// Start
+
+// Input: array arr with n-1 elements (numbers from 1 to n, one missing)
+
+// Function findMissingNumber:
+//     Set n = size of arr + 1
+//     Set expectedSum = (n * (n + 1)) / 2  // sum of 1 to n
+//     Set actualSum = 0
+
+//     For i = 0 to size of arr - 1:
+//         actualSum = actualSum + arr[i]
+
+//     missingNumber = expectedSum - actualSum
+//     Return missingNumber
+
+// In main:
+//     Input arr = {1, 2, 4, 5, 6}
+//     Call findMissingNumber(arr) → missingNumber
+//     Print missingNumber
+
+// End
+// ----------------------------------------------------------------------------------

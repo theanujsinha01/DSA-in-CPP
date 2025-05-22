@@ -28,3 +28,42 @@ int main() {
     cout << "Maximum product of a subarray is: " << result << endl;
     return 0;
 }
+
+// time complexity: O(n), where n is the size of the input array arr.
+// space complexity: O(1), as we are using a constant amount of extra space for the product and ans variables.
+
+// ----------------------------------------------------------------------------------
+// Pseudo code
+
+// Start
+
+// Input: array arr
+
+// Function maxProductSubarray:
+//     Set ans = very small number
+//     Set product = 1
+//     Set n = size of arr
+
+//     For i = 0 to n-1:
+//         product = product × arr[i]
+//         ans = max(ans, product)
+//         If product == 0:
+//             product = 1
+
+//     Set product = 1
+
+//     For i = n-1 down to 0:
+//         product = product × arr[i]
+//         ans = max(ans, product)
+//         If product == 0:
+//             product = 1
+
+//     Return ans
+
+// In main:
+//     Input array arr
+//     Call maxProductSubarray(arr) → ans
+//     Print ans
+
+// End
+// ----------------------------------------------------------------------------------

@@ -30,3 +30,29 @@ int main() {
 }
 // time complexity: O(n) where n is the number of words in the sentence
 // space complexity: O(n) for the vector storing words
+
+
+// --------------------------------------------------
+// Pseudo code to swap two words in a sentence by their indices
+
+// Start
+
+// Input string str
+// Input indices index1 and index2
+
+// Initialize empty list words
+// Split str into words and store in words list
+
+// If index1 and index2 are valid (within bounds of words list):
+//     Swap the words at index1 and index2
+
+// Clear str
+// For each word w in words:
+//     Append w followed by a space to str
+
+// Remove the trailing space from str
+
+// Output modified str
+
+// End
+// --------------------------------------------------

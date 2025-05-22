@@ -25,3 +25,26 @@ int main() {
 }
 //time complexity: O(log n) where n is the number of bits in the number
 //space complexity: O(1)
+
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Function countSetBits(n):
+//     Set count = 0
+//     While n > 0:
+//         lastbit = n & 1
+//         If lastbit == 1:
+//             count = count + 1
+//         n = n >> 1  // Right shift to check next bit
+//     Return count
+
+// Input num
+
+// result = countSetBits(num)
+
+// Print "The number of set bits in " + num + " is: " + result
+
+// End
+// ----------------------------------------------------------------------------------

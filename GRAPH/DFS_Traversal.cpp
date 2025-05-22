@@ -35,3 +35,31 @@ int main() {
 }
 // Time Complexity: O(V + E)
 // Space Complexity: O(V)
+
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Function dfs(node, adj, visited, ans):
+//     Mark visited[node] = true
+//     Add node to ans
+//     For each neighbor in adj[node]:
+//         If visited[neighbor] is false:
+//             Call dfs(neighbor, adj, visited, ans)
+
+// Function dfsOfGraph(V, adj):
+//     Initialize visited array of size V as false
+//     Initialize ans as empty list
+//     Call dfs(0, adj, visited, ans)
+//     Return ans
+
+// Set V = 5
+// Set adj = [[1, 2], [0, 4], [0, 3], [2], [1]]
+
+// result = dfsOfGraph(V, adj)
+
+// Print all elements in result
+
+// End
+// ----------------------------------------------------------------------------------

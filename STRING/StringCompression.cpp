@@ -20,3 +20,25 @@ int main() {
 }
 // time complexity: O(n)
 // space complexity: O(n)
+
+// --------------------------------------------------
+// Pseudo code to compress a character array into a string with character counts
+
+// Start
+
+// Input list of characters str
+// Initialize empty map freq to store character frequencies
+
+// For each character ch in str:
+//     Increment freq[ch] by 1
+
+// Initialize empty string result
+// For each (character, count) pair in freq:
+//     Append character to result
+//     If count > 1:
+//         Append count to result as a string
+
+// Return result
+
+// End
+// --------------------------------------------------

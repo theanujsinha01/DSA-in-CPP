@@ -24,5 +24,26 @@ int main() {
     cin >> n;
     cout << intToRoman(n);
 }
-// Time Complexity: O(n), where n is the number of digits in the integer. Each digit is processed once.
-// Space Complexity: O(1), if we consider the space used by the output string to be constant. However, if we consider the space used by the input integer, it would be O(log n) for the output string.
+// time complexity: O(n), where n is the number of digits in the input number.
+// space complexity: O(1), as we are using a constant amount of extra space for the result string.
+
+
+// --------------------------------------------------
+// Pseudo code to convert an integer to Roman numeral
+
+// Start
+
+// Input integer num
+// Create a map mp of integer values to corresponding Roman symbols (in descending order)
+
+// Initialize empty string res to store result
+
+// For each (value, symbol) pair in mp:
+//     While num is greater than or equal to value:
+//         Append symbol to res
+//         Subtract value from num
+
+// Output res
+
+// End
+// --------------------------------------------------

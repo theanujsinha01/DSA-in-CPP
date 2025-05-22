@@ -24,3 +24,25 @@ int main() {
 
 // time complexity: O(n)
 // space complexity: O(1)
+
+// --------------------------------------------------
+// Pseudo code to convert a Roman numeral to an integer
+
+// Start
+
+// Input string s
+// Create map mp to store Roman numeral values:
+//     I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000
+
+// Initialize total = 0
+
+// For i from 0 to length of s - 1:
+//     If i < length of s - 1 AND mp[s[i]] < mp[s[i + 1]]:
+//         Subtract mp[s[i]] from total
+//     Else:
+//         Add mp[s[i]] to total
+
+// Return total
+
+// End
+// --------------------------------------------------

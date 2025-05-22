@@ -16,5 +16,25 @@ int main() {
     cout << (result ? "First non-repeating character: " + string(1, result) : "No unique character") << endl;
     return 0;
 }
-// Time Complexity: O(n), where n is the length of the string. Each character is processed twice: once for counting and once for finding the first unique character.
-// Space Complexity: O(n), where n is the number of unique characters in the string. The unordered_map stores the frequency of each character.
+// time complexity: O(n), where n is the length of the string s.
+// space complexity: O(1), as the frequency map will have a maximum of 26 entries for lowercase letters.
+
+// --------------------------------------------------
+// Pseudo code to find the first non-repeating character in a string
+
+// Start
+
+// Input string s
+// Initialize empty map freq to store character frequencies
+
+// For each character ch in s:
+//     Increment freq[ch] by 1
+
+// For each character ch in s:
+//     If freq[ch] is equal to 1:
+//         Return ch  // First unique character found
+
+// Return null character or indicate no unique character found
+
+// End
+// --------------------------------------------------

@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -23,3 +22,22 @@ int main()
 }
 // time complexity: O(n)
 // space complexity: O(1)
+
+// --------------------------------------------------
+// Pseudo code to reverse a string
+
+// Start
+
+// Input string str
+// Set left = 0
+// Set right = length of str - 1
+
+// While left < right:
+//     Swap characters at positions left and right
+//     Increment left by 1
+//     Decrement right by 1
+
+// Return str
+
+// End
+// --------------------------------------------------

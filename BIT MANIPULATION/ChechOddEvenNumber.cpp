@@ -24,3 +24,26 @@ int main() {
 
     return 0;
 }
+// time complexity: O(1)
+// space complexity: O(1)
+
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Function isEven(n):
+//     If (n & 1) != 0:
+//         Return false
+//     Return true
+
+// Input num
+
+// If isEven(num):
+//     Print num + " is even."
+// Else:
+//     Print num + " is odd."
+
+// End
+// ----------------------------------------------------------------------------------
+

@@ -19,6 +19,26 @@ int main() {
     countCases(str);
     return 0;
 }
+// time complexity: O(n), where n is the length of the string str.
+// space complexity: O(1), as we are using a constant amount of extra space for the upper and lower counters.
 
-// Time Complexity: O(n), where n is the length of the string. Each character is processed once.
-// Space Complexity: O(1), as we are using a constant amount of space for the counters and not using any additional data structures that grow with input size.
+
+// --------------------------------------------------
+// Pseudo code to count uppercase and lowercase letters in a string
+
+// Start
+
+// Input string str
+// Set upper = 0
+// Set lower = 0
+
+// For each character ch in str:
+//    If ch is an uppercase letter:
+//        Increment upper by 1
+//    Else if ch is a lowercase letter:
+//        Increment lower by 1
+
+// Output "Uppercase: ", upper, ", Lowercase: ", lower
+
+// End
+// --------------------------------------------------

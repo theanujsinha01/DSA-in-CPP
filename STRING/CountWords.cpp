@@ -21,5 +21,24 @@ int main() {
     cout << "Total words: " << wordCount << endl;
     return 0;
 }
-// // Time Complexity: O(n), where n is the number of characters in the string. Each character is processed once.
-// // Space Complexity: O(m), where m is the number of words in the string. The space used to store the words in the vector.
+// time complexity: O(n), where n is the number of words in the input string.
+// space complexity: O(n), where n is the number of unique words in the input string.
+
+
+// --------------------------------------------------
+// Pseudo code to count the number of words in a string
+
+// Start
+
+// Input string str
+// Initialize empty list words
+// Create a string stream from str
+
+// While there is a word to read from the stream:
+//     Add the word to the words list
+
+// Set wordCount = size of words list
+// Output "Total words: ", wordCount
+
+// End
+// --------------------------------------------------

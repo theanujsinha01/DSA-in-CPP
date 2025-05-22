@@ -27,3 +27,39 @@ int main() {
 
     return 0;
 }
+
+// time complexity: O(log n) where n is the number of bits in the number
+// space complexity: O(1)
+
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Function findSetBitPos(n):
+//     If n == 0:
+//         Return 0
+
+//     If (n & (n - 1)) != 0:  // Check if n is not a power of 2
+//         Return -1
+
+//     Set pos = 1
+//     While n is not 0:
+//         If (n & 1) == 1:
+//             Break
+//         n = n >> 1   // Right shift n by 1
+//         pos = pos + 1
+
+//     Return pos
+
+// Input number = 16
+
+// position = findSetBitPos(number)
+
+// If position == -1:
+//     Print "Invalid Input"
+// Else:
+//     Print "The rightmost set bit of " + number + " is at position: " + position
+
+// End
+// ----------------------------------------------------------------------------------

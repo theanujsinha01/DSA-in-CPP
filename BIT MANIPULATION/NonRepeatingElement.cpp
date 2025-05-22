@@ -19,3 +19,23 @@ int main() {
 }
 //time complexity: O(n)
 //space complexity: O(1)
+
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Function findNonRepeatingElement(arr):
+//     result = 0
+//     For each element in arr:
+//         result = result XOR element
+//     Return result
+
+// Input arr = [2, 3, 5, 4, 5, 3, 4]
+
+// result = findNonRepeatingElement(arr)
+
+// Print "The only non-repeating element is: " + result
+
+// End
+// ----------------------------------------------------------------------------------

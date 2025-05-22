@@ -33,3 +33,32 @@ int main() {
 }
 // time complexity: O(n) where n is the length of the string
 // space complexity: O(1) as we are modifying the string in place
+
+
+// --------------------------------------------------
+// Pseudo code to convert a string to uppercase and lowercase
+
+// Start
+
+// Input string str
+
+// Function toUpperCase(str):
+//     For i from 0 to length of str - 1:
+//         If str[i] is a lowercase letter (between 'a' and 'z'):
+//             Subtract 32 from str[i] to convert to uppercase
+//     Return str
+
+// Function toLowerCase(str):
+//     For i from 0 to length of str - 1:
+//         If str[i] is an uppercase letter (between 'A' and 'Z'):
+//             Add 32 to str[i] to convert to lowercase
+//     Return str
+
+// Call toUpperCase with input str and store result in upperStr
+// Call toLowerCase with input str and store result in lowerStr
+
+// Output upperStr
+// Output lowerStr
+
+// End
+// --------------------------------------------------

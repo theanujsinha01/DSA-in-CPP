@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,3 +24,25 @@ int main() {
     }           
     return 0;
 }
+// time complexity: O(n), where n is the length of the string str.
+// space complexity: O(1), as we are using a constant amount of extra space for the left and right pointers.
+
+// --------------------------------------------------
+// Pseudo code to check if a string is a palindrome
+
+// Start
+
+// Input string str
+// Set left = 0
+// Set right = length of str - 1
+
+// While left < right:
+//    If str[left] != str[right]:
+//        Return false  // Not palindrome
+//    Increment left by 1
+//    Decrement right by 1
+
+// Return true  // Is palindrome
+
+// End
+// --------------------------------------------------

@@ -25,3 +25,24 @@ int main() {
 }
 //time complexity: O(1)
 //space complexity: O(1)
+
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Function isPowerOfTwo(n):
+//     If (n & (n - 1)) == 0:
+//         Return true
+//     Else:
+//         Return false
+
+// Input num
+
+// If isPowerOfTwo(num):
+//     Print num + " is a power of two."
+// Else:
+//     Print num + " is not a power of two."
+
+// End
+// ----------------------------------------------------------------------------------

@@ -31,3 +31,25 @@ int main() {
 
     return 0;
 }
+// time complexity: O(n), where n is the length of the string str.
+// space complexity: O(1), as the frequency map will have a maximum of 26 entries for lowercase letters.
+
+// --------------------------------------------------
+// Pseudo code to find the first repeated character in a string
+
+// Start
+
+// Input string str
+// Initialize empty map charCount to store frequency of each character
+
+// For each character ch in str:
+//     Increment charCount[ch] by 1
+
+// For each character ch in str:
+//     If charCount[ch] > 1:
+//         Return ch  // First repeated character found
+
+// Return null character to indicate no repeated characters found
+
+// End
+// --------------------------------------------------

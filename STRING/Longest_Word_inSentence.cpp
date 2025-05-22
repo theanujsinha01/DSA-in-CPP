@@ -25,3 +25,26 @@ int main() {
 }
 // time complexity: O(n) where n is the number of words in the sentence
 // space complexity: O(n) for the vector storing words
+
+
+// --------------------------------------------------
+// Pseudo code to find the longest word in a sentence
+
+// Start
+
+// Input string str
+// Initialize empty list words
+// Initialize empty string longest
+
+// Split str into words using spaces
+// For each word:
+//     Add word to words list
+
+// For each word in words:
+//     If length of word > length of longest:
+//         Set longest = word
+
+// Output longest
+
+// End
+// --------------------------------------------------

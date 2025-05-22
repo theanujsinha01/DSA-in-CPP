@@ -30,3 +30,30 @@ int main(){
 }
 //  Time Complexity: O(E)
 //  Space Complexity: O(V + E)
+
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Function printGraph(graph):
+//     For each node and neighbors in graph:
+//         Print "Node " + node + ", Neighbors: "
+//         For each neighbor in neighbors:
+//             Print neighbor + " "
+//         Print new line
+
+// edgeList = [[1, 2], [2, 3], [3, 4], [4, 1]]
+
+// Create empty graph as map from int to list of ints
+
+// For each edge in edgeList:
+//     a = edge[0]
+//     b = edge[1]
+//     Add b to graph[a]
+//     Add a to graph[b]
+
+// Call printGraph(graph)
+
+// End
+// ----------------------------------------------------------------------------------

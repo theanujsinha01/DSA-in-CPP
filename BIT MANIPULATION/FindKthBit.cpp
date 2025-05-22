@@ -16,5 +16,25 @@ int main() {
     cout << "The " << K << "-th bit of " << number << " is: " << kthBit << endl;
     return 0;
 }
-// //time complexity: O(1)
-// //space complexity: O(1)
+// time complexity: O(1)
+// space complexity: O(1)
+
+// ----------------------------------------------------------------------------------
+// pseudo code
+
+// Start
+
+// Function findKthBit(number, K):
+//     bit = number >> K         // Right shift number by K positions
+//     bit = bit & 1             // Extract the K-th bit by AND with 1
+//     Return bit                // Return the K-th bit
+
+// Input number = 8
+// Input K = 3
+
+// kthBit = findKthBit(number, K)
+
+// Print "The " + K + "-th bit of " + number + " is: " + kthBit
+
+// End
+// ----------------------------------------------------------------------------------

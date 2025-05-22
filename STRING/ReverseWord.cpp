@@ -30,3 +30,28 @@ int main() {
 }
 // time complexity: O(n)
 // space complexity: O(n)
+
+
+// --------------------------------------------------
+// Pseudo code to reverse the order of words in a string
+
+// Start
+
+// Input string str
+// Initialize empty string word
+// Create string stream from str
+// Initialize empty list reversedStr
+
+// While there is a word to read from the stream:
+//     Add word to reversedStr list
+
+// Clear str
+// Loop from the end of reversedStr to the beginning:
+//     Append each word to str followed by a space
+
+// Remove the trailing space from str
+
+// Return str
+
+// End
+// --------------------------------------------------

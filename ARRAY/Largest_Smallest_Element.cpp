@@ -58,10 +58,9 @@ int main() {
 //             smallest = arr[i]
 //     Return smallest
 
-// In main:
-//     Input array arr = {1, 2, 3, 4, 5}
-//     Call largestEle(arr) → largest
-//     Call SmallestEle(arr) → smallest
+// In main: 
+//     Call largestEle(arr) 
+//     Call SmallestEle(arr) 
 //     Print smallest
 //     Print largest
 

@@ -27,8 +27,6 @@ int main() {
 // Space Complexity: O(1).
 
 // ----------------------------------------------------------------------------------
-// Pseudo code
-
 // Start
 
 // Input: array arr with n elements
@@ -43,9 +41,7 @@ int main() {
 //     Return arr
 
 // In main:
-//     Input arr = {1, 2, 3, 4, 5}
-//     Call reverseArray(arr) → ans
+//     Call reverseArray(arr)
 //     Print ans
-
 // End
 // ----------------------------------------------------------------------------------

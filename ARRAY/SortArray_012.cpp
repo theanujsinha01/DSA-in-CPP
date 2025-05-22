@@ -54,15 +54,12 @@ int main() {
 //         Else if arr[mid] == 2:
 //             Swap arr[mid] and arr[high]
 //             high = high - 1
-//         Else:  // arr[mid] == 1
+//         Else: 
 //             mid = mid + 1
-
 //     Return arr
 
 // In main:
-//     Input arr = {0, 1, 2, 0, 1, 2}
-//     Call sortArray(arr) → ans
+//     Call sortArray(arr) 
 //     Print ans
-
 // End
 // ----------------------------------------------------------------------------------

@@ -20,7 +20,7 @@ double fractionalKnapsack(int W, vector<int> &val, vector<int> &wt) {
             total += val[idx];
             W -= wt[idx];
         } else {
-            total += r * W;
+            total += r * W; // take the fraction of the item
             break;
         }
     }

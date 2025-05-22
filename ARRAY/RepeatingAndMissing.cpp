@@ -48,8 +48,6 @@ int main() {
 // Space Complexity: O(n), where n is the size of the array.
 
 // ----------------------------------------------------------------------------------
-// Pseudo code
-
 // Start
 
 // Input: array arr of size n containing numbers from 1 to n with one repeating and one missing number
@@ -69,14 +67,12 @@ int main() {
 //     For i = 1 to n:
 //         If freq[i] == 0:
 //             Return i
-//     Return -1  // If no missing number found
+//     Return -1 
 
 // In main:
-//     Input arr = {1, 2, 2, 4}
-//     Call findRepeating(arr) → repeating
-//     Call findMissing(arr) → missing
+//     Call findRepeating(arr) 
+//     Call findMissing(arr) 
 //     Print repeating
 //     Print missing
-
 // End
 // ----------------------------------------------------------------------------------

@@ -33,8 +33,6 @@ int main() {
 // space complexity: O(1), as we are using a constant amount of extra space for the product and ans variables.
 
 // ----------------------------------------------------------------------------------
-// Pseudo code
-
 // Start
 
 // Input: array arr
@@ -61,9 +59,7 @@ int main() {
 //     Return ans
 
 // In main:
-//     Input array arr
-//     Call maxProductSubarray(arr) → ans
+//     Call maxProductSubarray(arr)
 //     Print ans
-
 // End
 // ----------------------------------------------------------------------------------

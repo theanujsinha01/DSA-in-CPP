@@ -30,8 +30,6 @@ int main() {
 // space complexity: O(1), as we are using a constant amount of extra space for the currentSum and maxSum variables.
 
 // ----------------------------------------------------------------------------------
-// Pseudo code
-
 // Start
 
 // Input: array arr
@@ -46,13 +44,10 @@ int main() {
 //         maxSum = max(maxSum, currentSum)
 //         If currentSum < 0:
 //             currentSum = 0
-
 //     Return maxSum
 
 // In main:
-//     Input array arr = {1, -2, 3, 4, -1, 2, 1, -5, 4}
-//     Call maxSubarraySum(arr) → result
+//     Call maxSubarraySum(arr)
 //     Print result
-
 // End
-// ----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------

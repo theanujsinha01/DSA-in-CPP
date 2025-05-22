@@ -38,8 +38,6 @@ int main() {
 // Space Complexity: O(n), where n is the size of the array.
 
 // ----------------------------------------------------------------------------------
-// Pseudo code
-
 // Start
 
 // Input: array arr of size n
@@ -64,9 +62,7 @@ int main() {
 //     Return arr
 
 // In main:
-//     Input arr = {-1, 2, -3, 4, 5, 6, -7, 8, 9}
-//     Call rearrange(arr) → arr
+//     Call rearrange(arr) 
 //     Print arr
-
 // End
 // ----------------------------------------------------------------------------------

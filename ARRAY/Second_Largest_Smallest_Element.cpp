@@ -39,8 +39,6 @@ int main() {
 // Space Complexity: O(1).
 
 // ----------------------------------------------------------------------------------
-// Pseudo code
-
 // Start
 
 // Input: array arr with n elements
@@ -49,7 +47,7 @@ int main() {
 //     Set mx = arr[0]
 //     For i = 1 to n-1:
 //         mx = max(mx, arr[i])
-//     Set ans = very small number (like INT_MIN)
+//     Set ans = very small number
 //     For i = 0 to n-1:
 //         If arr[i] != mx:
 //             ans = max(ans, arr[i])
@@ -59,17 +57,15 @@ int main() {
 //     Set mn = arr[0]
 //     For i = 1 to n-1:
 //         mn = min(mn, arr[i])
-//     Set ans = very large number (like INT_MAX)
+//     Set ans = very large number
 //     For i = 0 to n-1:
 //         If arr[i] != mn:
 //             ans = min(ans, arr[i])
 //     Return ans
 
 // In main:
-//     Input arr = {1, 2, 3, 4, 5}
-//     Call secondMax(arr) → secondMax
-//     Call secondMin(arr) → secondMin
+//     Call secondMax(arr) 
+//     Call secondMin(arr) 
 //     Print secondMin and secondMax
-
 // End
 // ----------------------------------------------------------------------------------

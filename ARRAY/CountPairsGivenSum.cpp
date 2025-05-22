@@ -42,12 +42,5 @@ int main() {
 //             count = count + 1
 
 // Return count
-
-// In main:
-//     Input arr = {1, 5, 7, -1, 5}
-//     Input target = 6
-//     Call countPairsWithSum(arr, target) → result
-//     Print result
-
 // End
 // ----------------------------------------------------------------------------------

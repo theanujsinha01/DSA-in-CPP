@@ -39,8 +39,6 @@ int main() {
 
 
 // ----------------------------------------------------------------------------------
-// Pseudo code
-
 // Start
 
 // Input: two sorted arrays v1, v2
@@ -70,10 +68,7 @@ int main() {
 //     Return mergedarr
 
 // In main:
-//     Input v1 = {1, 3, 5, 7}
-//     Input v2 = {2, 4, 6, 8}
-//     Call mergeArrays(v1, v2) → ans
+//     Call mergeArrays(v1, v2)
 //     Print ans
-
 // End
 // ----------------------------------------------------------------------------------

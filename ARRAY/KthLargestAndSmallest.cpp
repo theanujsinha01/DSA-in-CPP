@@ -41,12 +41,9 @@ int main() {
 //     Return v[k - 1]
 
 // In main:
-//     Input array arr = {1, 2, 3, 4, 5, 6}
-//     Input k = 2
 
-//     Call KthLargest(arr, k) → kthLargest
-//     Call KthSmallest(arr, k) → kthSmallest
-
+//     Call KthLargest(arr, k) 
+//     Call KthSmallest(arr, k) 
 //     Print kthLargest
 //     Print kthSmallest
 

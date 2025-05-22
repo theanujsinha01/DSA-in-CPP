@@ -38,8 +38,6 @@ int main() {
 // Space Complexity: O(n), where n is the size of the array.
 
 // ----------------------------------------------------------------------------------
-// Pseudo code
-
 // Start
 
 // Input: array arr
@@ -65,9 +63,7 @@ int main() {
 //     Return arr
 
 // In main:
-//     Input arr = {0, 8, 4, 0, 2, 7, 0, 6}
-//     Call MoveAllZeroEnd(arr) → ans
+//     Call MoveAllZeroEnd(arr)
 //     Print ans
-
 // End
 // ----------------------------------------------------------------------------------

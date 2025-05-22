@@ -24,8 +24,6 @@ int main() {
 // Space Complexity: O(1)
 
 // ----------------------------------------------------------------------------------
-// Pseudo code
-
 // Start
 
 // Input: array arr, integer target
@@ -38,10 +36,7 @@ int main() {
 //                 Return (stop searching)
 
 //     Print "No two numbers add up to the target."
-
 // In main:
-//     Input arr = {2, 7, 11, 15}, target = 13
 //     Call findTwoSum(arr, target)
-
 // End
 // ----------------------------------------------------------------------------------

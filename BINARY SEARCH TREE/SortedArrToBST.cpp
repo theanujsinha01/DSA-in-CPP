@@ -43,3 +43,32 @@ int main() {
 }
 // Time Complexity: O(N)
 // Space Complexity: O(N)
+
+//................................................................................
+// Start
+
+// Function SortedArrToBST(arr, start, end):
+//     If start > end:
+//         Return NULL
+//     mid = (start + end) / 2
+//     root = new Node(arr[mid])
+//     root.left = SortedArrToBST(arr, start, mid - 1)
+//     root.right = SortedArrToBST(arr, mid + 1, end)
+//     Return root
+
+// Function InOrderTraversal(root):
+//     If root is NULL:
+//         Return
+//     InOrderTraversal(root.left)
+//     Print root.data
+//     InOrderTraversal(root.right)
+
+// In main:
+//     arr = [-10, -3, 0, 5, 9]
+//     start = 0
+//     end = size of arr - 1
+//     result = SortedArrToBST(arr, start, end)
+//     Call InOrderTraversal(result)
+
+// End
+//................................................................................

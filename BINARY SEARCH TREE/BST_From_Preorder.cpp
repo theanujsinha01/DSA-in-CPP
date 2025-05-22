@@ -39,3 +39,37 @@ int main() {
 }
 // Time Complexity: O(N^2)
 // Space Complexity: O(N)
+//................................................................................
+// Start
+
+// Input: preorder array
+
+// Function Insert(root, key):
+//     If root is NULL:
+//         Create new node with key and return it
+//     If key < root.data:
+//         root.left = Insert(root.left, key)
+//     Else:
+//         root.right = Insert(root.right, key)
+//     Return root
+
+// Function BST_From_Preorder(preorder):
+//     root = NULL
+//     For i from 0 to end of preorder:
+//         root = Insert(root, preorder[i])
+//     Return root
+
+// Function InOrderTraversal(root):
+//     If root is NULL:
+//         Return
+//     InOrderTraversal(root.left)
+//     Print root.data
+//     InOrderTraversal(root.right)
+
+// In main:
+//     Input preorder array
+//     root = BST_From_Preorder(preorder)
+//     Call InOrderTraversal(root)
+
+// End
+//................................................................................

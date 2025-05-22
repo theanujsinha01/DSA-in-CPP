@@ -42,3 +42,29 @@ int main() {
 }
 // Time Complexity: O(N)
 // Space Complexity: O(N)
+
+//................................................................................
+// Start
+
+// Function StoreInOrder(root, arr):
+//     If root is NULL:
+//         Return
+//     StoreInOrder(root.left, arr)
+//     Add root.data to arr
+//     StoreInOrder(root.right, arr)
+
+// Function SearchInArray(root, key):
+//     Create empty array vec
+//     Call StoreInOrder(root, vec)
+//     Return binary_search(vec, key)
+
+// In main:
+//     Create BST nodes and link them
+//     key = 3
+//     If SearchInArray(root, key) is true:
+//         Print "Key Present in BST"
+//     Else:
+//         Print "Key NOT Present in BST"
+
+// End
+//................................................................................

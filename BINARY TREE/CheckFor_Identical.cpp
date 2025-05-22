@@ -47,3 +47,31 @@ int main()
 }
 //     // Time Complexity : O(N) where N is the number of nodes in the tree
 //     // Space Complexity : O(N) for the queue and map used in the algorithm
+
+//................................................................................
+// Start
+
+// Function isSameTree(root1, root2):
+//     If root1 is NULL and root2 is NULL:
+//         Return true
+//     If root1 is NULL or root2 is NULL:
+//         Return false
+//     If root1.data != root2.data:
+//         Return false
+
+//     leftCheck = isSameTree(root1.left, root2.left)
+//     rightCheck = isSameTree(root1.right, root2.right)
+
+//     If leftCheck AND rightCheck are true:
+//         Return true
+//     Else:
+//         Return false
+
+// In main:
+//     Build tree root1 with nodes 1,2,3,4,5
+//     Build tree root2 with nodes 1,2,3,4,5
+//     result = isSameTree(root1, root2)
+//     Print result (true or false)
+
+// End
+//................................................................................

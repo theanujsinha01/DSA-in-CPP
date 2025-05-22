@@ -55,3 +55,35 @@ int main()
 }
 // time complexity : O(N) where N is the number of nodes in the tree
 // space complexity : O(N) for the queue used in the algorithm
+
+//................................................................................
+// Start
+
+// Function levelOrder(root):
+//     ans = empty list of lists
+//     If root is NULL:
+//         Return ans
+
+//     Create queue q
+//     Push root into q
+
+//     While q is not empty:
+//         currNode = q.front()
+//         Pop q
+//         Append [currNode.data] to ans
+
+//         If currNode.left exists:
+//             Push currNode.left into q
+//         If currNode.right exists:
+//             Push currNode.right into q
+
+//     Return ans
+
+// In main:
+//     Build tree with root 1, left child 2, right child 3
+//     result = levelOrder(root)
+//     For each row in result:
+//         Print all elements in row
+
+// End
+//................................................................................

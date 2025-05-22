@@ -47,5 +47,39 @@ int main()
     cout<<" Tree is Balanced ? : "<<result<<endl;
     
 }
-//     // Time Complexity : O(N) where N is the number of nodes in the tree
-//     // Space Complexity : O(N) for the queue and map used in the algorithm
+// Time Complexity : O(N) where N is the number of nodes in the tree
+// Space Complexity : O(N) for the queue and map used in the algorithm
+
+//................................................................................
+// Start
+
+// Function checkHeight(node):
+//     If node is NULL:
+//         Return 0
+
+//     leftHeight = checkHeight(node.left)
+//     If leftHeight == -1:
+//         Return -1   // Left subtree not balanced
+
+//     rightHeight = checkHeight(node.right)
+//     If rightHeight == -1:
+//         Return -1   // Right subtree not balanced
+
+//     If abs(leftHeight - rightHeight) > 1:
+//         Return -1   // Current node not balanced
+
+//     Return 1 + max(leftHeight, rightHeight)
+
+// Function isBalanced(root):
+//     If checkHeight(root) == -1:
+//         Return false
+//     Else:
+//         Return true
+
+// In main:
+//     Build tree with nodes and structure
+//     result = isBalanced(root)
+//     Print result (true or false)
+
+// End
+//................................................................................

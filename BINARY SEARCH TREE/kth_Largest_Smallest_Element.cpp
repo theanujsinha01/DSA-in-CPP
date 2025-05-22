@@ -55,3 +55,46 @@ int main() {
 
     return 0;
 }
+// time complexity: O(n), where n is the number of nodes in the BST.
+// space complexity: O(n), for storing the elements in the vector v.
+
+//................................................................................
+// Start
+
+// Function inorderAsc(root, v):
+//     If root is NULL:
+//         Return
+//     inorderAsc(root.left, v)
+//     Add root.data to v
+//     inorderAsc(root.right, v)
+
+// Function inorderDesc(root, v):
+//     If root is NULL:
+//         Return
+//     inorderDesc(root.right, v)
+//     Add root.data to v
+//     inorderDesc(root.left, v)
+
+// Function kthLargest(root, k):
+//     Create empty vector v
+//     Call inorderDesc(root, v)
+//     If k > size of v:
+//         Return -1
+//     Return v[k-1]
+
+// Function kthSmallest(root, k):
+//     Create empty vector v
+//     Call inorderAsc(root, v)
+//     If k > size of v:
+//         Return -1
+//     Return v[k-1]
+
+// In main:
+//     Create BST with nodes 5, 2, 6, 1, 3
+//     Set k = 2
+//     Print kthLargest(root, k)
+//     Print kthSmallest(root, k)
+
+// End
+//................................................................................
+

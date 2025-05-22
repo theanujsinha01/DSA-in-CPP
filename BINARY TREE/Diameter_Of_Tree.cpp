@@ -45,5 +45,35 @@ int main()
       cout << "Diameter of Tree: " << result << endl;
       return 0;
 }
-    // Time Complexity : O(N^2) where N is the number of nodes in the tree
-    // Space Complexity : O(N) for the recursion stack used in the algorithm  
+// Time Complexity : O(N^2) where N is the number of nodes in the tree
+// Space Complexity : O(N) for the recursion stack used in the algorithm 
+
+//................................................................................
+// Start
+
+// Function Height(root):
+//     If root is NULL:
+//         Return 0
+//     leftHeight = Height(root.left)
+//     rightHeight = Height(root.right)
+//     Return 1 + max(leftHeight, rightHeight)
+
+// Function Diameter(root):
+//     If root is NULL:
+//         Return 0
+
+//     leftHeight = Height(root.left)
+//     rightHeight = Height(root.right)
+
+//     leftDiameter = Diameter(root.left)
+//     rightDiameter = Diameter(root.right)
+
+//     Return max(leftHeight + rightHeight, max(leftDiameter, rightDiameter))
+
+// In main:
+//     Build tree root with nodes 1,2,3,4,5
+//     result = Diameter(root)
+//     Print "Diameter of Tree: ", result
+
+// End
+//................................................................................

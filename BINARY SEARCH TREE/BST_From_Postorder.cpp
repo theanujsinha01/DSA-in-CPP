@@ -41,3 +41,36 @@ int main() {
 
 // Time Complexity: O(N^2)
 // Space Complexity: O(1)
+
+// Start
+
+// Input: postorder array
+
+// Function Insert(root, key):
+//     If root is NULL:
+//         Create new node with key and return it
+//     If key < root.data:
+//         root.left = Insert(root.left, key)
+//     Else:
+//         root.right = Insert(root.right, key)
+//     Return root
+
+// Function BST_From_Postorder(postorder):
+//     root = NULL
+//     For i from last index to 0:
+//         root = Insert(root, postorder[i])
+//     Return root
+
+// Function InOrderTraversal(root):
+//     If root is NULL:
+//         Return
+//     InOrderTraversal(root.left)
+//     Print root.data
+//     InOrderTraversal(root.right)
+
+// In main:
+//     Input postorder array
+//     root = BST_From_Postorder(postorder)
+//     Call InOrderTraversal(root)
+
+// End

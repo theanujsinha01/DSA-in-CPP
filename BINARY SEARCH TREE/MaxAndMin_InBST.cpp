@@ -46,3 +46,33 @@ int main() {
     cout << "Min Element : " << MinElemnt << endl;
     return 0;
 }
+
+// time complexity: O(h) where h is the height of the tree
+// space complexity: O(1) as we are not using any extra space
+
+//................................................................................
+// Start
+
+// Function MinElementInBST(root):
+//     If root is NULL:
+//         Return -1  // tree is empty
+//     While root.left is not NULL:
+//         root = root.left
+//     Return root.data
+
+// Function MaxElementInBST(root):
+//     If root is NULL:
+//         Return -1  // tree is empty
+//     While root.right is not NULL:
+//         root = root.right
+//     Return root.data
+
+// In main:
+//     Create BST with nodes
+//     Call MaxElementInBST(root)
+//     Call MinElementInBST(root)
+//     Print Max Element
+//     Print Min Element
+
+// End
+//................................................................................

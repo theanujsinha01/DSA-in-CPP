@@ -48,3 +48,35 @@ int main() {
 }
 // Time Complexity: O(N)
 // Space Complexity: O(N)
+//................................................................................
+
+// Start
+
+// Function InsertKey(root, key):
+//     If root is NULL:
+//         Create new node with key and return it
+
+//     If root.data == key:
+//         Return root  // key already exists, no insert
+
+//     If root.data < key:
+//         root.right = InsertKey(root.right, key)
+//     Else:
+//         root.left = InsertKey(root.left, key)
+
+//     Return root
+
+// Function InOrderTraversal(root):
+//     If root is NULL:
+//         Return
+//     InOrderTraversal(root.left)
+//     Print root.data
+//     InOrderTraversal(root.right)
+
+// In main:
+//     Create BST with nodes 5, 2, 6, 1, 3
+//     Call InsertKey(root, 7) to insert 7
+//     Call InOrderTraversal(root) to print BST in order
+
+// End
+//................................................................................

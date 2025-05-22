@@ -80,3 +80,59 @@ int main() {
 
 //time complexity: O(h) where h is the height of the tree
 //space complexity: O(h) where h is the height of the tree
+
+
+// Start
+
+// Function minValueNode(node):
+//     While node.left is not NULL:
+//         node = node.left
+//     Return node
+
+// Function deleteNode(root, key):
+//     If root is NULL:
+//         Return root
+
+//     If key < root.data:
+//         root.left = deleteNode(root.left, key)
+//     Else if key > root.data:
+//         root.right = deleteNode(root.right, key)
+//     Else:  // key == root.data, node to delete found
+
+//         // Case 1: Node has no left child
+//         If root.left is NULL:
+//             temp = root.right
+//             Delete root
+//             Return temp
+
+//         // Case 2: Node has no right child
+//         Else if root.right is NULL:
+//             temp = root.left
+//             Delete root
+//             Return temp
+
+//         // Case 3: Node has two children
+//         temp = minValueNode(root.right)  // Find inorder successor
+//         root.data = temp.data
+//         root.right = deleteNode(root.right, temp.data)
+
+//     Return root
+
+// Function inorder(root):
+//     If root is NULL:
+//         Return
+//     inorder(root.left)
+//     Print root.data
+//     inorder(root.right)
+
+// In main:
+//     Create BST with nodes 50, 30, 70, 20, 40, 60, 80
+//     Print "Inorder before deletion:"
+//     Call inorder(root)
+
+//     Call deleteNode(root, 20)  // Delete node with value 20
+
+//     Print "Inorder after deletion:"
+//     Call inorder(root)
+
+// End

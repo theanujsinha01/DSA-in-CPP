@@ -59,6 +59,46 @@ vector<int> topView(Node *root) {
       }
       return 0;
   }
-    // Time Complexity : O(N) where N is the number of nodes in the tree
-    // Space Complexity : O(N) for the queue and map used in the algorithm
-  
+// Time Complexity : O(N) where N is the number of nodes in the tree
+// Space Complexity : O(N) for the queue and map used in the algorithm
+
+//................................................................................
+// Start
+
+// Function topView(root):
+//     ans = empty list
+//     If root is NULL:
+//         Return ans
+
+//     mp = empty map  // horizontal distance -> first node data
+//     q = empty queue of pairs (Node, horizontal distance)
+//     q.push(root, 0)
+
+//     While q is not empty:
+//         pr = q.front()
+//         q.pop()
+//         temp = pr.first
+//         hd = pr.second
+
+//         If hd not in mp:
+//             mp[hd] = temp.data
+
+//         If temp.left is not NULL:
+//             q.push(temp.left, hd - 1)
+
+//         If temp.right is not NULL:
+//             q.push(temp.right, hd + 1)
+
+//     For each (hd, data) in mp in ascending order of hd:
+//         ans.push_back(data)
+
+//     Return ans
+
+// In main:
+//     Build tree with root 1, left child 2, right child 3
+//     Add left and right children to node 2 as 4 and 5
+//     result = topView(root)
+//     Print all elements of result separated by space
+
+// End
+//................................................................................

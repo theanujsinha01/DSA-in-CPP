@@ -49,3 +49,30 @@ int main()
 }
 // time complexity : O(N) where N is the number of nodes in the tree
 // space complexity : O(N) for the recursion stack used in the algorithm
+
+//................................................................................
+// Start
+
+// Function recursion(node, level, ans):
+//     If node is NULL:
+//         Return
+
+//     If size of ans < level:
+//         Add node.data to ans
+
+//     recursion(node.right, level + 1, ans)
+//     recursion(node.left, level + 1, ans)
+
+// Function rightSideView(root):
+//     ans = empty list
+//     recursion(root, 1, ans)
+//     Return ans
+
+// In main:
+//     Build tree with root 1, left child 2, right child 3
+//     Add left and right children to node 2 as 4 and 5
+//     result = rightSideView(root)
+//     Print all elements of result separated by space
+
+// End
+//................................................................................

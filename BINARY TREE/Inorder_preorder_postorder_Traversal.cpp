@@ -59,3 +59,39 @@ int main() {
     cout << endl;
     return 0;
 }
+// time complexity: O(n), where n is the number of nodes in the tree.
+// space complexity: O(n), for storing the elements in the vectors in, pre, and post.
+
+//................................................................................
+// Start
+
+// Function preorder(root, res):
+//     If root is not NULL:
+//         Append root.data to res
+//         preorder(root.left, res)
+//         preorder(root.right, res)
+
+// Function inorder(root, res):
+//     If root is not NULL:
+//         inorder(root.left, res)
+//         Append root.data to res
+//         inorder(root.right, res)
+
+// Function postorder(root, res):
+//     If root is not NULL:
+//         postorder(root.left, res)
+//         postorder(root.right, res)
+//         Append root.data to res
+
+// In main:
+//     Build tree with root 1, left child 2, right child 3
+//     Create empty vectors in, pre, post
+//     inorder(root, in)
+//     preorder(root, pre)
+//     postorder(root, post)
+//     Print "Inorder: " followed by elements in in
+//     Print "Preorder: " followed by elements in pre
+//     Print "Postorder: " followed by elements in post
+
+// End
+//................................................................................

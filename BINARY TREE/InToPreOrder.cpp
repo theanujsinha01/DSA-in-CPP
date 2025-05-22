@@ -50,3 +50,40 @@ int main() {
     return 0;
 }
 
+// Time Complexity: O(N)
+// Space Complexity: O(N) for the recursion stack
+
+//................................................................................
+// Start
+
+// Global variable i = 0  // index in preorder vector
+
+// Function build(pre, in, start, end):
+//     If start > end:
+//         Return NULL
+
+//     val = pre[i]
+//     Increment i
+//     Create root node with val
+
+//     Find mid where in[mid] == val
+
+//     root.left = build(pre, in, start, mid - 1)
+//     root.right = build(pre, in, mid + 1, end)
+
+//     Return root
+
+// Function printInorder(root):
+//     If root is NULL:
+//         Return
+//     printInorder(root.left)
+//     Print root.data
+//     printInorder(root.right)
+
+// In main:
+//     Initialize preorder and inorder vectors
+//     root = build(preorder, inorder, 0, size-1)
+//     printInorder(root)
+
+// End
+//................................................................................

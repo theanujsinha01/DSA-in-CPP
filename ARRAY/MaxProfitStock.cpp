@@ -22,19 +22,19 @@ int main() {
 // time complexity: O(n), where n is the size of the input array prices.
 // space complexity: O(1), as we are using a constant amount of extra space for the Profit variable.
 
-// ----------------------------------------------------------------------------------
-// Start
+/* ----------------------------------------------------------------------------------
+Start
 
-// Input: array prices
+Input: array prices
 
-// Function maxProfit:
-//     Set Profit = 0
-//     For i = 1 to prices.size() - 1:
-//         If prices[i] > prices[i - 1]:
-//             Profit = Profit + (prices[i] - prices[i - 1])
-//     Return Profit
-// In main:
-//     Call maxProfit(prices)
-//     Print Profit
-// End
-// ----------------------------------------------------------------------------------
+Function maxProfit:
+    Set Profit = 0
+    For i = 1 to prices.size() - 1:
+        If prices[i] > prices[i - 1]:
+            Profit = Profit + (prices[i] - prices[i - 1])
+    Return Profit
+In main:
+    Call maxProfit(prices)
+    Print Profit
+End
+-------------------------------------------------------------------------------*/

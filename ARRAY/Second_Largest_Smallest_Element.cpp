@@ -38,34 +38,34 @@ int main() {
 // Time Complexity: O(n), where n is the size of the array.
 // Space Complexity: O(1).
 
-// ----------------------------------------------------------------------------------
-// Start
+/*------------------------------------------------------------------------------
+Start
 
-// Input: array arr with n elements
+Input: array arr with n elements
 
-// Function secondMax:
-//     Set mx = arr[0]
-//     For i = 1 to n-1:
-//         mx = max(mx, arr[i])
-//     Set ans = very small number
-//     For i = 0 to n-1:
-//         If arr[i] != mx:
-//             ans = max(ans, arr[i])
-//     Return ans
+Function secondMax:
+    Set mx = arr[0]
+    For i = 1 to n-1:
+        mx = max(mx, arr[i])
+    Set ans = very small number
+    For i = 0 to n-1:
+        If arr[i] != mx:
+            ans = max(ans, arr[i])
+    Return ans
 
-// Function secondMin:
-//     Set mn = arr[0]
-//     For i = 1 to n-1:
-//         mn = min(mn, arr[i])
-//     Set ans = very large number
-//     For i = 0 to n-1:
-//         If arr[i] != mn:
-//             ans = min(ans, arr[i])
-//     Return ans
+Function secondMin:
+    Set mn = arr[0]
+    For i = 1 to n-1:
+        mn = min(mn, arr[i])
+    Set ans = very large number
+    For i = 0 to n-1:
+        If arr[i] != mn:
+            ans = min(ans, arr[i])
+    Return ans
 
-// In main:
-//     Call secondMax(arr) 
-//     Call secondMin(arr) 
-//     Print secondMin and secondMax
-// End
-// ----------------------------------------------------------------------------------
+In main:
+    Call secondMax(arr) 
+    Call secondMin(arr) 
+    Print secondMin and secondMax
+End
+-----------------------------------------------------------------------------*/

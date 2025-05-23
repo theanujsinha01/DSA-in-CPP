@@ -25,24 +25,24 @@ int main() {
 // Time Complexity: O(n)
 // Space Complexity: O(1)
 
-// ----------------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------
 
-// Start
+Start
 
-// Input: array arr with n elements, rotate count k
+Input: array arr with n elements, rotate count k
 
-// Function rotateArray:
-//     Set n = size of arr
-//     Set k = k % n  // to handle k > n
-//     If k == 0, return arr
+Function rotateArray:
+    Set n = size of arr
+    Set k = k % n  // to handle k > n
+    If k == 0, return arr
 
-//     Reverse the whole array
-//     Reverse the first k elements
-//     Reverse the elements from k to end
-//     Return arr
+    Reverse the whole array
+    Reverse the first k elements
+    Reverse the elements from k to end
+    Return arr
 
-// In main:
-//     Call rotateArray(arr, k)
-//     Print ans
-// End
-// ----------------------------------------------------------------------------------
+In main:
+    Call rotateArray(arr, k)
+    Print ans
+End
+--------------------------------------------------------------------------------*/

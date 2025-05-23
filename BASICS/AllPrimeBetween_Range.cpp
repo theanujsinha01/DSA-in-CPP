@@ -38,26 +38,25 @@ int main() {
 }
 // time complexity = O(n^2)
 // space complexity = O(1)
-//----------------------------------------------------------------------------------
-// pseudo code
-// Start
+/*--------------------------------------------------------------------------------
+Start
 
-// Input low
-// Input high
+Input low
+Input high
 
-// For number from low to high:
-//     If isPrime(number):
-//         Print number
+For number from low to high:
+    If isPrime(number):
+        Print number
 
-// Function isPrime(n):
-//     If n <= 1:
-//         Return false
+Function isPrime(n):
+    If n <= 1:
+        Return false
 
-//     For i from 2 to n-1:
-//         If n mod i == 0:
-//             Return false
+    For i from 2 to n-1:
+        If n mod i == 0:
+            Return false
 
-//     Return true
+    Return true
 
-// End
-//----------------------------------------------------------------------------------
+End
+-------------------------------------------------------------------------------*/

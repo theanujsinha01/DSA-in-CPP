@@ -29,25 +29,25 @@ int main() {
 // time complexity: O(n), where n is the size of the input array arr.
 // space complexity: O(1), as we are using a constant amount of extra space for the currentSum and maxSum variables.
 
-// ----------------------------------------------------------------------------------
-// Start
+/*--------------------------------------------------------------------------------
+Start
 
-// Input: array arr
+Input: array arr
 
-// Function maxSubarraySum:
-//     Set maxSum = very small number
-//     Set currentSum = 0
-//     Set n = size of arr
+Function maxSubarraySum:
+    Set maxSum = very small number
+    Set currentSum = 0
+    Set n = size of arr
 
-//     For i = 0 to n-1:
-//         currentSum = currentSum + arr[i]
-//         maxSum = max(maxSum, currentSum)
-//         If currentSum < 0:
-//             currentSum = 0
-//     Return maxSum
+    For i = 0 to n-1:
+        currentSum = currentSum + arr[i]
+        maxSum = max(maxSum, currentSum)
+        If currentSum < 0:
+            currentSum = 0
+    Return maxSum
 
-// In main:
-//     Call maxSubarraySum(arr)
-//     Print result
-// End
-//----------------------------------------------------------------------------------
+In main:
+    Call maxSubarraySum(arr)
+    Print result
+End
+-------------------------------------------------------------------------------*/

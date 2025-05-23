@@ -38,37 +38,37 @@ int main() {
 // Space Complexity: O(n1 + n2), where n1 and n2 are the sizes of the two arrays.
 
 
-// ----------------------------------------------------------------------------------
-// Start
+/*--------------------------------------------------------------------------------
+Start
 
-// Input: two sorted arrays v1, v2
+Input: two sorted arrays v1, v2
 
-// Function mergeArrays:
-//     Set n1 = size of v1
-//     Set n2 = size of v2
-//     Create empty array mergedarr
-//     Set i = 0, j = 0
+Function mergeArrays:
+    Set n1 = size of v1
+    Set n2 = size of v2
+    Create empty array mergedarr
+    Set i = 0, j = 0
 
-//     While i < n1 and j < n2:
-//         If v1[i] <= v2[j]:
-//             Add v1[i] to mergedarr
-//             i = i + 1
-//         Else:
-//             Add v2[j] to mergedarr
-//             j = j + 1
+    While i < n1 and j < n2:
+        If v1[i] <= v2[j]:
+            Add v1[i] to mergedarr
+            i = i + 1
+        Else:
+            Add v2[j] to mergedarr
+            j = j + 1
 
-//     While i < n1:
-//         Add v1[i] to mergedarr
-//         i = i + 1
+    While i < n1:
+        Add v1[i] to mergedarr
+        i = i + 1
 
-//     While j < n2:
-//         Add v2[j] to mergedarr
-//         j = j + 1
+    While j < n2:
+        Add v2[j] to mergedarr
+        j = j + 1
 
-//     Return mergedarr
+    Return mergedarr
 
-// In main:
-//     Call mergeArrays(v1, v2)
-//     Print ans
-// End
-// ----------------------------------------------------------------------------------
+In main:
+    Call mergeArrays(v1, v2)
+    Print ans
+End
+--------------------------------------------------------------------------------*/

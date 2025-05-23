@@ -23,20 +23,20 @@ int main() {
 // Time Complexity: O(N^2)
 // Space Complexity: O(1)
 
-// ----------------------------------------------------------------------------------
-// Start
+/*------------------------------------------------------------------------------
+Start
 
-// Input: array arr, integer target
+Input: array arr, integer target
 
-// Function findTwoSum:
-//     For i = 0 to n-1:
-//         For j = i+1 to n-1:
-//             If arr[i] + arr[j] == target:
-//                 Print i and j
-//                 Return (stop searching)
+Function findTwoSum:
+    For i = 0 to n-1:
+        For j = i+1 to n-1:
+            If arr[i] + arr[j] == target:
+                Print i and j
+                Return (stop searching)
 
-//     Print "No two numbers add up to the target."
-// In main:
-//     Call findTwoSum(arr, target)
-// End
-// ----------------------------------------------------------------------------------
+    Print "No two numbers add up to the target."
+In main:
+    Call findTwoSum(arr, target)
+End
+-----------------------------------------------------------------------------*/

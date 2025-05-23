@@ -9,27 +9,19 @@ struct Node {
         next = NULL;
     }
 };
-
 Node* reverseList(Node* head) {
-    stack<int> stk;
+    Node* prev = NULL;
+    Node* curr = head;
+    Node* next = NULL;
 
-    // Store the elements of the linked list in a vector
-    Node* temp = head;
-    while (temp != NULL) {
-        stk.push(temp->data);
-        temp = temp->next;
+    while (curr != NULL) {
+        next = curr->next;     // save next
+        curr->next = prev;     // reverse link
+        prev = curr;           // move prev
+        curr = next;           // move current
     }
 
-    // Reverse the linked list by setting the node values from the vector
-    temp = head;
-
-    while (temp != NULL) {
-        temp->data = stk.top();
-        stk.pop();
-        temp = temp->next;
-    }
-
-    return head;
+    return prev;  // new head
 }
 
 void printList(Node* node) {
@@ -59,25 +51,23 @@ int main() {
     return 0;
 }
 
-// time complexity: O(n)
-// space complexity: O(n) for the stack
+// Time Complexity: O(n), where n is the number of nodes in the linked list.
+// Space Complexity: O(1), as we are using a constant amount of extra space for pointers.
 
 /*...........................................................................
 
 Start
 
-If head is NULL:
-    Return head
+Set prev = NULL          // Previous node starts as NULL
+Set curr = head          // Current node starts at head
 
-Create an empty stack
+While curr is not NULL:  // Traverse the list
+    next = curr.next         // Save next node
+    curr.next = prev         // Reverse the link
+    prev = curr              // Move prev to current node
+    curr = next              // Move to next node
 
-Traverse the list:
-    Push each node's data onto the stack
-
-Traverse the list again:
-    Pop value from stack and assign to node's data
-
-Return head
+Return prev              // prev is the new head
 
 End
 ............................................................................*/

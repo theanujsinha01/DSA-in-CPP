@@ -25,25 +25,23 @@ int main() {
 
 // time complexity = O(1)
 // space complexity = O(1)
-//----------------------------------------------------------------------------------
-// pseudo code
+/*-------------------------------------------------------------------------
+Start
 
-// Start
+Input year
 
-// Input year
+Call isLeapYear(year)
 
-// Call isLeapYear(year)
+Function isLeapYear(year):
+    If (year % 400 == 0) OR (year % 4 == 0 AND year % 100 != 0):
+        Return true
+    Else:
+        Return false
 
-// Function isLeapYear(year):
-//     If (year % 400 == 0) OR (year % 4 == 0 AND year % 100 != 0):
-//         Return true
-//     Else:
-//         Return false
+If function returns true:
+    Print "Leap year"
+Else:
+    Print "Not a leap year"
 
-// If function returns true:
-//     Print "Leap year"
-// Else:
-//     Print "Not a leap year"
-
-// End
-//----------------------------------------------------------------------------------
+End
+--------------------------------------------------------------------------------*/

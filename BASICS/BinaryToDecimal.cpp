@@ -22,20 +22,20 @@ int main(){
 //time complexity: O(d), where d is the number of digits in the binary number.
 // Space complexity: O(1), as we are using a constant amount of space for variables.
 
-// ----------------------------------------------------------------------------------
-// Start
+/*-----------------------------------------------------------------------------
+Start
 
-// Input binaryNum
-// Set i = 0
-// Set ans = 0
+Input binaryNum
+Set i = 0
+Set ans = 0
 
-// While binaryNum is not 0:
-//     digit = binaryNum % 10
-//     ans = ans + (digit × 2^i)
-//     binaryNum = binaryNum / 10
-//     i = i + 1
+While binaryNum is not 0:
+    digit = binaryNum % 10
+    ans = ans + (digit × 2^i)
+    binaryNum = binaryNum / 10
+    i = i + 1
 
-// Print ans
+Print ans
 
-// End
-// ----------------------------------------------------------------------------------
+End
+--------------------------------------------------------------------------------*/

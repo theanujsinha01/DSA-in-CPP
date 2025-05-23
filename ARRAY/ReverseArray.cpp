@@ -26,22 +26,22 @@ int main() {
 // Time Complexity: O(n), where n is the size of the array.
 // Space Complexity: O(1).
 
-// ----------------------------------------------------------------------------------
-// Start
+/*-------------------------------------------------------------------------------
+Start
 
-// Input: array arr with n elements
+Input: array arr with n elements
 
-// Function reverseArray:
-//     Set start = 0
-//     Set end = n - 1
-//     While start < end:
-//         Swap arr[start] and arr[end]
-//         start = start + 1
-//         end = end - 1
-//     Return arr
+Function reverseArray:
+    Set start = 0
+    Set end = n - 1
+    While start < end:
+        Swap arr[start] and arr[end]
+        start = start + 1
+        end = end - 1
+    Return arr
 
-// In main:
-//     Call reverseArray(arr)
-//     Print ans
-// End
-// ----------------------------------------------------------------------------------
+In main:
+    Call reverseArray(arr)
+    Print ans
+End
+--------------------------------------------------------------------------------*/

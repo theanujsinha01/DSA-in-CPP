@@ -62,9 +62,6 @@ int main() {
 // time complexity: O(n)
 // space complexity: O(1)
 //................................................................................
-// pseudo code
-
-// Pseudo code to remove loop in linked list
 
 // Start
 

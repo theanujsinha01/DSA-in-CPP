@@ -66,11 +66,9 @@ int main() {
 
     return 0; 
 }
-// // Time complexity: O(n), where n is the number of nodes in the linked list.
-// // Space complexity: O(1), as we are using a constant amount of space for counting.
-// // ----------------------------------------------------------------------------------
-// pseudo code 
-
+// Time complexity: O(n), where n is the number of nodes in the linked list.
+// Space complexity: O(1), as we are using a constant amount of space for counting.
+// ----------------------------------------------------------------------------------
 // Start
 
 // Input: linked list with values 0, 1, 2 only

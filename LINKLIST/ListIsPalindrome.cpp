@@ -57,30 +57,29 @@ int main() {
 // Time complexity: O(n), where n is the number of nodes in the linked list.
 // Space complexity: O(n), for the stack used to store the elements of the linked list.
 
-//...............................................................................
-// pseudo code
+/*..............................................................................
+Start
 
-// Start
+If head is NULL:
+    Return true
 
-// Input: head of linked list
+Create an empty stack
 
-// Create an empty stack
+Set temp = head
 
-// temp = head
+While temp is not NULL:
+    Push temp.data onto stack
+    temp = temp.next
 
-// While temp is not NULL:
-//    Push temp.data into stack
-//    temp = temp.next
+Set temp = head
 
-// temp = head
+While temp is not NULL:
+    Pop value from stack
+    If temp.data != popped value:
+        Return false
+    temp = temp.next
 
-// While temp is not NULL:
-//    top = pop from stack
-//    If temp.data != top:
-//        Return false (not palindrome)
-//    temp = temp.next
+Return true
 
-// Return true (palindrome)
-
-// End
-//............................................................................
+End
+..............................................................................*/

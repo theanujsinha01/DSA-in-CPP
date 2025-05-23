@@ -62,29 +62,22 @@ int main() {
 // time complexity: O(n)
 // space complexity: O(n) for the stack
 
-//...........................................................................
+/*...........................................................................
 
-// Pseudo code to reverse linked list using stack
+Start
 
-// Start
+If head is NULL:
+    Return head
 
-// Input: head of linked list
+Create an empty stack
 
-// Create an empty stack
+Traverse the list:
+    Push each node's data onto the stack
 
-// temp = head
+Traverse the list again:
+    Pop value from stack and assign to node's data
 
-// While temp is not NULL:
-//    Push temp.data to stack
-//    temp = temp.next
+Return head
 
-// temp = head
-
-// While temp is not NULL:
-//    temp.data = pop value from stack
-//    temp = temp.next
-
-// Return head
-
-// End
- //............................................................................
+End
+............................................................................*/

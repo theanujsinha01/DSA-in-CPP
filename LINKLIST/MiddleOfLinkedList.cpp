@@ -52,26 +52,20 @@ int main() {
 // time complexity: O(n)
 // space complexity: O(1)
 
-//...............................................................................
-// pseudo code
+/*................................................................................
+Start
 
-// Pseudo code to find middle node of linked list
+If head is NULL:
+    Return NULL
 
-// Start
+Set slow = head
+Set fast = head
 
-// Input: head of linked list
+While fast is not NULL and fast.next is not NULL:
+    Move slow one step forward
+    Move fast two steps forward
 
-// If head is NULL:
-//     Return NULL (empty list)
+Return slow
 
-// Set slow = head
-// Set fast = head
-
-// While fast is not NULL and fast.next is not NULL:
-//     Move slow one step forward
-//     Move fast two steps forward
-
-// Return slow (middle node)
-
-// End
-//...............................................................................
+End
+................................................................................*/

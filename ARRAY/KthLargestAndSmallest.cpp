@@ -24,28 +24,25 @@ int main() {
 // Time Complexity: O(nlogn) for sorting
 // Space Complexity: O(1) for sorting
 
-// ----------------------------------------------------------------------------------
-// Pseudo code
+/* ----------------------------------------------------------------------------------
+Start
 
-// Start
+Input: array v, integer k
 
-// Input: array v, integer k
+Function KthLargest:
+    Sort v in ascending order
+    Set n = size of v
+    Return v[n - k]
 
-// Function KthLargest:
-//     Sort v in ascending order
-//     Set n = size of v
-//     Return v[n - k]
+Function KthSmallest:
+    Sort v in ascending order
+    Return v[k - 1]
 
-// Function KthSmallest:
-//     Sort v in ascending order
-//     Return v[k - 1]
-
-// In main:
-
-//     Call KthLargest(arr, k) 
-//     Call KthSmallest(arr, k) 
-//     Print kthLargest
-//     Print kthSmallest
-
-// End
-// ----------------------------------------------------------------------------------
+In main:
+    Call KthLargest(arr, k) 
+    Call KthSmallest(arr, k) 
+    Print kthLargest
+    Print kthSmallest
+End
+----------------------------------------------------------------------------------
+*/

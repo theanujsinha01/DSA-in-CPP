@@ -73,38 +73,28 @@ int main() {
 }
 // time complexity: O(nlogn)
 // space complexity: O(n)
-//................................................................................
-// pseudo code
+/*................................................................................
+Start
 
-// Pseudo code to merge two linked lists using a vector
+Create empty vector ans
 
-// Start
+Traverse list1:
+    Add each node's data to ans
 
-// Input: Two linked lists list1 and list2
+Traverse list2:
+    Add each node's data to ans
 
-// Create empty vector ans
+Sort ans
 
-// temp1 = list1
-// While temp1 != NULL:
-//    Add temp1.data to ans
-//    temp1 = temp1.next
+Create dummy node
+Set temp = dummy
 
-// temp2 = list2
-// While temp2 != NULL:
-//    Add temp2.data to ans
-//    temp2 = temp2.next
+For each value in ans:
+    Create new node with value
+    temp.next = new node
+    temp = temp.next
 
-// Sort ans
+Return dummy.next
 
-// Create dummy node
-// temp = dummy node
-
-// For i = 0 to size of ans - 1:
-//    Create new node with ans[i]
-//    temp.next = new node
-//    temp = temp.next
-
-// Return dummy.next
-
-// End
-//................................................................................
+End
+...............................................................................*/

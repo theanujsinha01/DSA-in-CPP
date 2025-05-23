@@ -52,29 +52,26 @@ int main(){
 // Time complexity: O(m + n), where m and n are the lengths of the two linked lists.
 // Space complexity: O(1), as we are using a constant amount of space for pointers.
 
-//...............................................................................
-// pseudo code
+/*..............................................................................
+Start
 
-// Start
-// Input: head1 and head2 of two linked lists
+If head1 is NULL or head2 is NULL:
+    Return NULL
 
-// if head1 is NULL or head2 is NULL:
-//     return NULL
+Set ptr1 = head1
+Set ptr2 = head2
 
-// ptr1 = head1
-// ptr2 = head2
+While ptr1 != ptr2:
+    If ptr1 is NULL:
+        ptr1 = head2
+    Else:
+        ptr1 = ptr1.next
 
-// while ptr1 != ptr2:
-//     if ptr1 is NULL:
-//         ptr1 = head2
-//     else:
-//         ptr1 = ptr1.next
+    If ptr2 is NULL:
+        ptr2 = head1
+    Else:
+        ptr2 = ptr2.next
 
-//     if ptr2 is NULL:
-//         ptr2 = head1
-//     else:
-//         ptr2 = ptr2.next
-
-// return ptr1
-// End
-//................................................................................
+Return ptr1
+End
+................................................................................*/

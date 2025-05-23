@@ -44,6 +44,5 @@ int main() {
 //         Subtract value from num
 
 // Output res
-
 // End
 // --------------------------------------------------

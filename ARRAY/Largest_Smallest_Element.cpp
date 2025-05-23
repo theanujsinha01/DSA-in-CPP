@@ -3,9 +3,8 @@ using namespace std;
 
 int largestEle(vector<int>& arr) {
     int n = arr.size();
-    int largest = arr[0]; // store min value
+    int largest = arr[0]; 
 
-    // Loop to find the largest element
     for(int i = 1; i < n; i++) {
         if(arr[i] > largest) {
             largest = arr[i];
@@ -37,32 +36,33 @@ int main() {
 // Time Complexity: O(n), where n is the size of the array.
 // Space Complexity: O(1).
 
-// ----------------------------------------------------------------------------------
-// Pseudo code
+/*---------------------------------------------------------------------------------
+Pseudo code
 
-// Start
+Start
 
-// Input: array arr
+Input: array arr
 
-// Function largestEle:
-//     Set largest = arr[0]
-//     For i = 1 to arr.size() - 1:
-//         If arr[i] > largest:
-//             largest = arr[i]
-//     Return largest
+Function largestEle:
+    Set largest = arr[0]
+    For i = 1 to arr.size() - 1:
+        If arr[i] > largest:
+            largest = arr[i]
+    Return largest
 
-// Function SmallestEle:
-//     Set smallest = arr[0]
-//     For i = 1 to arr.size() - 1:
-//         If arr[i] < smallest:
-//             smallest = arr[i]
-//     Return smallest
+Function SmallestEle:
+    Set smallest = arr[0]
+    For i = 1 to arr.size() - 1:
+        If arr[i] < smallest:
+            smallest = arr[i]
+    Return smallest
 
-// In main: 
-//     Call largestEle(arr) 
-//     Call SmallestEle(arr) 
-//     Print smallest
-//     Print largest
+In main: 
+    Call largestEle(arr) 
+    Call SmallestEle(arr) 
+    Print smallest
+    Print largest
 
-// End
-// ----------------------------------------------------------------------------------
+End
+----------------------------------------------------------------------------------
+*/

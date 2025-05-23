@@ -61,30 +61,29 @@ int main() {
 
 // time complexity: O(n)
 // space complexity: O(1)
-//................................................................................
+/*.............................................................................
 
-// Start
+Start
 
-// Input: head of linked list
+Input: head of linked list
 
-// slow = head
-// fast = head
+1. Initialize slow = head, fast = head
 
-// While fast is not NULL and fast.next is not NULL:
-//    slow = slow.next
-//    fast = fast.next.next
+2. Detect Loop:
+   While fast is not NULL and fast.next is not NULL:
+       slow = slow.next
+       fast = fast.next.next
+       If slow == fast:
+           // Loop detected
+           Go to step 3
 
-//    If slow == fast:   // Loop found
-//       Call removeLoopUtil(slow, head)
-//       Return
+3. Remove Loop:
+   Set ptr1 = head
+   Set ptr2 = slow
+   While ptr1.next != ptr2.next:
+       ptr1 = ptr1.next
+       ptr2 = ptr2.next
+   ptr2.next = NULL  // Break the loop
 
-// Function removeLoopUtil(loopNode, head):
-
-// While head.next != loopNode.next:
-//    head = head.next
-//    loopNode = loopNode.next
-
-// loopNode.next = NULL  // Break the loop
-
-// End
-//...............................................................................
+End
+..............................................................................*/

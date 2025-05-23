@@ -78,47 +78,26 @@ int main() {
 // Time Complexity: O(n)
 // Space Complexity: O(1)
 
-//...............................................................................
-// pseudo code
+/*...............................................................................
+Start
 
-// Start
+If list is empty or k is 0:
+    Return head
 
-// Input: linked list head and number k
+Count the number of nodes (length)
 
-// Step 1: Handle empty list or k = 0
-// If head is NULL or k is 0:
-//     Return head
+k = k % length
+If k is 0:
+    Return head
 
-// Step 2: Count total nodes in the list
-// Set temp = head
-// Set length = 1
-// While temp.next is not NULL:
-//     temp = temp.next
-//     length = length + 1
+Go to (length - k)th node
 
-// Step 3: Adjust k
-// k = k % length
-// If k is 0:
-//     Return head
+Set newHead = next node 
+Break the list here
 
-// Step 4: Move to (length - k - 1)th node
-// Set temp = head
-// Repeat (length - k - 1) times:
-//     temp = temp.next
+Go to end of newHead list
+Connect end to original head
 
-// Step 5: Break the list
-// newHead = temp.next
-// temp.next = NULL
-
-// Step 6: Go to the end of newHead list
-// Set last = newHead
-// While last.next is not NULL:
-//     last = last.next
-
-// Step 7: Attach old head at the end
-// last.next = head
-
-// Return newHead
-
-// End
-//...............................................................................
+Return newHead
+End
+...............................................................................*/

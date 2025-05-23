@@ -23,8 +23,6 @@ int main(){
 // Space complexity: O(1), as we are using a constant amount of space for variables.
 
 // ----------------------------------------------------------------------------------
-// pseudo code
-
 // Start
 
 // Input binaryNum

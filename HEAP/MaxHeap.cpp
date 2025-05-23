@@ -24,15 +24,13 @@ void insertKey(vector<int>& v, int key) {
     }
 }
 
-// Remove and return max
-int extractMax(vector<int>& v) {
-    if (v.empty()) return -1;
-    int mx = v.front();
-    v[0] = v.back();
+void deleteKey(vector<int>& v) {
+    if (v.empty()) return;
+    int n = v.size();
+    swap(v[0], v[n - 1]);
     v.pop_back();
-    if (!v.empty())
-        heapify(v, v.size(), 0);
-    return mx;
+    heapify(v, n - 1, 0);
+
 }
 
 int main() {
@@ -40,17 +38,13 @@ int main() {
     insertKey(heap, 20);
     insertKey(heap, 5);
     insertKey(heap, 15);
-    insertKey(heap, 22);
-    insertKey(heap, 9);
 
     cout << "Heap after inserts: ";
     for (int x : heap) cout << x << " ";
     cout << "\n";
 
-    int mx = extractMax(heap);
-    cout << "Extracted max: " << mx << "\n";
-
-    cout << "Heap now: ";
+    deleteKey(heap);
+    cout << "Heap after delete: ";
     for (int x : heap) cout << x << " ";
     cout << "\n";
     return 0;
@@ -59,42 +53,25 @@ int main() {
 // Time Complexity: O(log n) for insert and extractMax
 // Space Complexity: O(n) for the heap array
 
-//...............................................................................
-// Pseudocode for Max-Heap operations
+/*.............................................................................
+Start
 
-// Start
+heapify(v, n, i):
+    Find largest among i, left child, right child
+    If largest is not i:
+        Swap v[i] and v[largest]
+        heapify(v, n, largest)
 
-// Function heapify(v, n, i):
-//   largest = i
-//   l = 2*i + 1
-//   r = 2*i + 2
-//   If l < n and v[l] > v[largest]:
-//       largest = l
-//   If r < n and v[r] > v[largest]:
-//       largest = r
-//   If largest != i:
-//       Swap v[i] and v[largest]
-//       Call heapify(v, n, largest)
+insertKey(v, key):
+    Add key at end
+    While key > parent:
+        Swap with parent
+        Move up
 
-// Function insertKey(v, key):
-//   i = size of v
-//   Append key to v
-//   While i > 0:
-//       parent = (i - 1) / 2
-//       If v[parent] >= v[i]:
-//           Break
-//       Swap v[parent] and v[i]
-//       i = parent
+deleteMax(v):
+    Swap root with last
+    Remove last
+    heapify from root
 
-// Function extractMax(v):
-//   If v is empty:
-//       Return -1
-//   maxVal = v[0]
-//   v[0] = last element in v
-//   Remove last element from v
-//   If v not empty:
-//       Call heapify(v, size of v, 0)
-//   Return maxVal
-
-// End
-//...............................................................................
+End
+................................................................................*/

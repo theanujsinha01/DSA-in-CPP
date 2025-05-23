@@ -29,15 +29,12 @@ void insertKey(vector<int>& v, int key) {
 }
 
 
-// Remove and return min
-int extractMin(vector<int>& v) {
-    if (v.empty()) return -1;
-    int mn = v.front();
-    v[0] = v.back();
+void deleteKey(vector<int>& v) {
+    if (v.empty()) return;
+    int n = v.size();
+    swap(v[0], v[n - 1]);
     v.pop_back();
-    if (!v.empty())
-        heapify(v, v.size(), 0);
-    return mn;
+    heapify(v, n - 1, 0);
 }
 
 int main() {
@@ -45,17 +42,14 @@ int main() {
     insertKey(heap, 10);
     insertKey(heap, 2);
     insertKey(heap, 30);
-    insertKey(heap, 4);
-    insertKey(heap, 5);
+   
 
     cout << "Heap after inserts: ";
     for (int x : heap) cout << x << " ";
     cout << endl;
 
-    int mn = extractMin(heap);
-    cout << "Extracted min: " << mn << endl;
-
-    cout << "Heap now: ";
+    deleteKey(heap);
+    cout << "Heap after delete: ";
     for (int x : heap) cout << x << " ";
     cout << endl;
     return 0;
@@ -64,42 +58,25 @@ int main() {
 // Time Complexity: O(log n) for insert and extractMin
 // Space Complexity: O(n) for the heap array
 
-//...............................................................................
-// Pseudocode for Min-Heap operations
+/*..............................................................................
+Start
 
-// Start
+heapify(v, n, i):
+    Find smallest among i, left child, right child
+    If smallest is not i:
+        Swap v[i] and v[smallest]
+        heapify(v, n, smallest)
 
-// Function heapify(v, n, i):
-//   smallest = i
-//   left = 2*i + 1
-//   right = 2*i + 2
-//   If left < n and v[left] < v[smallest]:
-//       smallest = left
-//   If right < n and v[right] < v[smallest]:
-//       smallest = right
-//   If smallest != i:
-//       Swap v[i] and v[smallest]
-//       Call heapify(v, n, smallest)
+insertKey(v, key):
+    Add key at end
+    While key < parent:
+        Swap with parent
+        Move up
 
-// Function insertKey(v, key):
-//   i = size of v
-//   Append key to v
-//   While i > 0:
-//       parent = (i - 1) / 2
-//       If v[parent] <= v[i]:
-//           Break
-//       Swap v[parent] and v[i]
-//       i = parent
+deleteMin(v):
+    Swap root with last
+    Remove last
+    heapify from root
 
-// Function extractMin(v):
-//   If v is empty:
-//       Return -1
-//   minVal = v[0]
-//   v[0] = last element in v
-//   Remove last element from v
-//   If v not empty:
-//       Call heapify(v, size of v, 0)
-//   Return minVal
-
-// End
-//...............................................................................
+End
+...............................................................................*/

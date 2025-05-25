@@ -11,14 +11,12 @@ struct Node {
 };
 Node* reverseList(Node* head) {
     Node* prev = NULL;
-    Node* curr = head;
-    Node* next = NULL;
 
-    while (curr != NULL) {
-        next = curr->next;     // save next
-        curr->next = prev;     // reverse link
-        prev = curr;           // move prev
-        curr = next;           // move current
+    while (head != NULL) {
+        Node* next = head->next;     // save next
+        head->next = prev;     // reverse link
+        prev = head;           // move prev
+        head = next;           // move current
     }
 
     return prev;  // new head

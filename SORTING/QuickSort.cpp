@@ -39,42 +39,25 @@ int main() {
 // Time Complexity: O(n log n) on average, O(n^2) in the worst case (when the array is already sorted)
 // Space Complexity: O(log n) due to the recursive stack space
 
-// ----------------------------------------------------------------------------------
-// pseudo code
+/*-----------------------------------------------------------------------------
+Start
 
-// Start
+quickSort(arr, left, right):
+    If left < right:
+        pi = partition(arr, left, right)
+        quickSort(arr, left, pi - 1)
+        quickSort(arr, pi + 1, right)
 
-// Input array arr
-// n = size of arr
+partition(arr, left, right):
+    pivot = arr[left]
+    i = left
+    j = right
+    While i < j:
+        While arr[i] <= pivot and i < right: i++
+        While arr[j] > pivot and j > left: j--
+        If i < j: swap arr[i], arr[j]
+    swap arr[left], arr[j]
+    return j
 
-// Call quickSort(arr, 0, n-1)
-
-// Function quickSort(arr, left, right):
-//     If left < right:
-//         pi = partition(arr, left, right)
-
-//         quickSort(arr, left, pi - 1)
-//         quickSort(arr, pi + 1, right)
-
-// Function partition(arr, left, right):
-//     pivot = arr[left]
-//     i = left
-//     j = right
-
-//     While i < j:
-//         While arr[i] <= pivot and i < right:
-//             i = i + 1
-
-//         While arr[j] > pivot and j > left:
-//             j = j - 1
-
-//         If i < j:
-//             swap arr[i] and arr[j]
-
-//     swap arr[left] and arr[j]
-//     return j
-
-// Print sorted array
-
-// End
-// ----------------------------------------------------------------------------------
+End
+// --------------------------------------------------------------------------------*/

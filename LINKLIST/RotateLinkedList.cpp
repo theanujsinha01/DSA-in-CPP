@@ -10,9 +10,8 @@ struct Node {
     }
 };
 
-// Function to rotate the linked list by k positions
 Node* rotateLinkedList(Node* head) {
-    if (!head || !head->next) return head; // 0 or 1 node
+    if (head == NULL || head->next == NULL) return head; // 0 or 1 node
 
     Node* secondLast = NULL;
     Node* last = head;
@@ -49,11 +48,7 @@ int main() {
 
     cout << "Original Linked List: ";
     printList(head);
-
-    int k = 2; // Rotate by 2 positions
     head = rotateLinkedList(head);
-
-    cout << "Linked List after rotating by " << k << " positions: ";
     printList(head);
 
     return 0;

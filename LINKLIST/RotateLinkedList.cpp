@@ -13,19 +13,17 @@ struct Node {
 Node* rotateLinkedList(Node* head) {
     if (head == NULL || head->next == NULL) return head; // 0 or 1 node
 
-    Node* secondLast = NULL;
-    Node* last = head;
+    Node* secondLast = head;
+    
 
     // go to last node
-    while (last->next) {
-        secondLast = last;
-        last = last->next;
+    while (secondLast->next->next != NULL) {
+        secondLast = secondLast->next;        
     }
-
-    secondLast->next = NULL; // break link
-    last->next = head;       // move last to front
-    head = last;             // update head
-
+    Node* last = secondLast->next;
+    last->next = head; 
+    secondLast->next = NULL;  
+    head = last;             
     return head;
 }
 

@@ -7,9 +7,7 @@ vector<int> reverseArray(vector<int>& arr) {
     int end = n - 1;
 
     while (start < end) {
-        swap(arr[start], arr[end]);
-        start ++;
-        end--;
+        swap(arr[start++], arr[end--]); // Swap elements at start and end
     }
     return arr;
 }
